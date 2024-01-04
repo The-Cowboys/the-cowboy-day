@@ -13,7 +13,7 @@ function generateDay() {
 function generateIntegerForDay(currentDate, listLength) {
   const seed = `${currentDate}${listLength}`; 
   const hash = crypto.createHash('sha256').update(seed).digest('hex');
-  return parseInt(hash.slice(0, 6), 16);
+  return parseInt(hash.slice(0, 5), 16);
 }
 
 function getPuto(generatedInteger) {
@@ -54,20 +54,20 @@ app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
 
-// function runLoopForDays(numDays) {
-//   const currentDate = new Date();
+function runLoopForDays(numDays) {
+  const currentDate = new Date();
   
-//   for (let i = 0; i < numDays; i++) {
-//     const currentDay = new Date(currentDate);
-//     currentDay.setDate(currentDate.getDate() + i);
+  for (let i = 0; i < numDays; i++) {
+    const currentDay = new Date(currentDate);
+    currentDay.setDate(currentDate.getDate() + i);
     
-//     const generatedInteger = generateIntegerForDay(currentDay, putos.length);
-//     const todayPuto = getPuto(generatedInteger);
+    const generatedInteger = generateIntegerForDay(currentDay, putos.length);
+    const todayPuto = getPuto(generatedInteger);
     
-//     console.log(`Generated Integer for ${currentDay.toISOString().slice(0, 10)}`, todayPuto);
-//   }
-// }
+    console.log(`Generated Integer for ${currentDay.toISOString().slice(0, 10)}`, todayPuto);
+  }
+}
 
-// // Example: Run the loop for the next 5 days
-// const numDaysToRun = 50;
-// runLoopForDays(numDaysToRun);
+// Example: Run the loop for the next 5 days
+const numDaysToRun = 50;
+runLoopForDays(numDaysToRun);
