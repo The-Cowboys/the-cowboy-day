@@ -15,7 +15,7 @@ function App() {
 
   const fetchPuto = async () => {
     try {
-      const response = await fetch('http://localhost:3000/api/putos/today');
+      const response = await fetch('http://34.135.73.247/api/putos/today');
       const data = await response.json();
       setPuto(data.name);
     } catch (error) {
