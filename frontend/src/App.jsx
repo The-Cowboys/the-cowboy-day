@@ -29,11 +29,11 @@ function App() {
         {
           !clicked ? (
             <button onClick={click}>
-              ¿Quien es puto?
+              ¿Quien es el Cowboy del día?
             </button>
           ) : (
             <div>
-              <p>El puto de hoy es...</p>
+              <p>El cowboy de hoy es...</p>
               <h2>{puto}</h2>
             </div>
           )
