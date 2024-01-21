@@ -1,8 +1,17 @@
 const express = require('express');
 const crypto = require('crypto');
+const Pool = require('pg').Pool
 
 const app = express();
 const PORT = 3000;
+
+const pool = new Pool({
+  user: 'app',
+  host: 'localhost',
+  database: 'app_db',
+  password: 'pass',
+  port: 5432,
+})
 
 function generateDay() {
   // Get current date in "YYYY-MM-DD" format
@@ -47,6 +56,15 @@ app.get('/api/putos/today', (_, res) => {
   const todayPuto = getPuto(generatedInteger);
 
   res.json(todayPuto);
+});
+
+app.get('/api/cowboys', (_, res) => {
+  pool.query('SELECT * FROM cowboys ORDER BY name', (error, results) => {
+    if (error) {
+      throw error
+    }
+    res.json(results.rows);
+  });  
 });
 
 // Start the server
