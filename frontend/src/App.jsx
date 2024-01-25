@@ -33,7 +33,7 @@ function App() {
             </button>
           ) : (
             <div>
-              <p>El cowboy de hoy es...</p>
+              <p>El cowboy de hoy es....</p>
               <h2>{puto}</h2>
             </div>
           )
