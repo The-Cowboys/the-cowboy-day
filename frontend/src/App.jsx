@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css'
+import NavBar from './Componentes/NavBar';
 
 function App() {
   const [puto, setPuto] = useState(null);
@@ -25,6 +26,14 @@ function App() {
 
   return (
     <>
+      <NavBar />
+
+
+
+
+
+
+
       <div className="card">
         {
           !clicked ? (
