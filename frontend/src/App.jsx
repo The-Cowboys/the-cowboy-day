@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css'
-import NavBar from './Componentes/NavBar';
+// import { BrowserRouter as Router, Routes } from 'react-router-dom';
+import Estructura from './Componentes/Estructura';
 
 function App() {
   const [puto, setPuto] = useState(null);
@@ -26,28 +27,27 @@ function App() {
 
   return (
     <>
-      <NavBar />
+      {/* <Router> */}
+        {/* <Routes> */}
+          <Estructura />
 
 
-
-
-
-
-
-      <div className="card">
-        {
-          !clicked ? (
-            <button onClick={click}>
-              ¿Quien es el Cowboy del día?
-            </button>
-          ) : (
-            <div>
-              <p>El cowboy de hoy es....</p>
-              <h2>{puto}</h2>
-            </div>
-          )
-        }
-      </div>
+          <div className="card">
+            {
+              !clicked ? (
+                <button onClick={click}>
+                  ¿Quien es el Cowboy del día?
+                </button>
+              ) : (
+                <div>
+                  <p>El cowboy de hoy es....</p>
+                  <h2>{puto}</h2>
+                </div>
+              )
+            }
+          </div>
+        {/* </Routes> */}
+      {/* </Router> */}
     </>
   )
 }
