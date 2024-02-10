@@ -5,9 +5,9 @@ import './index.css'
 // import { BrowserRouter as Router, Routes } from 'react-router-dom';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  // <BrowserRouter>
     <React.StrictMode>
-      <App />
+    {/* <Router> */}
+    <App />
+    {/* </Router> */}
     </React.StrictMode>
-  // </BrowserRouter>
 )

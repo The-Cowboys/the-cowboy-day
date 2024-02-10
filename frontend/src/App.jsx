@@ -27,7 +27,6 @@ function App() {
 
   return (
     <>
-      {/* <Router> */}
         {/* <Routes> */}
           <Estructura />
 
@@ -47,7 +46,6 @@ function App() {
             }
           </div>
         {/* </Routes> */}
-      {/* </Router> */}
     </>
   )
 }
