@@ -13,6 +13,8 @@ const pool = new Pool({
   port: 5432,
 })
 
+const hash = crypto.createHash('sha256');
+
 function generateDay() {
   // Get current date in "YYYY-MM-DD" format
   const currentDate = new Date().toISOString().slice(0, 10); 
@@ -21,16 +23,16 @@ function generateDay() {
 
 function generateIntegerForDay(currentDate, listLength) {
   const seed = `${currentDate}${listLength}`; 
-  const hash = crypto.createHash('sha256').update(seed).digest('hex');
+  const hash = hash.update(seed).digest('hex');
   return parseInt(hash.slice(0, 8), 16);
 }
 
-function getPuto(generatedInteger) {
+function getPuto(putos, generatedInteger) {
   return putos[generatedInteger % putos.length];
 }
 
 // Sample data - replace this with a database in a real application
-const putos = [
+const PUTOS = [
   { id: 1, name: 'Pablo' },
   { id: 2, name: 'Jorge' },
   { id: 3, name: 'German' },
@@ -46,14 +48,14 @@ app.use(express.static('frontend/dist'));
 
 // Endpoint to get the list of pirates
 app.get('/api/putos', (req, res) => {
-  res.json(putos);
+  res.json(PUTOS);
 });
 
 // Endpoint to get a single pirate by id
 app.get('/api/putos/today', (_, res) => {
   const date = generateDay();
-  const generatedInteger = generateIntegerForDay(date, putos.length);
-  const todayPuto = getPuto(generatedInteger);
+  const generatedInteger = generateIntegerForDay(date, PUTOS.length);
+  const todayPuto = getPuto(PUTOS, generatedInteger);
 
   res.json(todayPuto);
 });
@@ -64,6 +66,22 @@ app.get('/api/cowboys', (_, res) => {
       throw error
     }
     res.json(results.rows);
+  });  
+});
+
+app.get('/api/cowboys/day', (_, res) => {
+  pool.query('SELECT * FROM cowboys ORDER BY name', (error, results) => {
+    if (error) {
+      throw error
+    }
+
+    const putos = results.rows;
+
+    const date = generateDay();
+    const generatedInteger = generateIntegerForDay(date, putos.length);
+    const todayPuto = getPuto(putos, generatedInteger);
+  
+    res.json(todayPuto);
   });  
 });
 
