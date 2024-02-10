@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Rye&display=swap');
+
+:root {
+  /* Tipografias */
+  --tipografiaTitulo: 'Rye', serif;
+  --tipografiaGeneral: 'Playfair Display', serif;
+
+  /* Colores */
+  --hover: #747bff;
+  --boton: #1a1a1a;
+  --fondoPricipal: #242424;
+  --fondoNav: #333;
+  --texto: #fff;
+}
+
+
+/* NavBar */
+
+.nav {
+  font-family: var(--tipografiaGeneral);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--fondoNav);
+  color: var(--texto);
+  padding: 10px;
+  z-index: 1000;
+}
+
+.nav>div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tituloNav {
+  margin: 0;
+  margin-left: 20px;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: var(--tipografiaTitulo);
+}
+
+.elementosNav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-right: 20px;
+  display: flex;
+}
+
+.elementosNav li {
+  margin-right: 20px;
+}
+
+.elementosNav li a {
+  color: var(--texto);
+  text-decoration: none;
+}
+
+.elementosNav li a:hover {
+  color: var(--hover)
+}

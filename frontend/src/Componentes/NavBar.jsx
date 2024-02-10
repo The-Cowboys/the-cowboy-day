@@ -1,4 +1,5 @@
 import React from "react";
+import './Estilos.css'
 import { Link } from 'react-router-dom';
 
 const NavBar = () => {
