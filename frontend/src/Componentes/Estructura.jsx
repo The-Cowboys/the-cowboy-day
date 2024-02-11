@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes } from "react-router-dom";
 import Inicio from "./Pagina/Inicio";
 import Estadisticas from "./Pagina/Estadisticas";
 import Acerca from "./Pagina/Acerca";
@@ -16,6 +16,6 @@ const Estructura = () => {
       </Routes>
     </>
   );
-}
+};
 
 export default Estructura;
