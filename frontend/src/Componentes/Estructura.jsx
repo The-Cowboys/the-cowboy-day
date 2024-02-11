@@ -1,19 +1,19 @@
 import React from "react";
-import { BrowserRouter as Router, Routes } from 'react-router-dom';
-import NavBar from "./NavBar";
-import Contacto from "./Contacto";
-import Inicio from "./Inicio";
-import Estadisticas from "./Estadisticas";
-import Acerca from "./Acerca";
+import { Route, Routes } from 'react-router-dom';
+import Inicio from "./Pagina/Inicio";
+import Estadisticas from "./Pagina/Estadisticas";
+import Acerca from "./Pagina/Acerca";
+import Contacto from "./Pagina/Contacto";
 
 const Estructura = () => {
   return (
     <>
-      <NavBar />
-      <Inicio />
-      <Acerca />
-      <Estadisticas />
-      <Contacto />
+      <Routes>
+        <Route path="/" element={<Inicio />} />
+        <Route path="/Estadisticas" element={<Estadisticas />} />
+        <Route path="/Acerca" element={<Acerca />} />
+        <Route path="/Contacto" element={<Contacto />} />
+      </Routes>
     </>
   );
 }

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css'
-// import { BrowserRouter as Router, Routes } from 'react-router-dom';
+import NavBar from './Componentes/NavBar';
 import Estructura from './Componentes/Estructura';
 
 function App() {
@@ -27,25 +27,22 @@ function App() {
 
   return (
     <>
-        {/* <Routes> */}
-          <Estructura />
-
-
-          <div className="card">
-            {
-              !clicked ? (
-                <button onClick={click}>
-                  ¿Quien es el Cowboy del día?
-                </button>
-              ) : (
-                <div>
-                  <p>El cowboy de hoy es....</p>
-                  <h2>{puto}</h2>
-                </div>
-              )
-            }
-          </div>
-        {/* </Routes> */}
+    <NavBar />
+      <Estructura />
+      <div className="card">
+        {
+          !clicked ? (
+            <button onClick={click}>
+              ¿Quien es el Cowboy del día?
+            </button>
+          ) : (
+            <div>
+              <p>El cowboy de hoy es....</p>
+              <h2>{puto}</h2>
+            </div>
+          )
+        }
+      </div>
     </>
   )
 }
