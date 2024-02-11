@@ -6,7 +6,8 @@
   --tipografiaGeneral: 'Playfair Display', serif;
 
   /* Colores */
-  --hover: #747bff;
+  --hoverTexto: #ff3300;
+  --hoverBorde: #646cff;
   --boton: #1a1a1a;
   --fondoPricipal: #242424;
   --fondoNav: #333;
@@ -37,9 +38,9 @@
 .tituloNav {
   margin: 0;
   margin-left: 20px;
-  font-size: 24px;
+  font-size: 25px;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 4px;
   font-family: var(--tipografiaTitulo);
 }
 
@@ -61,5 +62,26 @@
 }
 
 .elementosNav li a:hover {
-  color: var(--hover)
+  color: var(--hoverTexto)
+}
+
+/* Boton */
+
+.boton {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--boton);
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+.boton:hover {
+  border-color: var(--hoverBorde)
+}
+.boton:focus,
+.boton:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
 }
