@@ -10,7 +10,7 @@ const NavBar = () => {
           <h2 className="tituloNav">The Cowboys</h2>
           <ul className="elementosNav">
             <li><Link to={"/"}>Inicio</Link></li>
-            <li><Link to={"/Estadisticaso"}>Estadisticas</Link></li>
+            <li><Link to={"/Estadisticas"}>Estadisticas</Link></li>
             <li><Link to={"/Acerca"}>Acerca</Link></li>
             <li><Link to={"/Contacto"}>Contacto</Link></li>
           </ul>
