@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import './App.css'
+import NavBar from './Componentes/NavBar/NavBar';
+import Estructura from './Componentes/Estructura';
 
 function App() {
   const [puto, setPuto] = useState(null);
@@ -25,6 +27,8 @@ function App() {
 
   return (
     <>
+    <NavBar />
+      <Estructura />
       <div className="card">
         {
           !clicked ? (
@@ -33,7 +37,7 @@ function App() {
             </button>
           ) : (
             <div>
-              <p>El cowboy de hoy es...</p>
+              <p>El cowboy de hoy es....</p>
               <h2>{puto}</h2>
             </div>
           )
