@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Rye&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Rye&display=swap");
 
 :root {
   /* Tipografias */
-  --tipografiaTitulo: 'Rye', serif;
-  --tipografiaGeneral: 'Playfair Display', serif;
+  --tipografiaTitulo: "Rye", serif;
+  --tipografiaGeneral: "Playfair Display", serif;
 
   /* Colores */
   --hoverTexto: #ff3300;
@@ -13,7 +13,6 @@
   --fondoNav: #333;
   --texto: #fff;
 }
-
 
 /* NavBar */
 
@@ -29,7 +28,7 @@
   z-index: 1000;
 }
 
-.nav>div {
+.nav > div {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -62,7 +61,7 @@
 }
 
 .elementosNav li a:hover {
-  color: var(--hoverTexto)
+  color: var(--hoverTexto);
 }
 
 /* Boton */
@@ -79,7 +78,7 @@
   transition: border-color 0.25s;
 }
 .boton:hover {
-  border-color: var(--hoverBorde)
+  border-color: var(--hoverBorde);
 }
 .boton:focus,
 .boton:focus-visible {
