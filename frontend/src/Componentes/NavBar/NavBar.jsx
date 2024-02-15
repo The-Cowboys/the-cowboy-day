@@ -62,18 +62,21 @@ const NavBar = () => {
                 </Link>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link className="dropdown-item" to="Estadisticas">
+                    <Link className="dropdown-item" to="EstadisticasElMasToto">
+                      El más toto
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="dropdown-item"
+                      to="EstadisticasCowboyDelDia"
+                    >
                       Cowboy Del Dia
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="#">
-                      --En mantenimiento--
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="#">
-                      --En mantenimiento--
+                    <Link className="dropdown-item" to="Proximamente">
+                      --Próximamente--
                     </Link>
                   </li>
                 </ul>
