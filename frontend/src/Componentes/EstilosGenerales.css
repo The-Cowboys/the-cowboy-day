@@ -23,10 +23,13 @@
 }
 
 body {
-  margin-left: 3rem;
+  margin: 3rem;
 }
 .campo {
-  margin-top: 75px;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Boton */
@@ -44,10 +47,17 @@ body {
 }
 .btn:hover {
   border-color: var(--hoverBorde);
-  color: var(--hoverTexto)
+  color: var(--hoverTexto);
+  background-color: var(--fondoNav);
 }
 .btn :focus,
 .btn :focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-  background-color: var(--fondoNav);
+}
+
+/* Card */
+
+.card {
+  width: 400px;
+  justify-content: center;
 }
