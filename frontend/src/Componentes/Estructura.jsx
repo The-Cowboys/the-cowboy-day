@@ -7,12 +7,14 @@ import Contacto from "./Pagina/Contacto";
 const Estructura = () => {
   return (
     <>
-      <Routes>
-        <Route path="/" element={<CowboyDelDia />} />
-        <Route path="/Estadisticas" element={<Estadisticas />} />
-        <Route path="/Acerca" element={<Acerca />} />
-        <Route path="/Contacto" element={<Contacto />} />
-      </Routes>
+      <div className="campo">
+        <Routes>
+          <Route path="/" element={<CowboyDelDia />} />
+          <Route path="/Estadisticas" element={<Estadisticas />} />
+          <Route path="/Acerca" element={<Acerca />} />
+          <Route path="/Contacto" element={<Contacto />} />
+        </Routes>
+      </div>
     </>
   );
 };
