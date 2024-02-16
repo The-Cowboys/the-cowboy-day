@@ -12,6 +12,9 @@ concurrency:
 
 jobs:
   release:
+    defaults:
+        run:
+          working-directory: ${{ github.workspace }}/frontend
     name: Build React
     runs-on: ubuntu-latest
     env:
