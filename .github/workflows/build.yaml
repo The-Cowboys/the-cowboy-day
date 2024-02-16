@@ -20,7 +20,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          token: ${{ secrets.GHA_TRIGGER_TOKEN }}
           ref: main
       - name: Setup Node.js
         uses: actions/setup-node@v3
