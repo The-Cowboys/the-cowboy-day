@@ -62,7 +62,7 @@ const NavBar = () => {
                 </Link>
                 <ul className="menuEsta dropdown-menu">
                   <li>
-                    <Link className="menuEstadisticas dropdown-item" to="EstadisticasElMasToto">
+                    <Link className="menuEstadisticas dropdown-item" to="ListaElMasToto">
                       El más toto
                     </Link>
                   </li>

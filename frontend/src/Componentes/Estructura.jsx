@@ -3,7 +3,7 @@ import CowboyDelDia from "./Pagina/CowboyDelDia";
 import Estadisticas from "./Pagina/Estadisticas";
 import Acerca from "./Pagina/Acerca";
 import Contacto from "./Pagina/Contacto";
-import EstadisticasElMasToto from "./Pagina/Estadisticas/EstadisticasElMasToto";
+import ListaElMasToto from "./Pagina/Estadisticas/ListaElMasToto";
 import EstadisticasCowboyDelDia from "./Pagina/Estadisticas/EstadisticasCowboyDelDia";
 import Proximamente from "./Pagina/Estadisticas/Proximamente";
 
@@ -16,7 +16,7 @@ const Estructura = () => {
           <Route path="/Estadisticas" element={<Estadisticas />} />
           <Route path="/Acerca" element={<Acerca />} />
           <Route path="/Contacto" element={<Contacto />} />
-          <Route path="/EstadisticasElMasToto" element={<EstadisticasElMasToto />} />
+          <Route path="/ListaElMasToto" element={<ListaElMasToto />} />
           <Route path="/EstadisticasCowboyDelDia" element={<EstadisticasCowboyDelDia />} />
           <Route path="/Proximamente" element={<Proximamente />} />
         </Routes>

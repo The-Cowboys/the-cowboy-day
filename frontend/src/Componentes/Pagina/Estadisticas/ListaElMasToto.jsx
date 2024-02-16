@@ -1,7 +1,7 @@
 import "./EstilosEstadisticas.css";
 // import MayorMenor from "./MayorMenor";
 
-const EstadisticasElMasToto = () => {
+const ListaElMasToto = () => {
   return (
     <>
       <section>
@@ -55,4 +55,4 @@ const EstadisticasElMasToto = () => {
   );
 };
 
-export default EstadisticasElMasToto;
+export default ListaElMasToto;
