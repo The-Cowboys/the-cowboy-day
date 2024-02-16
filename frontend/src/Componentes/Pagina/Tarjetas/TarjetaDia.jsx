@@ -16,10 +16,10 @@ const TarjetaDia = () => {
           <div className="col-md-8">
             <div className="fondoNav card-body">
               <h5 className="nombre card-title">
-                Jorge
+                Nombre: Jorge
                 <span className="badge float-right">68</span>
               </h5>
-              <h6 className="fondoNav card-text">Títulos:</h6>
+              <h6 className="fondoNav card-text">Títulos: 6</h6>
               <div>
                 <p className="titulosObtenidos fondoNav">
                   Justiciero, Gil trabajador, Poker Tonto, Navideño
