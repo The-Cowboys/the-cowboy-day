@@ -31,7 +31,6 @@ jobs:
           cache: 'npm'
       - run: pwd
       - run: ls -l
-      - run: cd frontend
       - run: npm clean-install
       - run: npm run lint
       - run: npm run build
