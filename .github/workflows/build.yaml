@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  release:
+  build:
     defaults:
         run:
           working-directory: ${{ github.workspace }}/frontend
@@ -29,6 +29,8 @@ jobs:
         with:
           node-version: 20.5.1
           cache: 'npm'
+      - run: pwd
+      - run: ls -l
       - run: cd frontend
       - run: npm clean-install
       - run: npm run lint
