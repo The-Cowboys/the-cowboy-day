@@ -2,9 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import CowboyDelDia from "./Pagina/CowboyDelDia";
 import Estadisticas from "./Pagina/Estadisticas";
 import ListaElMasToto from "./Pagina/ListaElMasToto";
-import EstadisticasCowboyDelDia from "./Pagina/Estadisticas/EstadisticasCowboyDelDia";
 import EstadisticasElMasToto from "./Pagina/Estadisticas/EstadisticasElMasToto";
-import EstadisticasCowboyDelDia from "./Pagina/Estadisticas/EstadisticasCowboyDelDia";
 import Proximamente from "./Pagina/Estadisticas/Proximamente";
 
 const Estructura = () => {
