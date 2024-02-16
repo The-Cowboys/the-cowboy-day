@@ -30,7 +30,7 @@
   }
 }
 
-.d-flex {
+.tituloCont {
   background-color: var(--fondoNav);
 }
 
@@ -42,11 +42,6 @@
   background-color: var(--fondoNav);
   padding: 10px;
   z-index: 1000;
-}
-.nav > div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 .elementosNav {
   margin-right: 5rem;
@@ -60,11 +55,11 @@
   color: var(--hoverTexto);
 }
 
-.dropdown-item {
+.menuEstadisticas {
   background-color: var(--fondoNav);
   color: var(--texto);
 }
-.dropdown-menu {
+.menuEsta {
   background-color: var(--fondoNav);
   :hover {
     color: var(--hoverTexto);
@@ -72,11 +67,11 @@
   }
 }
 
-.navbar-toggler {
+.botonDelNav {
   color: var(--hoverTexto);
   background-color: var(--fondoPricipal);
 }
-.bi-crosshair {
+.fotoimg {
   :hover {
     color: var(--hoverTexto);
   }
