@@ -28,7 +28,8 @@ jobs:
         with:
           node-version: 20.5.1
           cache: 'npm'
-      - run: cd frontend
+      - run: pwd
+      - run: ls -l
       - run: npm clean-install
       - run: npm run lint
       - run: npm run build
