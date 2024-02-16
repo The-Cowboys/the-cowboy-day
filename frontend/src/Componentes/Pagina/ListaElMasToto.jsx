@@ -1,11 +1,11 @@
-import "./EstilosEstadisticas.css";
+import "./EstilosListaElMasToto.css";
 // import MayorMenor from "./MayorMenor";
 
 const ListaElMasToto = () => {
   return (
     <>
       <section>
-        <h3>--Estadisticas el mas toto en mantenimiento--</h3>
+        <h3 className="tituloH3">Lista de participantes</h3>
         <ol className="principal list-group list-group-numbered">
           <li className="list-group-item d-flex justify-content-between align-items-start">
             <div className="logros ms-2 me-auto">

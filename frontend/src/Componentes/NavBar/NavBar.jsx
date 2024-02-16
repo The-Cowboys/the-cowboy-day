@@ -36,18 +36,17 @@ const NavBar = () => {
           >
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link className="nav-link " aria-current="page" to="/">
+                <Link className="nav-link" to="/ListaElMasToto">
+                  El más toto
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className="nav-link "
+                  aria-current="page"
+                  to="/CowboyDelDia"
+                >
                   Cowboy Del Dia
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/Acerca">
-                  Acerca
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/Contacto">
-                  Contacto
                 </Link>
               </li>
               <li className="nav-item dropdown">
@@ -62,7 +61,10 @@ const NavBar = () => {
                 </Link>
                 <ul className="menuEsta dropdown-menu">
                   <li>
-                    <Link className="menuEstadisticas dropdown-item" to="ListaElMasToto">
+                    <Link
+                      className="menuEstadisticas dropdown-item"
+                      to="EstadisticasElMasToto"
+                    >
                       El más toto
                     </Link>
                   </li>
@@ -75,7 +77,10 @@ const NavBar = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link className="menuEstadisticas dropdown-item" to="Proximamente">
+                    <Link
+                      className="menuEstadisticas dropdown-item"
+                      to="Proximamente"
+                    >
                       --Próximamente--
                     </Link>
                   </li>
