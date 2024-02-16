@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Rye&display=swap");
+
+:root {
+  /* Tipografias */
+  --tipografiaTitulo: "Rye", serif;
+  --tipografiaGeneral: "Playfair Display", serif;
+
+  /* Colores */
+  --hoverTexto: #ff3300;
+  --hoverBorde: #646cff;
+  --boton: #1a1a1a;
+  --fondoPricipal: #242424;
+  --fondoNav: #333;
+  --texto: #fff;
+}
+
+/* NavBar */
+
+.tituloNav {
+  margin: 0;
+  margin-left: 5rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-family: var(--tipografiaTitulo);
+  background-color: var(--fondoNav);
+  color: var(--texto);
+  @media (max-width: 600px) {
+    align-items: center;
+  }
+}
+
+.tituloCont {
+  background-color: var(--fondoNav);
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--fondoNav);
+  padding: 10px;
+  z-index: 1000;
+}
+.elementosNav {
+  margin-right: 5rem;
+  background-color: var(--fondoNav);
+}
+.navbar-nav .nav-link {
+  color: var(--texto);
+  background-color: var(--fondoNav);
+}
+.navbar-nav .nav-link:hover {
+  color: var(--hoverTexto);
+}
+
+.menuEstadisticas {
+  background-color: var(--fondoNav);
+  color: var(--texto);
+}
+.menuEsta {
+  background-color: var(--fondoNav);
+  :hover {
+    color: var(--hoverTexto);
+    background-color: var(--fondoNav);
+  }
+}
+
+.botonDelNav {
+  color: var(--hoverTexto);
+  background-color: var(--fondoPricipal);
+}
+.fotoimg {
+  :hover {
+    color: var(--hoverTexto);
+  }
+}
