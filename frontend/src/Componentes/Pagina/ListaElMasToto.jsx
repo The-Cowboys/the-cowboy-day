@@ -1,9 +1,13 @@
-import "./EstilosListaElMasToto.css";
+import "./EstilosElMasToto.css";
+import TarjetaDia from "./Tarjetas/TarjetaDia";
 
 const ListaElMasToto = () => {
   return (
     <>
       <section>
+        <TarjetaDia />
+
+        {/* Lista de participantes */}
         <h3 className="tituloH3">Lista de participantes</h3>
         <ol className="principal list-group list-group-numbered">
           <li className="list-group-item d-flex justify-content-between align-items-start">
