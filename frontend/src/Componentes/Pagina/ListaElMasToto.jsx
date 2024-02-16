@@ -1,10 +1,12 @@
 import "./EstilosElMasToto.css";
+import ListaTitulos from "./Tarjetas/ListaTitulos";
 import TarjetaDia from "./Tarjetas/TarjetaDia";
 
 const ListaElMasToto = () => {
   return (
     <>
       <section>
+        {/* Tarjeta del día */}
         <TarjetaDia />
 
         {/* Lista de participantes */}
@@ -13,9 +15,9 @@ const ListaElMasToto = () => {
           <li className="list-group-item d-flex justify-content-between align-items-start">
             <div className="logros ms-2 me-auto">
               <div className="nombre fw-bold">German</div>
-              --Título más reciente.--
+              <ListaTitulos />
             </div>
-            <span className="badge">87</span>
+            <span className="badge">88</span>
           </li>
           <li className="list-group-item d-flex justify-content-between align-items-start">
             <div className="logros ms-2 me-auto">

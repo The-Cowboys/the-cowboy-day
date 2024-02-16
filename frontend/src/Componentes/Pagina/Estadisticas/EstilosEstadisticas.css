@@ -26,7 +26,8 @@
   background-color: var(--fondoPricipal);
 }
 .principal span:hover {
-  background-color: var(--hoverTexto);
+  background-color:var(--hoverTexto);
+  transition: 0.3s;
 }
 
 .nombre {

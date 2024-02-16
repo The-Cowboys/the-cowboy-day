@@ -33,6 +33,7 @@ span {
 }
 .principal span:hover {
   background-color: var(--hoverTexto);
+  transition: 0.3s;
 }
 .nombre {
   color: var(--texto);
