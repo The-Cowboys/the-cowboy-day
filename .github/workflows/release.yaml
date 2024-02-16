@@ -35,4 +35,4 @@ jobs:
       - run: npm run build
       - run: git add dist/
       - run: git commit -m "Release $TAG"
-      # - run: git push
+      - run: git push
