@@ -20,16 +20,21 @@
   background-color: var(--fondoNav);
   color: var(--texto);
 }
+.fondoNav {
+  background-color: var(--fondoNav);
+}
+span {
+  float: right;
+}
 .principal span {
   color: var(--texto);
   font-size: 1.5rem;
   background-color: var(--fondoPricipal);
 }
 .principal span:hover {
-  background-color:var(--hoverTexto);
+  background-color: var(--hoverTexto);
   transition: 0.3s;
 }
-
 .nombre {
   color: var(--texto);
   background-color: var(--fondoNav);
@@ -39,4 +44,14 @@
   color: var(--texto);
   background-color: var(--fondoNav);
   font-size: 1rem;
+}
+
+/* Titulos */
+
+.tituloH3 {
+  text-align: center;
+  width: 28rem;
+}
+.titulosObtenidos {
+  color: var(--texto);
 }
