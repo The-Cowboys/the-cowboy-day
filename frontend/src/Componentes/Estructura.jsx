@@ -1,18 +1,9 @@
 import { Route, Routes } from "react-router-dom";
-{
-  /* NavBar */
-}
 import ListaElMasToto from "./Pagina/ListaElMasToto";
 import CowboyDelDia from "./Pagina/CowboyDelDia";
-{
-  /* Estadisticas */
-}
 import EstadisticasElMasToto from "./Pagina/Estadisticas/EstadisticasElMasToto";
 import EstadisticasCowboyDelDia from "./Pagina/Estadisticas/EstadisticasCowboyDelDia";
 import Proximamente from "./Pagina/Estadisticas/Proximamente";
-{
-  /* Error404 */
-}
 import Error404 from "./Pagina/Error404/Error404";
 
 const Estructura = () => {
@@ -26,14 +17,8 @@ const Estructura = () => {
           <Route path="/ListaElMasToto" element={<ListaElMasToto />} />
 
           {/* Estadisticas */}
-          <Route
-            path="/EstadisticasElMasToto"
-            element={<EstadisticasElMasToto />}
-          />
-          <Route
-            path="/EstadisticasCowboyDelDia"
-            element={<EstadisticasCowboyDelDia />}
-          />
+          <Route path="/EstadisticasElMasToto" element={<EstadisticasElMasToto />} />
+          <Route path="/EstadisticasCowboyDelDia" element={<EstadisticasCowboyDelDia />} />
           <Route path="/Proximamente" element={<Proximamente />} />
 
           {/* Error404 */}
