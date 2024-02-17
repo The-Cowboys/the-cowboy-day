@@ -13,7 +13,7 @@ import Proximamente from "./Pagina/Estadisticas/Proximamente";
 {
   /* Error404 */
 }
-import Error404 from "./Pagina/Error404";
+import Error404 from "./Pagina/Error404/Error404";
 
 const Estructura = () => {
   return (
