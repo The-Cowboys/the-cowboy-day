@@ -46,9 +46,10 @@ body {
   transition: border-color 0.25s;
 }
 .btn:hover {
-  border-color: var(--hoverBorde);
+  border-color: var(--hoverTexto);
   color: var(--hoverTexto);
   background-color: var(--fondoNav);
+  transition: 0.3s;
 }
 .btn :focus,
 .btn :focus-visible {

@@ -1,0 +1,19 @@
+:root {
+  /* Tipografias */
+  --tipografiaTitulo: "Rye", serif;
+  --tipografiaGeneral: "Playfair Display", serif;
+
+  /* Colores */
+  --hoverTexto: #ff3300;
+  --hoverBorde: #646cff;
+  --boton: #1a1a1a;
+  --fondoPricipal: #242424;
+  --fondoNav: #333;
+  --texto: #fff;
+}
+
+.titulo {
+  background-color: var(--fondoNav);
+  color: var(--texto);
+  font-size: x-large;
+}
