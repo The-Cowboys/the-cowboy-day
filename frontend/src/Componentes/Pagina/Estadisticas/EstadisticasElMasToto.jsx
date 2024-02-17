@@ -1,4 +1,4 @@
-const ListaElMasToto = () => {
+const EstadisticasElMasToto = () => {
   return (
     <>
       <section>
@@ -8,4 +8,4 @@ const ListaElMasToto = () => {
   );
 };
 
-export default ListaElMasToto;
+export default EstadisticasElMasToto;
