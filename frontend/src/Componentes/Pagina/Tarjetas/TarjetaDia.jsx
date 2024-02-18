@@ -1,6 +1,9 @@
 import "../EstilosElMasToto.css";
 
 const TarjetaDia = ({ tarjeta }) => {
+  if (!tarjeta) {
+    return;
+  }
   return (
     <>
       <h3 className="tituloH3">
