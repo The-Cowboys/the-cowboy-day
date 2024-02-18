@@ -6,7 +6,6 @@ const TarjetaDia = ({ tarjeta }) => {
   }
   return (
     <>
-      <h3 className="tituloH3">{tarjeta.titulo}</h3>
       <div className="principal card mb-3">
         <div className="row g-0">
           <div className="fondoNav col-md-4">
