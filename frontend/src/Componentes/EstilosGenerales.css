@@ -55,10 +55,3 @@ body {
 .btn :focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
-/* Card */
-
-.card {
-  width: 400px;
-  justify-content: center;
-}
