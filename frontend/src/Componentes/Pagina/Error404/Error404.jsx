@@ -1,4 +1,4 @@
-import TarjetaDia from "../Tarjetas/TarjetaDia";
+import TarjetaDia from "../InfoTonto/TarjetaDia.jsx";
 
 const Error404 = () => {
   const tarjeta = {

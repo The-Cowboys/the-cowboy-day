@@ -1,4 +1,4 @@
-import "../EstilosElMasToto.css";
+import "../EstilosElMasTonto.css";
 
 const TarjetaDia = ({ tarjeta }) => {
   if (!tarjeta) {
@@ -6,9 +6,7 @@ const TarjetaDia = ({ tarjeta }) => {
   }
   return (
     <>
-      <h3 className="tituloH3">
-        {tarjeta.titulo}--Tonto del día de hoy es...--
-      </h3>
+      <h3 className="tituloH3">{tarjeta.titulo}</h3>
       <div className="principal card mb-3">
         <div className="row g-0">
           <div className="fondoNav col-md-4">
@@ -22,9 +20,7 @@ const TarjetaDia = ({ tarjeta }) => {
             <div className="fondoNav card-body">
               <h5 className="nombre card-title">
                 {tarjeta.persona}
-                <span className="badge float-right">
-                  {tarjeta.cantidad}--68--
-                </span>
+                <span className="badge float-right">{tarjeta.cantidad}</span>
               </h5>
               <h6 className="fondoNav card-text">{tarjeta.titulos}</h6>
               <div>

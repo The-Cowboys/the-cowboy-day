@@ -16,7 +16,7 @@ const ListaTitulos = () => {
         </a>
       </p>
       <div className="collapse " id="collapseExample">
-        <div className="fondoNav">Navideño, Cumpleañero, Poker Tonto</div>
+        <div className="fondoNav">...</div>
       </div>
     </>
   );
