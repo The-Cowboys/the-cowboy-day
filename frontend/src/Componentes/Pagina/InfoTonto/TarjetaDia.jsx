@@ -1,9 +1,6 @@
 import "../EstilosElMasTonto.css";
 
 const TarjetaDia = ({ tarjeta }) => {
-  if (!tarjeta) {
-    return;
-  }
   return (
     <>
       <div className="principal card mb-3">

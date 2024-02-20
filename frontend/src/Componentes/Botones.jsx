@@ -1,10 +1,6 @@
 import { Link } from "react-router-dom";
 
 const Botones = ({ button }) => {
-  if (!button) {
-    return;
-  }
-
   return (
     <>
       <Link to={button.ruta}>

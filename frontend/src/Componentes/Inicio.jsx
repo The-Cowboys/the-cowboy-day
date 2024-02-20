@@ -17,7 +17,7 @@ const Inicio = () => {
 
         {/* Tarjeta del cowboy del día */}
         <h3 className="tituloH3">Cowboy del día de hoy es...</h3>
-        <TarjetaDia />
+        {/* <TarjetaDia /> */}
       </section>
     </>
   );
