@@ -1,5 +1,5 @@
 import Botones from "../../Botones.jsx";
-import TarjetaDia from "../InfoTonto/TarjetaDia.jsx";
+import Tarjeta from "../InfoTonto/Tarjeta.jsx";
 
 const Error404 = () => {
   const tarjeta = {
@@ -7,18 +7,17 @@ const Error404 = () => {
     titulos: "¡Alto ahí, forastero!",
     listaTitulos:
       "Parece que has encontrado un territorio desconocido en el vasto desierto digital. No te preocupes, nuestros sheriff de la red están en camino para guiarte de regreso al pueblo principal. Mientras tanto, ¿por qué no te relajas con un poco de música en nuestro salon virtual?",
-    boton: "boton",
   };
 
   const button = {
     ruta: "/",
-    infBoton: "Inicio"
-  }
+    infBoton: "Inicio",
+  };
 
   return (
     <>
       <div>
-        <TarjetaDia tarjeta={tarjeta} />
+        <Tarjeta tarjeta={tarjeta} />
         <Botones button={button} />
       </div>
     </>

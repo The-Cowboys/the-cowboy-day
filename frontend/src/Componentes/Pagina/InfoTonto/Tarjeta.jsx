@@ -1,6 +1,6 @@
 import "../EstilosElMasTonto.css";
 
-const TarjetaDia = ({ tarjeta }) => {
+const Tarjeta = ({ tarjeta }) => {
   return (
     <>
       <div className="principal card mb-3">
@@ -32,4 +32,4 @@ const TarjetaDia = ({ tarjeta }) => {
   );
 };
 
-export default TarjetaDia;
+export default Tarjeta;

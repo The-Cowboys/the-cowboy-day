@@ -1,4 +1,4 @@
-import TarjetaDia from "./InfoTonto/TarjetaDia";
+import Tarjeta from "./InfoTonto/Tarjeta";
 import ListaParticipantes from "./InfoTonto/ListaParticipantes";
 
 const ListaElMasTonto = () => {
@@ -18,7 +18,7 @@ const ListaElMasTonto = () => {
       <section>
         {/* Tarjeta del día */}
       <h3 className="tituloH3">Tonto del día de hoy es...</h3>
-        <TarjetaDia tarjeta={tarjeta} />
+        <Tarjeta tarjeta={tarjeta} />
 
         {/* Lista de participantes */}
         <h3 className="tituloH3">Lista de participantes</h3>
