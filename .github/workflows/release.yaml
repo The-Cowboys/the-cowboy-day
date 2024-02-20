@@ -42,4 +42,5 @@ jobs:
           git config --local user.name "Auto Release Bot"      
           git add dist/
           git commit -m "Release $TAG"
-          git push
+          git push --set-upstream origin release/release-$TAG
+          echo "this is the tag $TAG"
