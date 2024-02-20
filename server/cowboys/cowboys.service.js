@@ -1,7 +1,6 @@
 const pool = require('./../database');
 
 const crypto = require('crypto');
-const hash = crypto.createHash('sha256');
 
 function generateDay() {
   // Get current date in "YYYY-MM-DD" format
@@ -11,7 +10,7 @@ function generateDay() {
 
 function generateIntegerForDay(currentDate, listLength) {
   const seed = `${currentDate}${listLength}`; 
-  const hash = hash.update(seed).digest('hex');
+  const hash = crypto.createHash('sha256').update(seed).digest('hex');
   return parseInt(hash.slice(0, 8), 16);
 }
 
@@ -20,29 +19,36 @@ function getPuto(putos, generatedInteger) {
 }
 
 async function getAll() {
-  pool.query("SELECT * FROM cowboys ORDER BY name", (error, results) => {
-    if (error) {
-      throw error;
-    }
-
-    return results.rows;
+  return new Promise((resolve, reject) => {+
+    pool.query("SELECT * FROM cowboys ORDER BY name", (error, results) => {
+      if (error) {
+        return reject(error);
+      }
+  
+      resolve(results.rows);
+    });
   });
 }
 
 async function getToday() {
-  pool.query("SELECT * FROM cowboys ORDER BY name", (error, results) => {
-    if (error) {
-      throw error;
-    }
+  return new Promise((resolve, reject) => {
+    pool.query("SELECT * FROM cowboys ORDER BY name", (error, results) => {
+      if (error) {
+        return reject(error);
+      }
+  
+      const putos = results.rows;
+  
+      const date = generateDay();
+      const generatedInteger = generateIntegerForDay(date, putos.length);
+      const todayPuto = getPuto(putos, generatedInteger);
+  
+      resolve(todayPuto);
+    });
 
-    const putos = results.rows;
-
-    const date = generateDay();
-    const generatedInteger = generateIntegerForDay(date, putos.length);
-    const todayPuto = getPuto(putos, generatedInteger);
-
-    return todayPuto;
   });
+
+  
 }
 
 async function getMultiple(page = 1){
