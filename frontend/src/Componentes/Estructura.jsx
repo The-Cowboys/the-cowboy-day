@@ -5,6 +5,7 @@ import EstadisticasElMasTonto from "./Pagina/Estadisticas/EstadisticasElMasTonto
 import EstadisticasCowboyDelDia from "./Pagina/Estadisticas/EstadisticasCowboyDelDia";
 import Proximamente from "./Pagina/Estadisticas/Proximamente";
 import Error404 from "./Pagina/Error404/Error404";
+import Inicio from "./Inicio";
 
 const Estructura = () => {
   return (
@@ -12,9 +13,11 @@ const Estructura = () => {
       <div className="campo">
         <Routes>
           {/* NavBar */}
-          <Route path="/" element={<ListaElMasTonto />} />
-          <Route path="/CowboyDelDia" element={<CowboyDelDia />} />
           <Route path="/ListaElMasTonto" element={<ListaElMasTonto />} />
+          <Route path="/CowboyDelDia" element={<CowboyDelDia />} />
+
+          {/* Inicio */}
+          <Route path="/" element={<Inicio /> } />
 
           {/* Estadisticas */}
           <Route path="/EstadisticasElMasTonto" element={<EstadisticasElMasTonto />} />

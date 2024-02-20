@@ -36,8 +36,9 @@ const NavBar = () => {
           >
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link className="nav-link" to="/ListaElMasTonto">
-                  El más toto
+                <Link className="nav-link" 
+                  to="/ListaElMasTonto">
+                  El más tonto
                 </Link>
               </li>
               <li className="nav-item">
@@ -62,7 +63,7 @@ const NavBar = () => {
                 <ul className="menuEsta dropdown-menu">
                   <li>
                     <Link className="menuEstadisticas dropdown-item" to="EstadisticasElMasTonto">
-                      El más toto
+                      El más tonto
                     </Link>
                   </li>
                   <li>
