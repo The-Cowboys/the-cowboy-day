@@ -18,15 +18,15 @@
 
 .tituloNav {
   margin: 0;
-  margin-left: 5rem;
+  margin-left: 1rem;
   font-size: 2rem;
   text-transform: uppercase;
   letter-spacing: 4px;
   font-family: var(--tipografiaTitulo);
   background-color: var(--fondoNav);
   color: var(--texto);
-  @media (max-width: 600px) {
-    align-items: center;
+  @media (max-width: 340px) {
+    font-size: 1.5rem;
   }
 }
 

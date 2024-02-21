@@ -6,8 +6,8 @@ const NavBar = () => {
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="nav container-fluid">
           <div className="tituloCont d-flex align-items-center">
-            <Link className="tituloNav navbar-brand" to="/">
-              The Cowboys
+            <Link className="fondoNav navbar-brand" to="/">
+              <h1 className="tituloNav">The Cowboys</h1>
             </Link>
           </div>
           <button
