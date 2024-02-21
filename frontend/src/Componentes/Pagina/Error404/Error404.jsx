@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import Botones from "../../Botones.jsx";
+import "./Error404.css";
+
 
 const Error404 = () => {
   const button = {
@@ -20,7 +22,7 @@ const Error404 = () => {
               <img
                 src="/Cowboys.png"
                 alt="Error 404"
-                className="img-fluid mb-3"
+                className="img-fluid mb-3 hoverImg"
                 width="200"
                 height="200"
               />
