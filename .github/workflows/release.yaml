@@ -1,5 +1,8 @@
 name: 🚀 CD - Release
 
+permissions:
+  contents: write
+
 on:
   release:
     types: [published]
@@ -33,6 +36,9 @@ jobs:
       - run: npm clean-install
       - run: npm run lint
       - run: npm run build
-      - run: git add dist/
-      - run: git commit -m "Release $TAG"
-      - run: git push
+      - run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "Auto Release Bot"      
+          git add dist/
+          git commit -m "Release $TAG"
+          git push
