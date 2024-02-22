@@ -1,9 +1,8 @@
-import "../EstilosElMasToto.css";
+import "../EstilosElMasTonto.css";
 
-const TarjetaDia = () => {
+const Tarjeta = ({ tarjeta }) => {
   return (
     <>
-      <h3 className="tituloH3">Tonto del día de hoy es...</h3>
       <div className="principal card mb-3">
         <div className="row g-0">
           <div className="fondoNav col-md-4">
@@ -13,16 +12,16 @@ const TarjetaDia = () => {
               alt="Icono cowboys"
             />
           </div>
-          <div className="col-md-8">
+          <div className="fondoNav col-md-8">
             <div className="fondoNav card-body">
               <h5 className="nombre card-title">
-                Nombre: Jorge
-                <span className="badge float-right">68</span>
+                {tarjeta.persona}
+                <span className="badge float-right">{tarjeta.cantidad}</span>
               </h5>
-              <h6 className="fondoNav card-text">Títulos: 6</h6>
+              <h6 className="fondoNav card-text">{tarjeta.titulos}</h6>
               <div>
                 <p className="titulosObtenidos fondoNav">
-                  Justiciero, Gil trabajador, Poker Tonto, Navideño
+                  {tarjeta.listaTitulos}
                 </p>
               </div>
             </div>
@@ -33,4 +32,4 @@ const TarjetaDia = () => {
   );
 };
 
-export default TarjetaDia;
+export default Tarjeta;

@@ -1,19 +1,11 @@
 import { Route, Routes } from "react-router-dom";
-{
-  /* NavBar */
-}
-import ListaElMasToto from "./Pagina/ListaElMasToto";
+import ListaElMasTonto from "./Pagina/ListaElMasTonto";
 import CowboyDelDia from "./Pagina/CowboyDelDia";
-{
-  /* Estadisticas */
-}
-import EstadisticasElMasToto from "./Pagina/Estadisticas/EstadisticasElMasToto";
+import EstadisticasElMasTonto from "./Pagina/Estadisticas/EstadisticasElMasTonto";
 import EstadisticasCowboyDelDia from "./Pagina/Estadisticas/EstadisticasCowboyDelDia";
 import Proximamente from "./Pagina/Estadisticas/Proximamente";
-{
-  /* Error404 */
-}
 import Error404 from "./Pagina/Error404/Error404";
+import Inicio from "./Inicio";
 
 const Estructura = () => {
   return (
@@ -21,19 +13,15 @@ const Estructura = () => {
       <div className="campo">
         <Routes>
           {/* NavBar */}
-          <Route path="/" element={<ListaElMasToto />} />
+          <Route path="/ListaElMasTonto" element={<ListaElMasTonto />} />
           <Route path="/CowboyDelDia" element={<CowboyDelDia />} />
-          <Route path="/ListaElMasToto" element={<ListaElMasToto />} />
+
+          {/* Inicio */}
+          <Route path="/" element={<Inicio /> } />
 
           {/* Estadisticas */}
-          <Route
-            path="/EstadisticasElMasToto"
-            element={<EstadisticasElMasToto />}
-          />
-          <Route
-            path="/EstadisticasCowboyDelDia"
-            element={<EstadisticasCowboyDelDia />}
-          />
+          <Route path="/EstadisticasElMasTonto" element={<EstadisticasElMasTonto />} />
+          <Route path="/EstadisticasCowboyDelDia" element={<EstadisticasCowboyDelDia />} />
           <Route path="/Proximamente" element={<Proximamente />} />
 
           {/* Error404 */}

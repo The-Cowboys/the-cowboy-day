@@ -6,8 +6,8 @@ const NavBar = () => {
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="nav container-fluid">
           <div className="tituloCont d-flex align-items-center">
-            <Link className="tituloNav navbar-brand" to="/">
-              The Cowboys
+            <Link className="fondoNav navbar-brand" to="/">
+              <h1 className="tituloNav">The Cowboys</h1>
             </Link>
           </div>
           <button
@@ -36,8 +36,9 @@ const NavBar = () => {
           >
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link className="nav-link" to="/ListaElMasToto">
-                  El más toto
+                <Link className="nav-link" 
+                  to="/ListaElMasTonto">
+                  El más tonto
                 </Link>
               </li>
               <li className="nav-item">
@@ -61,8 +62,8 @@ const NavBar = () => {
                 </Link>
                 <ul className="menuEsta dropdown-menu">
                   <li>
-                    <Link className="menuEstadisticas dropdown-item" to="EstadisticasElMasToto">
-                      El más toto
+                    <Link className="menuEstadisticas dropdown-item" to="EstadisticasElMasTonto">
+                      El más tonto
                     </Link>
                   </li>
                   <li>
