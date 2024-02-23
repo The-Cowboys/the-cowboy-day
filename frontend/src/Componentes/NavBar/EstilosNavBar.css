@@ -25,8 +25,14 @@
   font-family: var(--tipografiaTitulo);
   background-color: var(--fondoNav);
   color: var(--texto);
-  @media (max-width: 340px) {
-    font-size: 1.5rem;
+  @media (max-width: 403px) {
+    font-size: 1.3rem;
+  }
+  @media (max-width: 315px) {
+    font-size: 1rem;
+  }
+  @media (max-width: 290px) {
+    font-size: 0.8rem;
   }
 }
 
