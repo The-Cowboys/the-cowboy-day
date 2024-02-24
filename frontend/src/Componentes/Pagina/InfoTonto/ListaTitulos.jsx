@@ -1,11 +1,9 @@
-import "./EstilosTitulos.css";
-
 const ListaTitulos = () => {
   return (
     <>
       <p className="d-inline-flex gap-1">
         <a
-          className="decoracionNone"
+          className="ListaTitulos"
           data-bs-toggle="collapse"
           href="#collapseExample"
           role="button"

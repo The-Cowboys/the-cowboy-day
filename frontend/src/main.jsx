@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
-import "./Componentes/EstilosGenerales.css";
 import "./Componentes/NavBar/EstilosNavBar.css";
+import "./App.css";
 
 import { BrowserRouter } from "react-router-dom";
 

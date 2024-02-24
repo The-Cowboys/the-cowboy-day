@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import Botones from "../../Botones.jsx";
-import "./Error404.css";
 
 
 const Error404 = () => {
