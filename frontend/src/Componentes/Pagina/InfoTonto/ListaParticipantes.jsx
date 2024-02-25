@@ -19,19 +19,20 @@ const ListaParticipantes = () => {
 
   return (
     <>
-      <ol className="principal list-group list-group-numbered">
-        <li className="list-group-item d-flex justify-content-between align-items-start">
-          <div className="logros ms-2 me-auto">
-            {users.map((user) => (
-              <div className="nombre fw-bold" key={user.name}>
-                {user.last_name}
-              </div>
-            ))}
-            <ListaTitulos />
-          </div>
-          <span className="badge">88</span>
-        </li>
-      </ol>
+      {users.map((user) => (
+        <ol
+          className="principal list-group list-group-numbered"
+          key={user.name}
+        >
+          <li className="list-group-item d-flex justify-content-between align-items-start">
+            <div className="logros ms-2 me-auto">
+              <div className="nombre fw-bold">{user.last_name}</div>
+              <ListaTitulos />
+            </div>
+            <span className="badge">88</span>
+          </li>
+        </ol>
+      ))}
     </>
   );
 };
