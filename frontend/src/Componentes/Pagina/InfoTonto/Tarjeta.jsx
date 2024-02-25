@@ -1,6 +1,21 @@
 import "../EstilosElMasTonto.css";
+import { ApiNombres } from "/src/Componentes/API/ApiNombres.jsx"
 
 const Tarjeta = ({ tarjeta }) => {
+
+  ApiNombres.get("https://thecowboys.duckdns.org/api/cowboys")
+    .then ( resp => {
+      console.log(resp);
+    })
+
+
+
+
+
+
+
+
+
   return (
     <>
       <div className="principal card mb-3">
