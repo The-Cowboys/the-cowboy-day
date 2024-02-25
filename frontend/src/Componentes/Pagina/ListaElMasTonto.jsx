@@ -23,7 +23,6 @@ const ListaElMasTonto = () => {
         {/* Lista de participantes */}
         <h3 className="tituloH3">Lista de participantes</h3>
         <ListaParticipantes LP={LP} />
-        <ListaParticipantes LP={LP} />
       </section>
     </>
   );
