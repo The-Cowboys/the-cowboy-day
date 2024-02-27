@@ -12,8 +12,8 @@ export const useNombres = () => {
   }, []);
 
   const getUsers = async () => {
-    const resp = await Api.get("https://reqres.in/api/users?page=2");
-    setUsers(resp.data.data);
+    const resp = await Api.get("https://thecowboys.duckdns.org/api/cowboys");
+    setUsers(resp.data.data.name);
   };
 
   return {
