@@ -13,7 +13,7 @@ export const useNombres = () => {
 
   const getUsers = async () => {
     const resp = await Api.get("https://thecowboys.duckdns.org/api/cowboys");
-    setUsers(resp.data.data.name);
+    setUsers(resp.data);
   };
 
   return {
