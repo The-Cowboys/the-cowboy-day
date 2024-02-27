@@ -1,9 +1,7 @@
-import "../EstilosElMasTonto.css";
-
 const Tarjeta = ({ tarjeta }) => {
   return (
-    <>
-      <div className="principal card mb-3">
+    <div className="principalTarjeta">
+      <div className="card mb-3">
         <div className="row g-0">
           <div className="fondoNav col-md-4">
             <img
@@ -28,7 +26,7 @@ const Tarjeta = ({ tarjeta }) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

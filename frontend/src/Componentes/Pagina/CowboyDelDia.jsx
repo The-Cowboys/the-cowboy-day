@@ -23,7 +23,7 @@ const Inicio = () => {
   };
 
   return (
-    <div className="card">
+    <div className="cowboyDelDia">
         {
           !clicked ? (
             <button className='btn btn-dark' onClick={click}>

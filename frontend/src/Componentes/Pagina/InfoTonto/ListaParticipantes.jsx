@@ -3,8 +3,8 @@ import ListaTitulos from "./ListaTitulos";
 
 const ListaParticipantes = () => {
   return (
-    <>
-      <ol className="principal list-group list-group-numbered">
+    <div className="ListaParticipantes">
+      <ol className="list-group list-group-numbered">
         <li className="list-group-item d-flex justify-content-between align-items-start">
           <div className="logros ms-2 me-auto">
             <div className="nombre fw-bold">German</div>
@@ -48,7 +48,7 @@ const ListaParticipantes = () => {
           <span className="badge">68</span>
         </li>
       </ol>
-    </>
+    </div>
   );
 };
 
