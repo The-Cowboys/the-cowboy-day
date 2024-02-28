@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Botones from "../../Componentes/Botones.jsx";
+import Botones from "../../Botones.jsx";
 import "./Error404.css";
 
 
