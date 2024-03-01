@@ -1,11 +1,11 @@
 import { Route, Routes } from "react-router-dom";
-import ListaElMasTonto from "./Pagina/ListaElMasTonto";
-import CowboyDelDia from "./Pagina/CowboyDelDia";
-import EstadisticasElMasTonto from "./Pagina/Estadisticas/EstadisticasElMasTonto";
-import EstadisticasCowboyDelDia from "./Pagina/Estadisticas/EstadisticasCowboyDelDia";
-import Proximamente from "./Pagina/Estadisticas/Proximamente";
-import Error404 from "./Pagina/Error404/Error404";
-import Inicio from "./Inicio";
+import ListaElMasTonto from "../Pagina/ListaElMasTonto";
+import CowboyDelDia from "../Pagina/CowboyDelDia";
+import EstadisticasElMasTonto from "../Pagina/Estadisticas/EstadisticasElMasTonto";
+import EstadisticasCowboyDelDia from "../Pagina/Estadisticas/EstadisticasCowboyDelDia";
+import Proximamente from "../Pagina/Estadisticas/Proximamente";
+import Error404 from "../Pagina/Error404/Error404";
+import Inicio from "../Pagina/Inicio";
 
 const Estructura = () => {
   return (
