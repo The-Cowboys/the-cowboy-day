@@ -1,5 +1,4 @@
 import "./EstilosEstadisticas.css";
-// import MayorMenor from "./MayorMenor";
 
 const ListaElMasTonto = () => {
   return (
