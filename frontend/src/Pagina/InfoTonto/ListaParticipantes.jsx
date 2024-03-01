@@ -23,3 +23,4 @@ const ListaParticipantes = () => {
 };
 
 export default ListaParticipantes;
+
