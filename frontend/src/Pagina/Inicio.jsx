@@ -1,4 +1,4 @@
-import Tarjeta from "../Pagina/InfoTonto/Tarjeta";
+import Tarjeta from "../Componentes/Tarjeta";
 
 const Inicio = () => {
   const tarjeta = {
