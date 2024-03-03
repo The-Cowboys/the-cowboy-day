@@ -1,7 +1,5 @@
 const cowboyService = require('./cowboys.service');
 
-console.log('Cowboy Controller');
-
 async function getAll(_, res) {
   try {
     res.json(await cowboyService.getAll());
