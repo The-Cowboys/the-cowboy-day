@@ -1,15 +1,15 @@
-const express = require('express');
+const express = require("express");
 const cors = require("cors");
 const compression = require("compression");
 const helmet = require("helmet");
 const RateLimit = require("express-rate-limit");
 
-const apiRoute = require('./api');
+const apiRoute = require("./api");
 
 const app = express();
 const PORT = 3001;
 
-const web = express.static('frontend/dist');
+const web = express.static("frontend/dist");
 
 // Set up rate limiter: maximum of twenty requests per minute
 const limiter = RateLimit({
@@ -23,17 +23,17 @@ app.use(
     directives: {
       "script-src": ["'self'", "fonts.googleapis.com"],
     },
-  }),
+  })
 );
 app.use(limiter);
 app.use(cors());
 app.use(express.json());
-app.use(express.static('frontend/dist'));
-app.use('/', web);
+app.use(express.static("frontend/dist"));
+app.use("/", web);
 
-app.use('/api', apiRoute);
+app.use("/api", apiRoute);
 
-app.use('*', web);
+app.use("*", web);
 
 // Start the server
 app.listen(PORT, () => {
