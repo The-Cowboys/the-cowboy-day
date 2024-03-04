@@ -1,6 +1,4 @@
-const cowboyService = require('./cowboys.service');
-
-console.log('Cowboy Controller');
+const cowboyService = require("./cowboys.service");
 
 async function getAll(_, res) {
   try {
@@ -9,7 +7,7 @@ async function getAll(_, res) {
     console.error(err);
 
     res.status(500).json({
-      "message": "Error getting list of cowboys",
+      message: "Error getting list of cowboys",
     });
   }
 }
@@ -21,12 +19,12 @@ async function getToday(_, res) {
     console.error(err);
 
     res.status(500).json({
-      "message": "Error genereting the cowboy for today",
+      message: "Error genereting the cowboy for today",
     });
   }
 }
 
 module.exports = {
   getAll,
-  getToday
+  getToday,
 };
