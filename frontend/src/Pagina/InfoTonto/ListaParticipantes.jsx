@@ -1,4 +1,4 @@
-import ListaTitulos from "./ListaTitulos";
+import ListaTitulos from "../PerfilDeParticipante/ListaTitulos";
 import { useNombres } from "../../API/Api";
 import { Link } from "react-router-dom";
 
@@ -10,7 +10,7 @@ const ListaParticipantes = () => {
         <ol className="list-group list-group-numbered" key={index}>
           <li className="list-group-item d-flex justify-content-between align-items-start">
             <div className="logros ms-2 me-auto">
-              <Link to="/PerfilDeParticipante" className="nombre fw-bold">{user.name}</Link>
+              <Link to="/EstructuraDePerfil" className="nombre fw-bold">{user.name}</Link>
               <div className="fondoNav">
                 <ListaTitulos />
               </div>
