@@ -1,4 +1,4 @@
-import ListaTitulos from "../PerfilDeParticipante/ListaTitulos";
+// import ListaTitulos from "../PerfilDeParticipante/ListaTitulos";
 import { useNombres } from "../../API/Api";
 import { Link } from "react-router-dom";
 
@@ -12,7 +12,7 @@ const ListaParticipantes = () => {
             <div className="logros ms-2 me-auto">
               <Link to="/EstructuraDePerfil" className="nombre fw-bold">{user.name}</Link>
               <div className="fondoNav">
-                <ListaTitulos />
+                {/* <ListaTitulos /> */}
               </div>
             </div>
             <span className="badge">75</span>
