@@ -1,88 +1,19 @@
-const pool = require("../database");
+const repository = require("./titulos.repository");
 
 async function getAll() {
-  return new Promise((resolve, reject) => {
-    pool.query("SELECT * FROM titulos ORDER BY created", (error, results) => {
-      if (error) {
-        return reject(error);
-      }
-
-      const titulos = results.rows.map((row) => {
-        return {
-          id: row.id,
-          titulo: row.name,
-          created: row.created,
-          updated: row.updated,
-        };
-      });
-
-      resolve(titulos);
-    });
-  });
+  return await repository.getAll();
 }
 
 async function deleteById(id) {
-  return new Promise((resolve, reject) => {
-    pool.query("DELETE FROM titulos WHERE id = $1", [id], (error, _) => {
-      if (error) {
-        return reject(error);
-      }
-
-      resolve();
-    });
-  });
+  return await repository.deleteById(id);
 }
 
 async function getAllByCowboyId(id) {
-  return new Promise((resolve, reject) => {
-    pool.query(
-      "SELECT * FROM titulos WHERE cowboy_id = $1 ORDER BY created",
-      [id],
-      (error, results) => {
-        if (error) {
-          return reject(error);
-        }
-
-        const titulos = results.rows.map((row) => {
-          return {
-            id: row.id,
-            titulo: row.name,
-            created: row.created,
-            updated: row.updated,
-          };
-        });
-
-        resolve(titulos);
-      }
-    );
-  });
+  return await repository.getAllByCowboyId(id);
 }
 
 async function saveTitulo(cowboyId, data) {
-  return new Promise((resolve, reject) => {
-    pool.query(
-      `INSERT INTO titulos 
-    (name, cowboy_id, created) 
-    VALUES 
-    ($1, $2, $3)
-    RETURNING *`,
-      [data.name, cowboyId, data.created],
-      (error, result) => {
-        if (error) {
-          return reject(error);
-        }
-
-        const res = result.rows[0];
-
-        resolve({
-          id: res.id,
-          titulo: res.name,
-          created: res.created,
-          updated: res.updated,
-        });
-      }
-    );
-  });
+  return await repository.saveTitulo(cowboyId, data);
 }
 
 module.exports = {
