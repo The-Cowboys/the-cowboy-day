@@ -1,5 +1,5 @@
 import ListaTitulos from "./ListaTitulos";
-import { useNombres } from "../../API/Api"
+import { useNombres } from "../../Hooks/Hooks"
 
 const ListaParticipantes = () => {
   const { users } = useNombres();
