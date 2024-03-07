@@ -131,6 +131,21 @@ span {
   color: var(--hoverTexto);
   transition: 0.3s;
 }
+.tituloEnTexto {
+  background-color: var(--fondoNav);
+  border-radius: 5px;
+  border: 1px solid var(--boton);
+}
+.tituloEnTexto:focus {
+  border-color: var(--hoverBorde);
+  outline: none;
+}
+.form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
 
 /* Error 404    hover y transition*/
 .hoverImg {

@@ -28,10 +28,10 @@ const ListaTitulos = () => {
   return (
     <>
       <div>
-        <form onSubmit={handleSubmit}>
+        <form className="form" onSubmit={handleSubmit}>
           <input
             type="text"
-            className=""
+            className="tituloEnTexto"
             name="description"
             placeholder="Titulo nuevo"
             ref={inputRef}
