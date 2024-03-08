@@ -1,6 +1,6 @@
-// import ListaTitulos from "../PerfilDeParticipante/ListaTitulos";
-import { useNombres } from "../../API/Api";
-import { Link } from "react-router-dom";
+// import ListaTitulos from "./ListaTitulos";
+import { useNombres } from "../../Hooks/Hooks"
+import { Link } from "react-router-dom.min";
 
 const ListaParticipantes = () => {
   const { users } = useNombres();
