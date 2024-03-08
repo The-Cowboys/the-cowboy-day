@@ -1,20 +1,7 @@
-import { useEffect, useState } from "react";
 import axios from "axios";
+const api = axios.create();
 
-export const useNombres = () => {
-
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    getUsers();
-  }, []);
-
-  const getUsers = async () => {
-    const resp = await axios.get("https://thecowboys.duckdns.org/api/cowboys");
-    setUsers(resp.data);
-  };
-
-  return {
-    users,
-  };
-};
+export default async function obtenerNombres() {
+  const resp = await api.get("https://thecowboys.duckdns.org/api/cowboys");
+  return resp.data;
+}

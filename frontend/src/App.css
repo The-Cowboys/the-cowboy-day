@@ -110,6 +110,7 @@ span {
   color: var(--texto);
   background-color: var(--fondoNav);
   font-size: 1.4rem;
+  text-decoration: none;
 }
 .logros {
   color: var(--texto);
@@ -122,10 +123,28 @@ span {
   text-decoration: none;
   color: var(--texto);
   background-color: var(--fondoNav);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .ListaTitulos:hover {
   color: var(--hoverTexto);
   transition: 0.3s;
+}
+.tituloEnTexto {
+  background-color: var(--fondoNav);
+  border-radius: 5px;
+  border: 1px solid var(--boton);
+}
+.tituloEnTexto:focus {
+  border-color: var(--hoverBorde);
+  outline: none;
+}
+.form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 10px;
 }
 
 /* Error 404    hover y transition*/
@@ -135,4 +154,11 @@ span {
 .hoverImg:hover {
   transform: scale(1.1);
   transition: transform 0.5s ease;
+}
+
+/* Perfil de participante */
+.tituloH2 {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 40px;
 }

@@ -6,6 +6,7 @@ import EstadisticasCowboyDelDia from "../Pagina/Estadisticas/EstadisticasCowboyD
 import Proximamente from "../Pagina/Estadisticas/Proximamente";
 import Error404 from "../Pagina/Error404/Error404";
 import Inicio from "../Pagina/Inicio";
+import EstructuraDePerfil from "../Pagina/PerfilDeParticipante/EstructuraDePerfil";
 
 const Estructura = () => {
   return (
@@ -23,6 +24,9 @@ const Estructura = () => {
           <Route path="/EstadisticasElMasTonto" element={<EstadisticasElMasTonto />} />
           <Route path="/EstadisticasCowboyDelDia" element={<EstadisticasCowboyDelDia />} />
           <Route path="/Proximamente" element={<Proximamente />} />
+
+          {/* Perfil de participante */}
+          <Route path="/EstructuraDePerfil" element={<EstructuraDePerfil />} />
 
           {/* Error404 */}
           <Route path="/*" element={<Error404 />} />
