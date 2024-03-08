@@ -36,7 +36,7 @@ const ListaTitulos = () => {
             placeholder="Titulo nuevo"
             ref={inputRef}
           />
-          <input type="submit" value="Agreguar" className="btn btn-dark" />
+          <input type="submit" value="Agregar" className="btn btn-dark" />
         </form>
         <div className="task">
           {tasks &&
