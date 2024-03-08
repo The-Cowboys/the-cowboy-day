@@ -1,6 +1,6 @@
 // import ListaTitulos from "./ListaTitulos";
 import { useNombres } from "../../Hooks/Hooks"
-import { Link } from "react-router-dom.min";
+import { Link } from "react-router-dom";
 
 const ListaParticipantes = () => {
   const { users } = useNombres();
@@ -10,7 +10,7 @@ const ListaParticipantes = () => {
         <ol className="list-group list-group-numbered" key={index}>
           <li className="list-group-item d-flex justify-content-between align-items-start">
             <div className="logros ms-2 me-auto">
-              <Link to="/EstructuraDePerfil" className="nombre fw-bold">{user.name}</Link>
+              <Link to="/EstructuraDePerfil" state={{ user: user }} className="nombre fw-bold">{user.name}</Link>
               <div className="fondoNav">
                 {/* <ListaTitulos /> */}
               </div>

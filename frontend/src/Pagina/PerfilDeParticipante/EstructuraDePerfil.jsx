@@ -1,22 +1,17 @@
-import { useNombres } from "../../API/Api";
 import ListaTitulos from "./ListaTitulos";
+import { useLocation } from "react-router-dom";
 
 const EstructuraDePerfil = () => {
-  const { users } = useNombres();
+  const { state } = useLocation();
 
   return (
     <div>
-      {users.map((user, index) => (
-        <>
-          <h2 className="tituloH2" key={index}>
-            {user.name}
-          </h2>
-          <div className="ListaTitulos">
-            <ListaTitulos />
-          </div>
-          
-        </>
-      ))}
+      <>
+        <h2 className="tituloH2">{state?.user.name}</h2>
+        <div className="ListaTitulos">
+          <ListaTitulos />
+        </div>
+      </>
     </div>
   );
 };

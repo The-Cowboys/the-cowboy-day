@@ -23,6 +23,7 @@ const ListaTitulos = () => {
       type: "add_task",
       titel: inputRef.current.value,
     });
+    inputRef.current.value = null;
   };
 
   return (
