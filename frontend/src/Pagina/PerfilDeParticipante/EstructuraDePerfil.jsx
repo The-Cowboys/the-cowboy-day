@@ -5,14 +5,12 @@ const EstructuraDePerfil = () => {
   const { state } = useLocation();
 
   return (
-    <div>
-      <>
-        <h2 className="tituloH2">{state?.user.name}</h2>
-        <div className="ListaTitulos">
-          <ListaTitulos />
-        </div>
-      </>
-    </div>
+    <>
+      <h2 className="tituloH2">{state?.user.name}</h2>
+      <div className="ListaTitulos">
+        <ListaTitulos />
+      </div>
+    </>
   );
 };
 
