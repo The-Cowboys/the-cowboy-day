@@ -1,4 +1,4 @@
-const pool = require("./../database");
+const repository = require("./cowboys.repository");
 
 const crypto = require("crypto");
 
@@ -19,33 +19,16 @@ function getPuto(putos, generatedInteger) {
 }
 
 async function getAll() {
-  return new Promise((resolve, reject) => {
-    pool.query("SELECT * FROM cowboys ORDER BY name", (error, results) => {
-      if (error) {
-        return reject(error);
-      }
-
-      resolve(results.rows);
-    });
-  });
+  return repository.getAll();
 }
 
 async function getToday() {
-  return new Promise((resolve, reject) => {
-    pool.query("SELECT * FROM cowboys ORDER BY name", (error, results) => {
-      if (error) {
-        return reject(error);
-      }
+  const putos = await repository.getAll();
 
-      const putos = results.rows;
-
-      const date = generateDay();
-      const generatedInteger = generateIntegerForDay(date, putos.length);
-      const todayPuto = getPuto(putos, generatedInteger);
-
-      resolve(todayPuto);
-    });
-  });
+  const date = generateDay();
+  const generatedInteger = generateIntegerForDay(date, putos.length);
+  const todayPuto = getPuto(putos, generatedInteger);
+  return todayPuto;
 }
 
 module.exports = {
