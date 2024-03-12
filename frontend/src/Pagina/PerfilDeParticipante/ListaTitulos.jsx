@@ -1,7 +1,7 @@
 import { useEffect, useReducer, useRef } from "react";
 import { deleteTitulos, getTitulos, postTitulos } from "../../API/Api";
 //recibir ID del Cowoboy
-const ListaTitulos = () => {
+const ListaTitulos = ({ idCowboy }) => {
   const inputRef = useRef();
 
   const [tasks, dispatch] = useReducer((state = [], action) => {
@@ -20,10 +20,12 @@ const ListaTitulos = () => {
       }
     }
   });
-  console.log(tasks);
+  
   const handleSubmit = (evento) => {
     //llamara a la API post titulo
-    postTitulos(id);
+    const titulo = inputRef.current.value;
+    console.log(idCowboy);
+    postTitulos(idCowboy, titulo);
     evento.preventDefault();
     dispatch({
       type: "add_task",

@@ -8,7 +8,7 @@ const EstructuraDePerfil = () => {
     <>
       <h2 className="tituloH2">{state?.user.name}</h2>
       <div className="ListaTitulos">
-        <ListaTitulos />
+      <ListaTitulos idCowboy={state?.user.id} />
       </div>
     </>
   );
