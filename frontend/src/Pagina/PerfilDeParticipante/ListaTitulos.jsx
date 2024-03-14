@@ -1,91 +1,97 @@
-import { useEffect, useReducer, useRef } from "react";
+import { useEffect, useState } from "react";
 import { deleteTitulos, getTitulos, postTitulos } from "../../API/Api";
 
+/*
+
+Que muestra mi pantalla?
+ - Input para ingresar titulo
+ - Lista que muestra los titulo
+ - Boton que guarda el titulo
+ - Botones de borrar
+
+Variables del estado:
+ - Estado para el input
+ - Estado para la lista de titulos
+
+Acciones de la pantalla:
+ - Borrar un titulo
+ - Crear un titulo
+ - Mostrar todos los titulos
+
+
+ Pasos:
+ 1. declarar los estados
+ 2. asociar los estado al HTML
+ 3. hacer una funcion para cada accion
+*/
+
 const ListaTitulos = ({ idCowboy }) => {
-  const inputRef = useRef();
+  // Estados
+  const [input, setInput] = useState("");
+  const [titulos, setTitulos] = useState([]);
 
-  const [tasks, dispatch] = useReducer((state = [], action) => {
-    switch (action.type) {
-      case "mostrar": {
-        return action.titulos;
-      }
-      case "add_task": {
-        return [...state, action.titulo];
-      }
-      case "remove_tasl": {
-        return state.filter((task) => task.id != action.id);
-      }
-      default: {
-        return state;
-      }
-    }
-  });
-
-  const handleSubmit = (evento) => {
-    evento.preventDefault();
-    // Crea el objeto titulo que necesita la api
-    const titulo = {
-      "titulo": inputRef.current.value
-    };
-
-    const enviar = async () => {
-      // llamara a la API post titulo
-      const tituloObjeto = await postTitulos(idCowboy, titulo);
-
-      // mandar el nuevo titulo al estado usando el dispatch
-      dispatch ({
-        type: "add_task",
-        titulo: tituloObjeto
-      });
-
-      // limpia el texto escrito en el input
-      inputRef.current.value = null;
-    }
-    enviar();
-  };
-
-  const cargarTitulos = () => {
-    const fetchData = async () => {
-      const titulos = await getTitulos(idCowboy);
-      dispatch({
-        type: "mostrar",
-        titulos: titulos,
-      });
-    };
-    fetchData();
-  };
-
+  // Hooks
   useEffect(() => {
-    cargarTitulos();
+    mostrarTitulo();
   }, []);
+
+  // Acciones
+  const mostrarTitulo = async () => {
+    // llamar a la api de obtener
+    const lista = await getTitulos(idCowboy);
+    setTitulos(lista);
+  };
+
+  const crearTitulo = async () => {
+    // llamar a la api de crear
+    const titulo = {
+      titulo: input,
+    };
+    const tituloCreado = await postTitulos(idCowboy, titulo);
+
+    const nuevaLista = [...titulos, tituloCreado];
+    setTitulos(nuevaLista);
+    setInput("");
+  };
+
+  const borrarTitulo = async (id) => {
+    // llamar a la api de borrar
+    await deleteTitulos(id);
+
+    const listaBorrada = titulos.filter((titulo) => titulo.id != id);
+    setTitulos(listaBorrada);
+  };
 
   return (
     <>
       <div>
-        <form className="form" onSubmit={handleSubmit}>
+        <div className="form">
           <input
             type="text"
             className="tituloEnTexto"
             name="description"
             placeholder="Titulo nuevo"
-            ref={inputRef}
+            value={input}
+            onChange={(input) => setInput(input.target.value)}
           />
-          <input type="submit" value="Agregar" className="btn btn-dark" />
-        </form>
+          <input
+            onClick={crearTitulo}
+            type="submit"
+            value="Agregar"
+            className="btn btn-dark"
+          />
+        </div>
         <div className="task">
-          {tasks &&
-            tasks.map((titulo) => (
+          {titulos &&
+            titulos.map((titulo) => (
               <div className="task" key={titulo.id}>
                 <ul className="list-group lista fondoNav">
                   <li className="list-group-item d-flex justify-content-between align-items-center">
                     {titulo.titulo}
-                    <div className=" fondoNav">
+                    <div className="fondoNav">
                       <button
                         className="btn btn-dark"
-                        onClick={() => {
-                          deleteTitulos(titulo.id);
-                          dispatch({ type: "remove_tasl", id: titulo.id });
-                        }}
+                        onClick={() => borrarTitulo(titulo.id)}
                       >
                         Borrar
                       </button>

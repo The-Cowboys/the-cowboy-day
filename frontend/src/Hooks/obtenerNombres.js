@@ -4,13 +4,13 @@ import obtenerNombres from "../API/Api";
 export const useNombres = () => {
   const [users, setUsers] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await obtenerNombres();
-      setUsers(data);
-    };
+  const mostrarUsuarios = async () => {
+    const data = await obtenerNombres();
+    setUsers(data);
+  };
 
-    fetchData();
+  useEffect(() => {
+    mostrarUsuarios();
   }, []);
 
   return {
