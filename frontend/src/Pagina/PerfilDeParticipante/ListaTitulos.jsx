@@ -1,6 +1,6 @@
 import { useEffect, useReducer, useRef } from "react";
 import { deleteTitulos, getTitulos, postTitulos } from "../../API/Api";
-//recibir ID del Cowoboy
+
 const ListaTitulos = ({ idCowboy }) => {
   const inputRef = useRef();
 
@@ -10,40 +10,54 @@ const ListaTitulos = ({ idCowboy }) => {
         return action.titulos;
       }
       case "add_task": {
-        return [...state, { id: state.length, titel: action.titel }];
+        return [...state, action.titulo];
       }
       case "remove_tasl": {
-        return state.filter((task, id) => id != action.id);
+        return state.filter((task) => task.id != action.id);
       }
       default: {
         return state;
       }
     }
   });
-  
+
   const handleSubmit = (evento) => {
-    //llamara a la API post titulo
-    const titulo = inputRef.current.value;
-    console.log(idCowboy);
-    postTitulos(idCowboy, titulo);
     evento.preventDefault();
-    dispatch({
-      type: "add_task",
-      titel: inputRef.current.value,
-    });
-    inputRef.current.value = null;
+    // Crea el objeto titulo que necesita la api
+    const titulo = {
+      "titulo": inputRef.current.value
+    };
+
+    const enviar = async () => {
+      // llamara a la API post titulo
+      const tituloObjeto = await postTitulos(idCowboy, titulo);
+
+      // mandar el nuevo titulo al estado usando el dispatch
+      dispatch ({
+        type: "add_task",
+        titulo: tituloObjeto
+      });
+
+      // limpia el texto escrito en el input
+      inputRef.current.value = null;
+    }
+    enviar();
   };
 
-  useEffect(() => {
+  const cargarTitulos = () => {
     const fetchData = async () => {
-      const titulos = await getTitulos(1);
+      const titulos = await getTitulos(idCowboy);
       dispatch({
         type: "mostrar",
         titulos: titulos,
       });
     };
     fetchData();
-  }, [dispatch]);
+  };
+
+  useEffect(() => {
+    cargarTitulos();
+  }, []);
 
   return (
     <>
@@ -60,17 +74,17 @@ const ListaTitulos = ({ idCowboy }) => {
         </form>
         <div className="task">
           {tasks &&
-            tasks.map((task, id) => (
-              <div className="task" key={id}>
+            tasks.map((titulo) => (
+              <div className="task" key={titulo.id}>
                 <ul className="list-group lista fondoNav">
                   <li className="list-group-item d-flex justify-content-between align-items-center">
-                    {task.titulo}
+                    {titulo.titulo}
                     <div className=" fondoNav">
                       <button
                         className="btn btn-dark"
                         onClick={() => {
-                          deleteTitulos(id);
-                          dispatch({ type: "remove_tasl", id });
+                          deleteTitulos(titulo.id);
+                          dispatch({ type: "remove_tasl", id: titulo.id });
                         }}
                       >
                         Borrar
