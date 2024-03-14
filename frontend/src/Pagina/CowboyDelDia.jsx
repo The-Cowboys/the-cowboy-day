@@ -1,22 +1,22 @@
 import { useState } from 'react';
 
 const Inicio = () => {
-  const [puto, setPuto] = useState(null);
+  const [cowboys, setCowboys] = useState(null);
   const [clicked, setClick] = useState(false);
 
   const click = () => {
     setClick(true);
 
     setTimeout(() => {
-      fetchPuto();
+      fetchCowboys();
     }, 1000);
   };
 
-  const fetchPuto = async () => {
+  const fetchCowboys = async () => {
     try {
-      const response = await fetch('/api/putos/today');
+      const response = await fetch('/api/cowboys/today');
       const data = await response.json();
-      setPuto(data.name);
+      setCowboys(data.name);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -32,7 +32,7 @@ const Inicio = () => {
           ) : (
             <div>
               <p>El cowboy de hoy es....</p>
-              <h2>{puto}</h2>
+              <h2>{cowboys}</h2>
             </div>
           )
         }
