@@ -23,12 +23,22 @@ Acciones de la pantalla:
  1. declarar los estados
  2. asociar los estado al HTML
  3. hacer una funcion para cada accion
+
+
+
+ Agregar mensaje de error:
+ 1. Agregar nuevo estado booleando con valor por defecto false
+ 2. En el HTML, cuando el estado tengo valor igual a true, mostrar un mensaje de error
+ 3. Capturar posibles errores y poner el estado en true cuando hay error
+
+  Usar try-catch para capturar errores, buscar en interne como funciona.
 */
 
 const ListaTitulos = ({ idCowboy }) => {
   // Estados
   const [input, setInput] = useState("");
   const [titulos, setTitulos] = useState([]);
+  const [error, setError] = useState(false);
 
   // Hooks
   useEffect(() => {
@@ -47,10 +57,15 @@ const ListaTitulos = ({ idCowboy }) => {
     const titulo = {
       titulo: input,
     };
-    const tituloCreado = await postTitulos(idCowboy, titulo);
+    try {
+      const tituloCreado = await postTitulos(idCowboy, titulo);
 
-    const nuevaLista = [...titulos, tituloCreado];
-    setTitulos(nuevaLista);
+      const nuevaLista = [...titulos, tituloCreado];
+      setTitulos(nuevaLista);
+    } catch (err) {
+      setError(true);
+      console.log("Hubo un error!!!!!");
+    }
     setInput("");
   };
 
@@ -74,6 +89,7 @@ const ListaTitulos = ({ idCowboy }) => {
             value={input}
             onChange={(input) => setInput(input.target.value)}
           />
+
           <input
             onClick={crearTitulo}
             type="submit"
@@ -81,6 +97,7 @@ const ListaTitulos = ({ idCowboy }) => {
             className="btn btn-dark"
           />
         </div>
+        <div>{error == true && <p className="error">No se puede duplicar titulos</p>}</div>
         <div className="task">
           {titulos &&
             titulos.map((titulo) => (
