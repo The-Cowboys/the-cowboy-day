@@ -169,4 +169,6 @@ span {
   border-radius: 5px;
   text-align: center;
   color: var(--texto);
+  border: 2px solid var(--boton);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

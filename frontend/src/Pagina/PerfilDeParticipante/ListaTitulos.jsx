@@ -59,9 +59,9 @@ const ListaTitulos = ({ idCowboy }) => {
     };
     try {
       const tituloCreado = await postTitulos(idCowboy, titulo);
-
       const nuevaLista = [...titulos, tituloCreado];
       setTitulos(nuevaLista);
+      setError(false)
     } catch (err) {
       setError(true);
       console.log("Hubo un error!!!!!");
@@ -89,7 +89,6 @@ const ListaTitulos = ({ idCowboy }) => {
             value={input}
             onChange={(input) => setInput(input.target.value)}
           />
-
           <input
             onClick={crearTitulo}
             type="submit"
@@ -97,7 +96,11 @@ const ListaTitulos = ({ idCowboy }) => {
             className="btn btn-dark"
           />
         </div>
-        <div>{error == true && <p className="error">No se puede duplicar titulos</p>}</div>
+        <div>
+          {error == true && (
+            <p className="error">No se puede duplicar el titulo</p>
+          )}
+        </div>
         <div className="task">
           {titulos &&
             titulos.map((titulo) => (
