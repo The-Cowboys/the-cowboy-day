@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const Inicio = () => {
-  const [cowboys, setCowboys] = useState(null);
+  const [cowboy, setCowboy] = useState(null);
   const [clicked, setClick] = useState(false);
 
   const click = () => {
@@ -16,7 +16,7 @@ const Inicio = () => {
     try {
       const response = await fetch('/api/cowboys/today');
       const data = await response.json();
-      setCowboys(data.name);
+      setCowboy(data.name);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -32,7 +32,7 @@ const Inicio = () => {
           ) : (
             <div>
               <p>El cowboy de hoy es....</p>
-              <h2>{cowboys}</h2>
+              <h2>{cowboy}</h2>
             </div>
           )
         }
