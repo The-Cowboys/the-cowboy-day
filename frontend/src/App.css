@@ -19,12 +19,13 @@
   --tipografiaGeneral: "Playfair Display", serif;
 
   /* Colores */
-  --hoverTexto: #ff3300;
-  --hoverBorde: #646cff;
+  --hoverTexto: #ff0000;
+  --hoverBorde: #00ff00;
   --boton: #1a1a1a;
   --fondoPricipal: #242424;
   --fondoNav: #333;
   --texto: #fff;
+  --marron: #8b4513;
 }
 
 /* Boton */
