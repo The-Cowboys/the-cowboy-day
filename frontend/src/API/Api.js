@@ -1,10 +1,11 @@
 import axios from "axios";
 const api = axios.create();
 
+const token = import.meta.env.VITE_JWT
+
 const headers = {
   "Content-Type": "application/json",
-  Authorization:
-    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSm9yZ2UiLCJpYXQiOjE3MDk0MjE4MDUsImV4cCI6MTcxMDAyNjYwNX0.QtparKNYCN7EmvQXE70eQ0keeuJcCmzXIPoCIN1SShA",
+  Authorization: `Bearer ${token}`,
 };
 
 export default async function obtenerNombres() {
