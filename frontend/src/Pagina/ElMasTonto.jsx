@@ -1,5 +1,5 @@
-import Tarjeta from "../Componentes/Tarjeta";
-import ListaParticipantes from "./InfoTonto/ListaParticipantes";
+import Tarjeta from "../Componentes/Tarjetas/TarjetaTonta";
+import ListaParticipantes from "./PerfilDeParticipante/ListaParticipantes";
 
 const ListaElMasTonto = () => {
   const tarjeta = {

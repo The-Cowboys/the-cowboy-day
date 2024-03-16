@@ -37,7 +37,7 @@ const NavBar = () => {
             <ul className="navbar-nav">
               <li className="nav-item">
                 <Link className="nav-link" 
-                  to="/ListaElMasTonto">
+                  to="/ElMasTonto">
                   El más tonto
                 </Link>
               </li>

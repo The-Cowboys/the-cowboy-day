@@ -1,5 +1,4 @@
-// import ListaTitulos from "./ListaTitulos";
-import { useNombres } from "../../Hooks/Hooks"
+import { useNombres } from "../../Hooks/obtenerNombres"
 import { Link } from "react-router-dom";
 
 const ListaParticipantes = () => {
@@ -12,7 +11,6 @@ const ListaParticipantes = () => {
             <div className="logros ms-2 me-auto">
               <Link to="/EstructuraDePerfil" state={{ user: user }} className="nombre fw-bold">{user.name}</Link>
               <div className="fondoNav">
-                {/* <ListaTitulos /> */}
               </div>
             </div>
             <span className="badge">75</span>

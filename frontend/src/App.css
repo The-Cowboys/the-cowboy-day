@@ -163,3 +163,13 @@ span {
   margin-top: 25px;
   font-size: 40px;
 }
+
+/* Error */
+.error {
+  background-color: var(--hoverTexto);
+  border-radius: 5px;
+  text-align: center;
+  color: var(--texto);
+  border: 2px solid var(--boton);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

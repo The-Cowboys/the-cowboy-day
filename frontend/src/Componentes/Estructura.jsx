@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import ListaElMasTonto from "../Pagina/ListaElMasTonto";
+import ElMasTonto from "../Pagina/ElMasTonto";
 import CowboyDelDia from "../Pagina/CowboyDelDia";
 import EstadisticasElMasTonto from "../Pagina/Estadisticas/EstadisticasElMasTonto";
 import EstadisticasCowboyDelDia from "../Pagina/Estadisticas/EstadisticasCowboyDelDia";
@@ -14,7 +14,7 @@ const Estructura = () => {
       <div className="campo">
         <Routes>
           {/* NavBar */}
-          <Route path="/ListaElMasTonto" element={<ListaElMasTonto />} />
+          <Route path="/ElMasTonto" element={<ElMasTonto />} />
           <Route path="/CowboyDelDia" element={<CowboyDelDia />} />
 
           {/* Inicio */}
