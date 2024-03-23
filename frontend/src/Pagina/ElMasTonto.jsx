@@ -1,8 +1,8 @@
-import Tarjeta from "../Componentes/Tarjetas/TarjetaTonta";
+import Tarjeta from "../Componentes/Tarjetas/Tarjeta";
 import ListaParticipantes from "./PerfilDeParticipante/ListaParticipantes";
 
 const ListaElMasTonto = () => {
-  const tarjeta = {
+  const datos = {
     persona: "Nombre: Jorge",
     cantidad: "68",
     titulos: "Titulos",
@@ -17,8 +17,8 @@ const ListaElMasTonto = () => {
     <>
       <section>
         {/* Tarjeta del día */}
-      <h3 className="tituloH3">Tonto del día de hoy es...</h3>
-        <Tarjeta tarjeta={tarjeta} />
+        <h3 className="tituloH3">Tonto del día de hoy es...</h3>
+        <Tarjeta tarjeta={datos} />
 
         {/* Lista de participantes */}
         <h3 className="tituloH3">Lista de participantes</h3>
