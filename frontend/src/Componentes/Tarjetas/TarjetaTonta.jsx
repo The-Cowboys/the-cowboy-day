@@ -15,10 +15,9 @@ const TarjetaTonta = () => {
             />
           </div>
           <div className="fondoNav col-md-8">
-            {tonto.map((user, index) => (
-              <div className="fondoNav card-body" key={index}>
+              <div className="fondoNav card-body">
                 <h5 className="nombre card-title">
-                  {user.name}
+                  {tonto.cowboyId}
                   <span className="badge float-right">75</span>
                 </h5>
                 <h6 className="fondoNav card-text">...</h6>
@@ -26,7 +25,7 @@ const TarjetaTonta = () => {
                   <p className="titulosObtenidos fondoNav">......lol..</p>
                 </div>
               </div>
-            ))}
+            
           </div>
         </div>
       </div>
