@@ -1,15 +1,12 @@
-import Tarjeta from "../Componentes/Tarjetas/Tarjeta";
-import { useObtenerTonto } from "../Hooks/useObtenerTonto";
+import TarjetaTonta from "../Componentes/Tarjetas/TarjetaTonta";
 
 const Inicio = () => {
-  const { tonto } = useObtenerTonto();
-  console.log ("32132")
   return (
     <>
       <section>
         {/* Tarjeta del día del mas tonto */}
         <h3 className="tituloH3">Tonto del día de hoy es...</h3>
-        <Tarjeta persona={tonto} />;
+        <TarjetaTonta />;
 
         {/* Tarjeta del cowboy del día */}
         <h3 className="tituloH3">Cowboy del día de hoy es...</h3>
