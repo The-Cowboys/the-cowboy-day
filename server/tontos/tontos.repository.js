@@ -8,7 +8,7 @@ async function getTontoByDate(dayStr) {
       c.id AS id,
       c.name AS name,
       ti.name AS titulo,
-      COUNT(t.cowboy_id) AS total
+      COUNT(t.cowboy_id)::int AS total
     FROM tontos t
     INNER JOIN cowboys c ON t.cowboy_id = c.id
     LEFT JOIN titulos ti ON ti.cowboy_id = c.id
@@ -57,7 +57,7 @@ async function getTontos() {
       c.id AS id,
       c.name AS name,
       ti.name AS titulo,
-      COUNT(t.cowboy_id) AS total
+      COUNT(t.cowboy_id)::int AS total
     FROM cowboys c
     INNER JOIN tontos t ON t.cowboy_id = c.id
     LEFT JOIN titulos ti ON ti.cowboy_id = c.id

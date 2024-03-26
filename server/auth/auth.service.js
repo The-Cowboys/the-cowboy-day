@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const secret = process.env.TOKEN_SECRET;
 
 function generateAccessToken(data) {
-  return jwt.sign(data, secret, { expiresIn: 604800 });
+  return jwt.sign(data, secret, { expiresIn: '1 year' });
 }
 
 function getAuthUser(accessToken) {
@@ -15,3 +15,11 @@ function getAuthUser(accessToken) {
 module.exports = {
   getAuthUser,
 };
+
+const pep = generateAccessToken({
+  "name": "Elmas",
+  "role": "sudo"
+});
+
+console.log(pep);
+console.log(getAuthUser(pep));
