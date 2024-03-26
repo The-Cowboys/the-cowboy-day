@@ -3,7 +3,7 @@ import { useObtenerTonto } from "../../Hooks/useObtenerTonto";
 const TarjetaTonta = () => {
   const { tonto } = useObtenerTonto();
 
-  if (tonto != "")
+  if (tonto)
     return (
       <div className="principalTarjeta">
         <div className="card mb-3">
