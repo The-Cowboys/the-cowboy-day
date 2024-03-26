@@ -12,6 +12,8 @@ function checkRole(req, res, next, role) {
     req.user = user;
     next();
   } catch (error) {
+    console.error(error);
+
     res.status(403).json({ message: "Token invalido" });
   }
 }
