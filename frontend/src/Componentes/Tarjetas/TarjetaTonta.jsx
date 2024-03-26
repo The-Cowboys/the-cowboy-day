@@ -15,17 +15,19 @@ const TarjetaTonta = () => {
             />
           </div>
           <div className="fondoNav col-md-8">
-              <div className="fondoNav card-body">
-                <h5 className="nombre card-title">
-                  {tonto.cowboyId}
-                  <span className="badge float-right">75</span>
-                </h5>
-                <h6 className="fondoNav card-text">...</h6>
-                <div>
-                  <p className="titulosObtenidos fondoNav">......lol..</p>
-                </div>
+            <div className="fondoNav card-body">
+              <h5 className="nombre card-title">
+                Nombre: {tonto.cowboyId}
+                <span className="numeros badge float-right">75</span>
+              </h5>
+              <h6 className="fondoNav card-text">Titulos totales: 4</h6>
+              <div>
+                <p className="titulosObtenidos fondoNav">
+                  Titulos: Poker Tonto Jorge - Navideño 2023 - Gil trabajador -
+                  Justiciero
+                </p>
               </div>
-            
+            </div>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-const Tarjeta = () => {
+const TarjetaCowboy = () => {
   return (
     <div className="principalTarjeta">
       <div className="card mb-3">
@@ -13,13 +13,13 @@ const Tarjeta = () => {
           <div className="fondoNav col-md-8">
             <div className="fondoNav card-body">
               <h5 className="nombre card-title">
-                yo
-                <span className="badge float-right">75</span>
+                Nombre: Jorge
+                <span className="numeros badge float-right">75</span>
               </h5>
-              <h6 className="fondoNav card-text">...</h6>
+              <h6 className="fondoNav card-text">Titulos totales: 1</h6>
               <div>
                 <p className="titulosObtenidos fondoNav">
-                  ...........
+                  Titulos: El 1
                 </p>
               </div>
             </div>
@@ -30,4 +30,4 @@ const Tarjeta = () => {
   );
 };
 
-export default Tarjeta;
+export default TarjetaCowboy;

@@ -1,3 +1,4 @@
+import TarjetaCowboy from "../Componentes/Tarjetas/TarjetaCowboy";
 import TarjetaTonta from "../Componentes/Tarjetas/TarjetaTonta";
 
 const Inicio = () => {
@@ -6,11 +7,11 @@ const Inicio = () => {
       <section>
         {/* Tarjeta del día del mas tonto */}
         <h3 className="tituloH3">Tonto del día de hoy es...</h3>
-        <TarjetaTonta />;
+        <TarjetaTonta />
 
         {/* Tarjeta del cowboy del día */}
         <h3 className="tituloH3">Cowboy del día de hoy es...</h3>
-        {/* <Tarjeta /> */}
+        <TarjetaCowboy />
       </section>
     </>
   );
