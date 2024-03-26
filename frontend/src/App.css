@@ -81,6 +81,11 @@
   margin-left: auto;
   margin-right: auto;
 }
+span.numeros {
+  background-color: var(--boton);
+  color: var(--texto);
+  font-size: 31px;
+}
 
 /* Lista Participantes */
 .ListaParticipantes {
@@ -101,7 +106,7 @@ span {
 .ListaParticipantes span {
   color: var(--texto);
   font-size: 1.5rem;
-  background-color: var(--fondoPricipal);
+  background-color: var(--boton);
 }
 .princListaParticipantesipal span:hover {
   background-color: var(--hoverTexto);

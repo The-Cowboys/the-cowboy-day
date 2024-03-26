@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import obtenerNombres from "../API/Api";
+import { obtenerNombres } from "../API/Api";
 
 export const useNombres = () => {
   const [users, setUsers] = useState([]);
