@@ -1,7 +1,6 @@
 import useTitulos from "../../Hooks/useTitulos";
 
 const ListaTitulos = ({ idCowboy }) => {
-  // Utilizamos el hook useTitulos
   const { borrarTitulo, crearTitulo, error, titulos, setInput, input } = useTitulos(idCowboy);
 
   return (
