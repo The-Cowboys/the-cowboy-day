@@ -25,10 +25,12 @@ router.delete("/titulos/:idTitulo", titulosController.deleteTitulo);
 // == Tontos ==
 // Guardar tonto del dia
 router.post("/tontos", sudoAuth, tontosController.createTontoHoy);
-// Obtener tonto por id
-router.get("/tontos/:idCowboy(\d+)", tontosController.getTontoPorId);
 // Obtener tonto del dia
 router.get("/tontos/hoy", tontosController.getTontoHoy);
+
+// Obtener tonto por id
+router.get("/tontos/:idCowboy", tontosController.getTontoPorId);
+
 // Obtener todos los tontos
 router.get("/tontos", tontosController.getAllTontos);
 

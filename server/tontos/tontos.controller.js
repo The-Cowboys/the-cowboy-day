@@ -21,7 +21,7 @@ async function getTontoPorId(req, res) {
     if (tonto) return res.json(tonto);
 
     res.status(404).json({
-      message: `Tonto aún no registrado.`,
+      message: `Tonto con id ${idCowboy} no existe`,
     });
   } catch (err) {
     console.error(err);
@@ -38,7 +38,7 @@ async function getTontoHoy(_, res) {
     if (tonto) return res.json(tonto);
 
     res.status(404).json({
-      message: `Tonto aún no registrado.`,
+      message: `Tonto del dia aún no calculado.`,
     });
   } catch (err) {
     console.error(err);
