@@ -16,11 +16,9 @@ const TarjetaCowboy = () => {
                 Nombre: Jorge
                 <span className="numeros badge float-right">75</span>
               </h5>
-              <h6 className="fondoNav card-text">Titulos totales: 1</h6>
+              <h5 className="fondoNav card-text">Titulos totales: 1</h5>
               <div>
-                <p className="titulosObtenidos fondoNav">
-                  Titulos: El 1
-                </p>
+                <p className="titulosObtenidos fondoNav">Titulos: El 1</p>
               </div>
             </div>
           </div>
