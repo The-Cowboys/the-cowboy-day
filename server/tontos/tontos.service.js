@@ -25,11 +25,16 @@ async function getToday() {
   return await tontoRepository.getTontoByDate(strToday);
 }
 
+async function getTontoById(idCowboy) {
+  return await tontoRepository.getTontoById(idCowboy);
+}
+
 async function getAll() {
   return await tontoRepository.getTontos();
 }
 
 module.exports = {
+  getTontoById,
   saveTodays,
   getToday,
   getAll,

@@ -13,6 +13,25 @@ async function createTontoHoy(req, res) {
   }
 }
 
+async function getTontoPorId(req, res) {
+  try {
+    const idCowboy = req.params.idCowboy;
+
+    const tonto = await tontosService.getTontoById(idCowboy);
+    if (tonto) return res.json(tonto);
+
+    res.status(404).json({
+      message: `Tonto aún no registrado.`,
+    });
+  } catch (err) {
+    console.error(err);
+
+    res.status(500).json({
+      message: `Error getting todays's tonto`,
+    });
+  }
+}
+
 async function getTontoHoy(_, res) {
   try {
     const tonto = await tontosService.getToday();
@@ -46,4 +65,5 @@ module.exports = {
   createTontoHoy,
   getTontoHoy,
   getAllTontos,
+  getTontoPorId,
 };

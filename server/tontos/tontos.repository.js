@@ -85,8 +85,39 @@ async function getTontos() {
   return Array.from(groupedData.values());
 }
 
+async function getTontoById(idCowboy) {
+  const res = await pool.query(
+    `
+    SELECT 
+      c.id AS id,
+      c.name AS name,
+      ti.name AS titulo,
+      COUNT(t.cowboy_id)::int AS total
+    FROM cowboys c
+    INNER JOIN tontos t ON t.cowboy_id = c.id
+    LEFT JOIN titulos ti ON ti.cowboy_id = c.id
+    WHERE c.id = $1
+    GROUP BY c.id, c.name, ti.name;
+    `,
+    [idCowboy]
+  );
+
+  if (res.rows.length > 0) {
+    const firstRow = res.rows[0];
+    return {
+      dia: firstRow.dia,
+      id: firstRow.id,
+      nombre: firstRow.name,
+      total: firstRow.total,
+      titulos: res.rows.map((row) => row.titulo),
+    };
+  }
+  return null;
+}
+
 module.exports = {
   getTontoByDate,
   saveTonto,
   getTontos,
+  getTontoById,
 };
