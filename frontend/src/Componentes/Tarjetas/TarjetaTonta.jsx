@@ -28,7 +28,7 @@ const TarjetaTonta = () => {
                 </h6>
                 <div>
                   <p className="titulosObtenidos fondoNav">
-                    Titulos: {tonto.titulos.join(" - ")}
+                    Titulos: {tonto.titulos.join(", ")}
                   </p>
                 </div>
               </div>

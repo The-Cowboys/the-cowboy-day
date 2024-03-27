@@ -1,26 +1,24 @@
 import { useNombres } from "../../Hooks/obtenerNombres"
 import { Link } from "react-router-dom";
-import { useObtenerTonto } from "../../Hooks/useObtenerTonto";
 
 const ListaParticipantes = () => {
   const { users } = useNombres();
-  const { tonto } = useObtenerTonto();
-  if (tonto)
 
   return (
     <div className="ListaParticipantes">
+      <ol className="list-group list-group-numbered">
       {users.map((user, index) => (
-        <ol className="list-group list-group-numbered" key={index}>
-          <li className="list-group-item d-flex justify-content-between align-items-start">
+          <li className="list-group-item d-flex justify-content-between align-items-start" key={index}>
             <div className="logros ms-2 me-auto">
-              <Link to="/EstructuraDePerfil" state={{ user: user }} className="nombre fw-bold">{user.name}</Link>
+              <Link to="/EstructuraDePerfil" state={{ user: user }} className="nombre fw-bold">{user.nombre}</Link>
+              <p className="fondoNav">{user.titulos.join(", ")}</p>
               <div className="fondoNav">
               </div>
             </div>
-            <span className="badge">{tonto.total}</span>
+            <span className="badge">{user.total}</span>
           </li>
-        </ol>
       ))}
+      </ol>
     </div>
   );
 };
