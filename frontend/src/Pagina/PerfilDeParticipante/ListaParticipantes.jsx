@@ -3,24 +3,20 @@ import { Link } from "react-router-dom";
 
 const ListaParticipantes = () => {
   const { users } = useNombres();
+
   return (
     <div className="ListaParticipantes">
+      <ol className="list-group list-group-numbered">
       {users.map((user, index) => (
-        <ol className="list-group list-group-numbered" key={index}>
-          <li className="list-group-item d-flex justify-content-between align-items-start">
+          <li className="list-group-item d-flex justify-content-between align-items-start" key={index}>
             <div className="logros ms-2 me-auto">
-              <Link
-                to={`/EstructuraDePerfil/${user.id}`}
-                className="nombre fw-bold"
-              >
-                {user.name}
-              </Link>
-              <div className="fondoNav"></div>
+              <Link to={`/EstructuraDePerfil/${user.id}`} className="nombre fw-bold">{user.nombre}</Link>
+              <p className="fondoNav">{user.titulos.join(", ")}</p>
             </div>
-            <span className="badge">75</span>
+            <span className="badge">{user.total}</span>
           </li>
-        </ol>
       ))}
+      </ol>
     </div>
   );
 };

@@ -11,7 +11,7 @@ const headers = {
 // ----Mostrar:
 // Mostrar nombres de los participantes
 export async function obtenerNombres() {
-  const resp = await api.get(`https://thecowboys.duckdns.org/api/cowboys`);
+  const resp = await api.get(`https://thecowboys.duckdns.org/api/tontos`);
   return resp.data;
 }
 

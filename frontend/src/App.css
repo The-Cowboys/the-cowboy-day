@@ -127,6 +127,9 @@ span {
   background-color: var(--fondoNav);
   font-size: 1rem;
 }
+.ListaParticipantes p {
+  margin-left: 15px;
+}
 
 /* Lista Titulos */
 .ListaTitulos {
