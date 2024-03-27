@@ -10,7 +10,7 @@ const ListaParticipantes = () => {
       {users.map((user, index) => (
           <li className="list-group-item d-flex justify-content-between align-items-start" key={index}>
             <div className="logros ms-2 me-auto">
-              <Link to={`/EstructuraDePerfil/${user.id}` className="nombre fw-bold">{user.nombre}</Link>
+              <Link to={`/EstructuraDePerfil/${user.id}`} className="nombre fw-bold">{user.nombre}</Link>
               <p className="fondoNav">{user.titulos.join(", ")}</p>
             </div>
             <span className="badge">{user.total}</span>
