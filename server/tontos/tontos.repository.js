@@ -25,7 +25,7 @@ async function getTontoByDate(dayStr) {
       id: firstRow.id,
       nombre: firstRow.name,
       total: firstRow.total,
-      titulos: res.rows.map((row) => row.titulo),
+      titulos: res.rows.map((row) => row.titulo).filter((t) => t),
     };
   }
   return null;
@@ -59,9 +59,10 @@ async function getTontos() {
       ti.name AS titulo,
       COUNT(t.cowboy_id)::int AS total
     FROM cowboys c
-    INNER JOIN tontos t ON t.cowboy_id = c.id
+    LEFT JOIN tontos t ON t.cowboy_id = c.id
     LEFT JOIN titulos ti ON ti.cowboy_id = c.id
-    GROUP BY c.id, c.name, ti.name;
+    GROUP BY c.id, c.name, ti.name
+    ORDER BY total DESC;
     `
   );
 
@@ -94,7 +95,7 @@ async function getTontoById(idCowboy) {
       ti.name AS titulo,
       COUNT(t.cowboy_id)::int AS total
     FROM cowboys c
-    INNER JOIN tontos t ON t.cowboy_id = c.id
+    LEFT JOIN tontos t ON t.cowboy_id = c.id
     LEFT JOIN titulos ti ON ti.cowboy_id = c.id
     WHERE c.id = $1
     GROUP BY c.id, c.name, ti.name;
@@ -109,7 +110,7 @@ async function getTontoById(idCowboy) {
       id: firstRow.id,
       nombre: firstRow.name,
       total: firstRow.total,
-      titulos: res.rows.map((row) => row.titulo),
+      titulos: res.rows.map((row) => row.titulo).filter((t) => t),
     };
   }
   return null;
