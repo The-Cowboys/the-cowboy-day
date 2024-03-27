@@ -1,8 +1,12 @@
 import { useNombres } from "../../Hooks/obtenerNombres"
 import { Link } from "react-router-dom";
+import { useObtenerTonto } from "../../Hooks/useObtenerTonto";
 
 const ListaParticipantes = () => {
   const { users } = useNombres();
+  const { tonto } = useObtenerTonto();
+  if (tonto)
+
   return (
     <div className="ListaParticipantes">
       {users.map((user, index) => (
@@ -13,7 +17,7 @@ const ListaParticipantes = () => {
               <div className="fondoNav">
               </div>
             </div>
-            <span className="badge">75</span>
+            <span className="badge">{tonto.total}</span>
           </li>
         </ol>
       ))}
