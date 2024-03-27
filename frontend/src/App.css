@@ -86,6 +86,10 @@ span.numeros {
   color: var(--texto);
   font-size: 31px;
 }
+.titulosObtenidos {
+  font-size: 18px;
+  padding-top: 10px;
+}
 
 /* Lista Participantes */
 .ListaParticipantes {

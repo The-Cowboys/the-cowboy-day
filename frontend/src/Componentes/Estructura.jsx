@@ -26,7 +26,7 @@ const Estructura = () => {
           <Route path="/Proximamente" element={<Proximamente />} />
 
           {/* Perfil de participante */}
-          <Route path="/EstructuraDePerfil" element={<EstructuraDePerfil />} />
+          <Route path="/EstructuraDePerfil/:id" element={<EstructuraDePerfil />} />
 
           {/* Error404 */}
           <Route path="/*" element={<Error404 />} />

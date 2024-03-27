@@ -29,6 +29,14 @@ export async function obtenerTonto() {
   return resp.data;
 }
 
+// Obtener Tonto por ID Participante
+export async function obtenerTontoId(idCowboy) {
+  const resp = await api.get(
+    `https://thecowboys.duckdns.org/api/tontos/${idCowboy}`
+  );
+  return resp.data;
+}
+
 // ----Guardar:
 // Guardar títulos
 export async function postTitulos(idCowboy, data) {

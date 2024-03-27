@@ -23,9 +23,9 @@ const TarjetaTonta = () => {
                     {tonto.total}
                   </span>
                 </h5>
-                <h6 className="fondoNav card-text">
+                <h5 className="fondoNav card-text">
                   Titulos totales: {tonto.titulos.length}
-                </h6>
+                </h5>
                 <div>
                   <p className="titulosObtenidos fondoNav">
                     Titulos: {tonto.titulos.join(", ")}
