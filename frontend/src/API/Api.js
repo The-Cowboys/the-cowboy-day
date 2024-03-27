@@ -31,7 +31,6 @@ export async function obtenerTonto() {
 
 // Obtener Tonto por ID Participante
 export async function obtenerTontoId(idCowboy) {
-  console.log("el valor", idCowboy);
   const resp = await api.get(
     `https://thecowboys.duckdns.org/api/tontos/${idCowboy}`
   );
