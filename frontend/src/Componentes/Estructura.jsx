@@ -4,7 +4,7 @@ import CowboyDelDia from "../Pagina/CowboyDelDia";
 import EstadisticasElMasTonto from "../Pagina/Estadisticas/EstadisticasElMasTonto";
 import EstadisticasCowboyDelDia from "../Pagina/Estadisticas/EstadisticasCowboyDelDia";
 import Proximamente from "../Pagina/Estadisticas/Proximamente";
-import Error404 from "../Pagina/Error404/Error404";
+import Error404 from "../Pagina/Errores/Error404";
 import Inicio from "../Pagina/Inicio";
 import EstructuraDePerfil from "../Pagina/PerfilDeParticipante/EstructuraDePerfil";
 
