@@ -2,7 +2,6 @@ import { useObtenerParticipante } from "../../Hooks/useObtenerParticipante";
 
 const TarjetaPerfil = ({ idCowboy }) => {
   const { participante } = useObtenerParticipante(idCowboy);
-  if (participante)
     return (
       <div className="principalTarjeta">
         <div className="card mb-3">
