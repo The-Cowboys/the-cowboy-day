@@ -1,12 +1,12 @@
 import { useNombres } from "../Hooks/obtenerNombres";
 import { useObtenerTonto } from "../Hooks/useObtenerTonto";
-import TarjetaTonta from "../Componentes/Tarjetas/TarjetaTonta";
 import ListaParticipantes from "./PerfilDeParticipante/ListaParticipantes";
 import Carga from "./Errores/Carga";
+import Tarjeta from "../Componentes/Tarjeta/Tarjeta";
 
 const ListaElMasTonto = () => {
   const { cargaa } = useNombres();
-  const { carga } = useObtenerTonto();
+  const { tonto, carga } = useObtenerTonto();
 
   if (carga || cargaa) {
     return <Carga />;
@@ -16,7 +16,12 @@ const ListaElMasTonto = () => {
       <section>
         {/* Tarjeta del día */}
         <h3 className="tituloH3">Tonto del día de hoy es...</h3>
-        <TarjetaTonta />
+        <Tarjeta
+          nombre={tonto.nombre}
+          titulos={tonto.titulos.join(", ")}
+          titulosCantidad={tonto.titulos.length}
+          total={tonto.total}
+        />
 
         {/* Lista de participantes */}
         <h3 className="tituloH3">Lista de participantes</h3>

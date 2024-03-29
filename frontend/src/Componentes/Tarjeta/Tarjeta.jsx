@@ -1,13 +1,5 @@
-import { useObtenerTonto } from "../../Hooks/useObtenerTonto";
-// import Carga from "../../Pagina/Errores/Carga";
-
-const TarjetaTonta = () => {
-  const { tonto} = useObtenerTonto();
-
-  // if (carga) {
-  //   return <Carga />;
-  // }
-  if (tonto)
+const TarjetaTonta = ({nombre, titulos, titulosCantidad, total}) => {
+  // console.log(titulos);
     return (
       <div className="principalTarjeta">
         <div className="card mb-3">
@@ -22,17 +14,17 @@ const TarjetaTonta = () => {
             <div className="fondoNav col-md-8">
               <div className="fondoNav card-body">
                 <h5 className="nombre card-title">
-                  Nombre: {tonto.nombre}
+                  Nombre: {nombre}
                   <span className="numeros badge float-right">
-                    {tonto.total}
+                    {total}
                   </span>
                 </h5>
                 <h5 className="fondoNav card-text">
-                  Titulos totales: {tonto.titulos.length}
+                  Titulos totales: {titulosCantidad}
                 </h5>
                 <div>
                   <p className="titulosObtenidos fondoNav">
-                    Titulos: {tonto.titulos.join(", ")}
+                    Titulos: {titulos}
                   </p>
                 </div>
               </div>

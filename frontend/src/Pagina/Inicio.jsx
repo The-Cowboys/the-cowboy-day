@@ -1,23 +1,37 @@
 import { useNombres } from "../Hooks/obtenerNombres";
-import TarjetaCowboy from "../Componentes/Tarjetas/TarjetaCowboy";
-import TarjetaTonta from "../Componentes/Tarjetas/TarjetaTonta";
+import { useObtenerTonto } from "../Hooks/useObtenerTonto";
+import Tarjeta from "../Componentes/Tarjeta/Tarjeta";
 import Carga from "./Errores/Carga";
 
 const Inicio = () => {
   const { cargaa } = useNombres();
+  const { tonto } = useObtenerTonto();
+
   if (cargaa) {
     return <Carga />;
   }
+
   return (
     <>
       <section>
         {/* Tarjeta del día del mas tonto */}
         <h3 className="tituloH3">Tonto del día de hoy es...</h3>
-        <TarjetaTonta />
+        <Tarjeta
+          nombre={tonto.nombre}
+          titulos={tonto.titulos.join(", ")}
+          titulosCantidad={tonto.titulos.length}
+          total={tonto.total}
+        />
 
         {/* Tarjeta del cowboy del día */}
         <h3 className="tituloH3">Cowboy del día de hoy es...</h3>
-        <TarjetaCowboy />
+        <Tarjeta
+          nombre={"--Próximamente--"}
+          titulos={"--Próximamente--"}
+          titulosCantidad={"--Próximamente--"}
+          total={"--"}
+        />
+        {/* <TarjetaCowboy /> */}
       </section>
     </>
   );
