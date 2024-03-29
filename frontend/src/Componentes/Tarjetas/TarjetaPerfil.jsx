@@ -1,14 +1,7 @@
-import { useObtenerTonto } from "../../Hooks/useObtenerTonto";
-import Carga from "../../Pagina/Errores/Carga";
+import { useObtenerParticipante } from "../../Hooks/useObtenerParticipante";
 
-const TarjetaTonta = () => {
-  const { tonto, carga } = useObtenerTonto();
-
-  if (carga) {
-    return <Carga />;
-  }
-
-  if (tonto)
+const TarjetaPerfil = ({ idCowboy }) => {
+  const { participante } = useObtenerParticipante(idCowboy);
     return (
       <div className="principalTarjeta">
         <div className="card mb-3">
@@ -23,17 +16,19 @@ const TarjetaTonta = () => {
             <div className="fondoNav col-md-8">
               <div className="fondoNav card-body">
                 <h5 className="nombre card-title">
-                  Nombre: {tonto.nombre}
+                  Nombre: {participante.nombre}
                   <span className="numeros badge float-right">
-                    {tonto.total}
+                    {participante.total}
                   </span>
                 </h5>
                 <h5 className="fondoNav card-text">
-                  Titulos totales: {tonto.titulos.length}
+                  Titulos totales:{" "}
+                  {participante.titulos ? participante.titulos.length : 0}
                 </h5>
                 <div>
                   <p className="titulosObtenidos fondoNav">
-                    Titulos: {tonto.titulos.join(", ")}
+                    Titulos:{" "}
+                    {participante.titulos ? participante.titulos.join(", ") : 0}
                   </p>
                 </div>
               </div>
@@ -44,4 +39,4 @@ const TarjetaTonta = () => {
     );
 };
 
-export default TarjetaTonta;
+export default TarjetaPerfil;

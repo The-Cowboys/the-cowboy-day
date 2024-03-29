@@ -1,3 +1,4 @@
+import TarjetaPerfil from "../../Componentes/Tarjetas/TarjetaPerfil";
 import { useObtenerParticipante } from "../../Hooks/useObtenerParticipante";
 import Carga from "../Errores/Carga";
 import ListaTitulos from "./ListaTitulos";
@@ -13,6 +14,9 @@ const EstructuraDePerfil = () => {
   return (
     <>
       <h2 className="tituloH2">{participante.nombre}</h2>
+      <dir>
+        <TarjetaPerfil idCowboy={id} />
+      </dir>
       <div className="ListaTitulos">
         <ListaTitulos idCowboy={id} />
       </div>
