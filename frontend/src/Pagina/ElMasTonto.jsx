@@ -14,7 +14,7 @@ const ListaElMasTonto = () => {
   return (
     <>
       <section>
-        {/* Tarjeta del día */}
+        {/* Tarjeta del día del más tonto */}
         <h3 className="tituloH3">Tonto del día de hoy es...</h3>
         <Tarjeta
           nombre={tonto.nombre}
