@@ -1,13 +1,13 @@
 import { useNombres } from "../../Hooks/obtenerNombres";
 import { Link } from "react-router-dom";
-import Carga from "../Errores/Carga";
+// import Carga from "../Errores/Carga";
 
 const ListaParticipantes = () => {
-  const { users, carga } = useNombres();
+  const { users,} = useNombres();
 
-  if (carga) {
-    return <Carga />;
-  }
+  // if (carga) {
+  //   return <Carga />;
+  // }
 
   return (
     <div className="ListaParticipantes">

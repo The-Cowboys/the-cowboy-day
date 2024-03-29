@@ -1,7 +1,13 @@
+import { useNombres } from "../Hooks/obtenerNombres";
 import TarjetaCowboy from "../Componentes/Tarjetas/TarjetaCowboy";
 import TarjetaTonta from "../Componentes/Tarjetas/TarjetaTonta";
+import Carga from "./Errores/Carga";
 
 const Inicio = () => {
+  const { cargaa } = useNombres();
+  if (cargaa) {
+    return <Carga />;
+  }
   return (
     <>
       <section>

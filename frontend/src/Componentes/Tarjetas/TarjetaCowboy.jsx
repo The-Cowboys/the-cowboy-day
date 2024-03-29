@@ -13,12 +13,12 @@ const TarjetaCowboy = () => {
           <div className="fondoNav col-md-8">
             <div className="fondoNav card-body">
               <h5 className="nombre card-title">
-                Nombre: Jorge
-                <span className="numeros badge float-right">75</span>
+                Nombre: --Próximamente--
+                <span className="numeros badge float-right">--</span>
               </h5>
-              <h5 className="fondoNav card-text">Titulos totales: 1</h5>
+              <h5 className="fondoNav card-text">Titulos totales: --Próximamente--</h5>
               <div>
-                <p className="titulosObtenidos fondoNav">Titulos: El 1</p>
+                <p className="titulosObtenidos fondoNav">Titulos: --Próximamente--</p>
               </div>
             </div>
           </div>

@@ -1,8 +1,16 @@
+import { useNombres } from "../Hooks/obtenerNombres";
+import { useObtenerTonto } from "../Hooks/useObtenerTonto";
 import TarjetaTonta from "../Componentes/Tarjetas/TarjetaTonta";
 import ListaParticipantes from "./PerfilDeParticipante/ListaParticipantes";
+import Carga from "./Errores/Carga";
 
 const ListaElMasTonto = () => {
+  const { cargaa } = useNombres();
+  const { carga } = useObtenerTonto();
 
+  if (carga || cargaa) {
+    return <Carga />;
+  }
   return (
     <>
       <section>
