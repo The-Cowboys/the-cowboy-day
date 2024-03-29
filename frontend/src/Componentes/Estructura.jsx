@@ -5,6 +5,7 @@ import EstadisticasElMasTonto from "../Pagina/Estadisticas/EstadisticasElMasTont
 import EstadisticasCowboyDelDia from "../Pagina/Estadisticas/EstadisticasCowboyDelDia";
 import Proximamente from "../Pagina/Estadisticas/Proximamente";
 import Error404 from "../Pagina/Errores/Error404";
+import Error from "../Pagina/Errores/Error";
 import Inicio from "../Pagina/Inicio";
 import EstructuraDePerfil from "../Pagina/PerfilDeParticipante/EstructuraDePerfil";
 
@@ -28,8 +29,9 @@ const Estructura = () => {
           {/* Perfil de participante */}
           <Route path="/EstructuraDePerfil/:id" element={<EstructuraDePerfil />} />
 
-          {/* Error404 */}
+          {/* Errores */}
           <Route path="/*" element={<Error404 />} />
+          <Route path="/¡Oops!/Parece/que/tomé/el/camino/equivocado./¡Cuidado/con/los/bandidos/digitales!" element={<Error />} />
         </Routes>
       </div>
     </>

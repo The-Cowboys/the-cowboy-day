@@ -14,7 +14,7 @@ export const useObtenerParticipante = (idCowboy) => {
       setParticipante(data);
       setCarga(false);
     } catch (err) {
-      navigate("/*");
+      navigate("/¡Oops!/Parece/que/tomé/el/camino/equivocado./¡Cuidado/con/los/bandidos/digitales!");
     }
   };
   useEffect(() => {
