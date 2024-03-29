@@ -5,13 +5,12 @@ import { useNavigate } from "react-router-dom";
 export const useObtenerParticipante = (idCowboy) => {
   const [participante, setParticipante] = useState([]);
   const navigate = useNavigate();
-
   const mostrarParticipante = async () => {
     try {
       const data = await obtenerTontoId(idCowboy);
       setParticipante(data);
     } catch (err) {
-      navigate("/*");
+      navigate("/camino/equivocado/");
     }
   };
   useEffect(() => {
