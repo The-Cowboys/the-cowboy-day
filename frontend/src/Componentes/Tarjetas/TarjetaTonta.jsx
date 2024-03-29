@@ -1,8 +1,12 @@
 import { useObtenerTonto } from "../../Hooks/useObtenerTonto";
+import Carga from "../../Pagina/Errores/Carga";
 
 const TarjetaTonta = () => {
-  const { tonto } = useObtenerTonto();
+  const { tonto, carga } = useObtenerTonto();
 
+  if (carga) {
+    return <Carga />;
+  }
   if (tonto)
     return (
       <div className="principalTarjeta">
