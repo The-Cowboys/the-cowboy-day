@@ -7,14 +7,15 @@ export const useObtenerParticipante = (idCowboy) => {
   const [participante, setParticipante] = useState([]);
   const [carga, setCarga] = useState(true);
   const navigate = useNavigate();
-
   const mostrarParticipante = async () => {
     try {
       const data = await obtenerTontoId(idCowboy);
       setParticipante(data);
       setCarga(false);
     } catch (err) {
-      navigate("/¡Oops!/Parece/que/tomé/el/camino/equivocado./¡Cuidado/con/los/bandidos/digitales!");
+      navigate(
+        "/¡Oops!/Parece/que/tomé/el/camino/equivocado./¡Cuidado/con/los/bandidos/digitales!"
+      );
     }
   };
   useEffect(() => {

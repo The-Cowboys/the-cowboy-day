@@ -1,8 +1,8 @@
 import { useObtenerParticipante } from "../../Hooks/useObtenerParticipante";
-import Carga from "../Errores/Carga";
-import ListaTitulos from "./ListaTitulos";
 import { useParams } from "react-router-dom";
 import Tarjeta from "../../Componentes/Tarjeta/Tarjeta";
+import ListaTitulos from "./ListaTitulos";
+import Carga from "../Errores/Carga";
 
 const EstructuraDePerfil = () => {
   const { id } = useParams();
