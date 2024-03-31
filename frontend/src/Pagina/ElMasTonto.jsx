@@ -18,9 +18,8 @@ const ListaElMasTonto = () => {
         <h3 className="tituloH3">Tonto del día de hoy es...</h3>
         <Tarjeta
           nombre={tonto.nombre}
-          titulos={tonto.titulos.join(", ")}
-          titulosCantidad={tonto.titulos.length}
           total={tonto.total}
+          titulos={tonto.titulos}
         />
 
         {/* Lista de participantes */}

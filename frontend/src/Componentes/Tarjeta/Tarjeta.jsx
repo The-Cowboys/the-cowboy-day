@@ -1,4 +1,4 @@
-const TarjetaTonta = ({ nombre, titulos, titulosCantidad, total }) => {
+const TarjetaTonta = ({ nombre, total, titulos }) => {
   return (
     <div className="principalTarjeta">
       <div className="card mb-3">
@@ -17,10 +17,12 @@ const TarjetaTonta = ({ nombre, titulos, titulosCantidad, total }) => {
                 <span className="numeros badge float-right">{total}</span>
               </h5>
               <h5 className="fondoNav card-text">
-                Titulos totales: {titulosCantidad}
+                Titulos totales: {titulos.length}
               </h5>
               <div>
-                <p className="titulosObtenidos fondoNav">Titulos: {titulos}</p>
+                <p className="titulosObtenidos fondoNav">
+                  Titulos: {titulos.join(", ")}
+                </p>
               </div>
             </div>
           </div>

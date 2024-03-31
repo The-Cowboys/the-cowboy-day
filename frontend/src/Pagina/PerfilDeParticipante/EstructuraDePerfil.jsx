@@ -17,10 +17,10 @@ const EstructuraDePerfil = () => {
       {/* Tarjeta del participante */}
       <Tarjeta
         nombre={participante.nombre}
-        titulos={participante.titulos.join(", ")}
-        titulosCantidad={participante.titulos.length}
         total={participante.total}
+        titulos={participante.titulos}
       />
+      {/* Lista de titulos */}
       <div className="ListaTitulos">
         <ListaTitulos idCowboy={id} />
       </div>
