@@ -25,7 +25,9 @@ const Error = () => {
                 height="200"
               />
             </Link>
-            <p className="errorDeErrores">Acceso Denegado por la Ley del Alcalde:</p>
+            <p className="errorDeErrores">
+              Acceso Denegado por la Ley del Alcalde:
+            </p>
             <p>
               ¡Alto ahí, forastero! Parece que has llegado a un territorio
               restringido por la ley del pueblo. No te preocupes, nuestros
