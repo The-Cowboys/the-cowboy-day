@@ -64,6 +64,7 @@
   margin-top: 25px;
   font-size: 40px;
   font-family: "Playfair Display", serif;
+  font-weight: bold;
 }
 
 /* CowboyDelDia */
@@ -159,12 +160,22 @@ span {
   justify-content: space-between;
   padding-bottom: 10px;
 }
-/* Error */
+/* Error del componete <ListaTitulos /> */
+.error {
+  background-color: var(--hoverTexto);
+  border-radius: 5px;
+  text-align: center;
+  color: var(--texto);
+  border: 2px solid var(--boton);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+m
+/* Componete <Error /> */
 .errorDeErrores {
   font-size: 22px;
 }
 
-/* Error 404    hover y transition*/
+/* Componete <Error404 />    hover y transition*/
 .hoverImg {
   transition: transform 0.3s ease;
 }
@@ -178,16 +189,7 @@ span {
   text-align: center;
   margin-top: 25px;
   font-size: 40px;
-}
-
-/* Error */
-.error {
-  background-color: var(--hoverTexto);
-  border-radius: 5px;
-  text-align: center;
-  color: var(--texto);
-  border: 2px solid var(--boton);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
 }
 
 /* Pantalla de carga */

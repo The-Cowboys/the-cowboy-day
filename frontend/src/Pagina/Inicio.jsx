@@ -18,18 +18,16 @@ const Inicio = () => {
         <h3 className="tituloH3">Tonto del día de hoy es...</h3>
         <Tarjeta
           nombre={tonto.nombre}
-          titulos={tonto.titulos.join(", ")}
-          titulosCantidad={tonto.titulos.length}
           total={tonto.total}
+          titulos={tonto.titulos}
         />
 
         {/* Tarjeta del cowboy del día */}
         <h3 className="tituloH3">Cowboy del día de hoy es...</h3>
         <Tarjeta
           nombre={"--Próximamente--"}
-          titulos={"--Próximamente--"}
-          titulosCantidad={"--Próximamente--"}
           total={"--"}
+          titulos={["--Próximamente--"]}
         />
       </section>
     </>

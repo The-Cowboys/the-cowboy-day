@@ -18,14 +18,16 @@ const Error = () => {
             </p>
             <Link to="/">
               <img
-                src="/Cowboys.png"
+                src="/CowboysBaliado.png"
                 alt="Error"
                 className="img-fluid mb-3 hoverImg"
                 width="200"
                 height="200"
               />
             </Link>
-            <p className="errorDeErrores">Acceso Denegado por la Ley del Alcalde:</p>
+            <p className="errorDeErrores">
+              Acceso Denegado por la Ley del Alcalde:
+            </p>
             <p>
               ¡Alto ahí, forastero! Parece que has llegado a un territorio
               restringido por la ley del pueblo. No te preocupes, nuestros
