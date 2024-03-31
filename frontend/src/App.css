@@ -159,6 +159,10 @@ span {
   justify-content: space-between;
   padding-bottom: 10px;
 }
+/* Error */
+.errorDeErrores {
+  font-size: 22px;
+}
 
 /* Error 404    hover y transition*/
 .hoverImg {

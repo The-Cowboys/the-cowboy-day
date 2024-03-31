@@ -1,4 +1,4 @@
-const TarjetaCowboy = () => {
+const TarjetaTonta = ({ nombre, titulos, titulosCantidad, total }) => {
   return (
     <div className="principalTarjeta">
       <div className="card mb-3">
@@ -13,12 +13,14 @@ const TarjetaCowboy = () => {
           <div className="fondoNav col-md-8">
             <div className="fondoNav card-body">
               <h5 className="nombre card-title">
-                Nombre: Jorge
-                <span className="numeros badge float-right">75</span>
+                Nombre: {nombre}
+                <span className="numeros badge float-right">{total}</span>
               </h5>
-              <h5 className="fondoNav card-text">Titulos totales: 1</h5>
+              <h5 className="fondoNav card-text">
+                Titulos totales: {titulosCantidad}
+              </h5>
               <div>
-                <p className="titulosObtenidos fondoNav">Titulos: El 1</p>
+                <p className="titulosObtenidos fondoNav">Titulos: {titulos}</p>
               </div>
             </div>
           </div>
@@ -28,4 +30,4 @@ const TarjetaCowboy = () => {
   );
 };
 
-export default TarjetaCowboy;
+export default TarjetaTonta;

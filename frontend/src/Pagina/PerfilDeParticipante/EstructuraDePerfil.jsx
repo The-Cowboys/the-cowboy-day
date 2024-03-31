@@ -1,8 +1,8 @@
-import TarjetaPerfil from "../../Componentes/Tarjetas/TarjetaPerfil";
 import { useObtenerParticipante } from "../../Hooks/useObtenerParticipante";
-import Carga from "../Errores/Carga";
-import ListaTitulos from "./ListaTitulos";
 import { useParams } from "react-router-dom";
+import Tarjeta from "../../Componentes/Tarjeta/Tarjeta";
+import ListaTitulos from "./ListaTitulos";
+import Carga from "../Errores/Carga";
 
 const EstructuraDePerfil = () => {
   const { id } = useParams();
@@ -14,9 +14,13 @@ const EstructuraDePerfil = () => {
   return (
     <>
       <h2 className="tituloH2">{participante.nombre}</h2>
-      <dir>
-        <TarjetaPerfil idCowboy={id} />
-      </dir>
+      {/* Tarjeta del participante */}
+      <Tarjeta
+        nombre={participante.nombre}
+        titulos={participante.titulos.join(", ")}
+        titulosCantidad={participante.titulos.length}
+        total={participante.total}
+      />
       <div className="ListaTitulos">
         <ListaTitulos idCowboy={id} />
       </div>
