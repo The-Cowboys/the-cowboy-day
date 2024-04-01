@@ -14,7 +14,7 @@ const Inicio = () => {
 
   const fetchCowboys = async () => {
     try {
-      const response = await fetch('/api/cowboys/today');
+      const response = await fetch('https://thecowboys.duckdns.org/api/cowboys/today');
       const data = await response.json();
       setCowboy(data.name);
     } catch (error) {

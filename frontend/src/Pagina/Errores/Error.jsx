@@ -18,7 +18,7 @@ const Error = () => {
             </p>
             <Link to="/">
               <img
-                src="/CowboysBaliado.png"
+                src="CowboysBaliado.png"
                 alt="Error"
                 className="img-fluid mb-3 hoverImg"
                 width="200"
