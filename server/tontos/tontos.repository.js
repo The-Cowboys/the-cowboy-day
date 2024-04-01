@@ -4,15 +4,16 @@ async function getTontoByDate(dayStr) {
   const res = await pool.query(
     `
     SELECT 
-      t.dia dia, 
+      t.dia AS dia, 
       c.id AS id,
       c.name AS name,
       ti.name AS titulo,
-      COUNT(t.cowboy_id)::int AS total
-    FROM tontos t
-    INNER JOIN cowboys c ON t.cowboy_id = c.id
+      COUNT(t1.id)::int AS total
+    FROM cowboys c
+    INNER JOIN tontos t ON t.cowboy_id = c.id
     LEFT JOIN titulos ti ON ti.cowboy_id = c.id
-    WHERE t.dia = $1
+    LEFT JOIN tontos t1 ON t1.cowboy_id = c.id
+    WHERE t.dia = $1 
     GROUP BY t.dia, c.id, c.name, ti.name;
     `,
     [dayStr]
