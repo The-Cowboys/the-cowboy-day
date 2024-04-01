@@ -1,5 +1,14 @@
 const pool = require("./../database");
 
+const convertirCowboy = (row) => {
+  return {
+    id: row.id,
+    nombre: row.name,
+    total: row.total,
+    correo: row.email,
+  };
+};
+
 async function getTontoByDate(dayStr) {
   const res = await pool.query(
     `
@@ -7,6 +16,7 @@ async function getTontoByDate(dayStr) {
       t.dia dia, 
       c.id AS id,
       c.name AS name,
+      c.email AS email,
       ti.name AS titulo,
       COUNT(t.cowboy_id)::int AS total
     FROM tontos t
@@ -20,11 +30,10 @@ async function getTontoByDate(dayStr) {
 
   if (res.rows.length > 0) {
     const firstRow = res.rows[0];
+    const cowboy = convertirCowboy(firstRow);
     return {
+      ...cowboy,
       dia: firstRow.dia,
-      id: firstRow.id,
-      nombre: firstRow.name,
-      total: firstRow.total,
       titulos: res.rows.map((row) => row.titulo).filter((t) => t),
     };
   }
@@ -56,6 +65,7 @@ async function getTontos() {
     SELECT 
       c.id AS id,
       c.name AS name,
+      c.email AS email,
       ti.name AS titulo,
       COUNT(t.cowboy_id)::int AS total
     FROM cowboys c
@@ -73,10 +83,9 @@ async function getTontos() {
     } else {
       const titulos = [];
       if (row.titulo) titulos.push(row.titulo);
+      const cowboy = convertirCowboy(row);
       acc.set(row.id, {
-        id: row.id,
-        nombre: row.name,
-        total: row.total,
+        ...cowboy,
         titulos: titulos,
       });
     }
@@ -92,6 +101,7 @@ async function getTontoById(idCowboy) {
     SELECT 
       c.id AS id,
       c.name AS name,
+      c.email AS email,
       ti.name AS titulo,
       COUNT(t.cowboy_id)::int AS total
     FROM cowboys c
@@ -105,11 +115,10 @@ async function getTontoById(idCowboy) {
 
   if (res.rows.length > 0) {
     const firstRow = res.rows[0];
+    const cowboy = convertirCowboy(firstRow);
     return {
+      ...cowboy,
       dia: firstRow.dia,
-      id: firstRow.id,
-      nombre: firstRow.name,
-      total: firstRow.total,
       titulos: res.rows.map((row) => row.titulo).filter((t) => t),
     };
   }
