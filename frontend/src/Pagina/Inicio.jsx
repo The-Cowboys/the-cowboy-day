@@ -4,10 +4,10 @@ import Tarjeta from "../Componentes/Tarjeta/Tarjeta";
 import Carga from "./Errores/Carga";
 
 const Inicio = () => {
-  const { cargaa } = useNombres();
+  const { carga } = useNombres();
   const { tonto } = useObtenerTonto();
 
-  if (cargaa) {
+  if (carga) {
     return <Carga />;
   }
 

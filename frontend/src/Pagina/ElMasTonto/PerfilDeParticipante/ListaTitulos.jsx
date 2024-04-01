@@ -1,4 +1,4 @@
-import useTitulos from "../../Hooks/useTitulos";
+import useTitulos from "../../../Hooks/useTitulos";
 
 const ListaTitulos = ({ idCowboy }) => {
   const { borrarTitulo, crearTitulo, error, titulos, setInput, input } = useTitulos(idCowboy);

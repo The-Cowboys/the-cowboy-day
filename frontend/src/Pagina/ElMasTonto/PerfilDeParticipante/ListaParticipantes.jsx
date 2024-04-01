@@ -1,4 +1,4 @@
-import { useNombres } from "../../Hooks/obtenerNombres";
+import { useNombres } from "../../../Hooks/obtenerNombres";
 import { Link } from "react-router-dom";
 
 const ListaParticipantes = () => {

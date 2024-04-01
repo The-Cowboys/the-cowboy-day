@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import ElMasTonto from "../Pagina/ElMasTonto";
+import ElMasTonto from "../Pagina/ElMasTonto/ElMasTonto";
 import CowboyDelDia from "../Pagina/CowboyDelDia";
 import EstadisticasElMasTonto from "../Pagina/Estadisticas/EstadisticasElMasTonto";
 import EstadisticasCowboyDelDia from "../Pagina/Estadisticas/EstadisticasCowboyDelDia";
@@ -7,7 +7,7 @@ import Proximamente from "../Pagina/Estadisticas/Proximamente";
 import Error404 from "../Pagina/Errores/Error404";
 import Error from "../Pagina/Errores/Error";
 import Inicio from "../Pagina/Inicio";
-import EstructuraDePerfil from "../Pagina/PerfilDeParticipante/EstructuraDePerfil";
+import EstructuraDePerfil from "../Pagina/ElMasTonto/PerfilDeParticipante/EstructuraDePerfil";
 
 const Estructura = () => {
   return (
