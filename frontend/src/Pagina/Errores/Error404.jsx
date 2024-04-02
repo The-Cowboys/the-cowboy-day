@@ -19,7 +19,7 @@ const Error404 = () => {
             </p>
             <Link to="/">
               <img
-                src="/CowboysBaliado.png"
+                src="CowboysBaliado.png"
                 alt="Error 404"
                 className="img-fluid mb-3 hoverImg"
                 width="200"

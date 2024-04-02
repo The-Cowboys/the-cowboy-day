@@ -1,0 +1,33 @@
+name: 🚢 Publicar a GitHub Pages
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+concurrency:
+  group: ci-deploy-pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    defaults:
+        run:
+          working-directory: ${{ github.workspace }}/frontend
+    name: Publicar a GitHub Pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.5.1
+          cache: 'npm'
+      - run: pwd
+      - run: rm -rf dist
+      - run: git branch
+      - run: ls -l
+      - run: npm install
+      - run: npm run deploy
+      
