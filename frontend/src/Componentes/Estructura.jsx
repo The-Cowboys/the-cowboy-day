@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import ElMasTonto from "../Pagina/ElMasTonto/ElMasTonto";
-import CowboyDelDia from "../Pagina/CowboyDelDia";
+import CowboyDelDia from "../Pagina/CowboyDelDia/CowboyDelDia";
 import EstadisticasElMasTonto from "../Pagina/Estadisticas/EstadisticasElMasTonto";
 import EstadisticasCowboyDelDia from "../Pagina/Estadisticas/EstadisticasCowboyDelDia";
 import Proximamente from "../Pagina/Estadisticas/Proximamente";

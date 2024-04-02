@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const Inicio = () => {
+const CowboyDelDia = () => {
   const [cowboy, setCowboy] = useState(null);
   const [clicked, setClick] = useState(false);
 
@@ -40,4 +40,4 @@ const Inicio = () => {
   );
 };
 
-export default Inicio;
+export default CowboyDelDia;
