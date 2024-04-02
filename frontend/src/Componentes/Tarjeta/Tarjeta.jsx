@@ -5,7 +5,7 @@ const TarjetaTonta = ({ nombre, total, titulos }) => {
         <div className="row g-0">
           <div className="fondoNav col-md-4">
             <img
-              src="/Cowboys.png"
+              src="Cowboys.png"
               className="fondoNav img-fluid rounded-start"
               alt="Icono cowboys"
             />
