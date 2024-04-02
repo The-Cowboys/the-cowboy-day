@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { fetchCowboysToday } from "./ApiCowboys";
+import { fetchCowboysToday } from "../API/Api";
 
 export const useCowboyDelDia = () => {
   const [cowboy, setCowboy] = useState(null);
