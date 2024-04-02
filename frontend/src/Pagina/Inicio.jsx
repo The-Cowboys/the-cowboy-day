@@ -1,15 +1,8 @@
-import { useNombres } from "../Hooks/obtenerNombres";
 import { useObtenerTonto } from "../Hooks/useObtenerTonto";
 import Tarjeta from "../Componentes/Tarjeta/Tarjeta";
-import Carga from "./Errores/Carga";
 
 const Inicio = () => {
-  const { carga } = useNombres();
   const { tonto } = useObtenerTonto();
-
-  if (carga) {
-    return <Carga />;
-  }
 
   return (
     <>
