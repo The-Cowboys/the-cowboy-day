@@ -34,5 +34,5 @@ jobs:
       - run: npm run build-gh-pages
       - run: git add dist
       - run: git commit -m "Deploy to GitHub Pages"
-      - run: git push
+      - run: git subtree push --prefix dist origin gh-pages
       
