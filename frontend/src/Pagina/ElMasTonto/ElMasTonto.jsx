@@ -1,7 +1,7 @@
-import { useObtenerTonto } from "../Hooks/useObtenerTonto";
-import ListaParticipantes from "./PerfilDeParticipante/ListaParticipantes";
-import Carga from "./Errores/Carga";
-import Tarjeta from "../Componentes/Tarjeta/Tarjeta";
+import { useObtenerTonto } from "../../Hooks/useObtenerTonto";
+import ListaParticipantes from "../ElMasTonto/PerfilDeParticipante/ListaParticipantes";
+import Carga from "../Errores/Carga";
+import Tarjeta from "../../Componentes/Tarjeta/Tarjeta";
 
 const ListaElMasTonto = () => {
   const { tonto, carga } = useObtenerTonto();

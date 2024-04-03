@@ -1,6 +1,6 @@
 import { useObtenerTonto } from "../Hooks/useObtenerTonto";
 import Tarjeta from "../Componentes/Tarjeta/Tarjeta";
-import Carga from "./Errores/Carga";
+import Carga from "../Pagina/Errores/Carga";
 
 const Inicio = () => {
   const { tonto, carga } = useObtenerTonto();

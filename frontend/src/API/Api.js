@@ -8,6 +8,8 @@ const headers = {
   Authorization: `Bearer ${token}`,
 };
 
+// -------El día del más tonto-------
+
 // ----Mostrar:
 // Mostrar nombres de los participantes
 export async function obtenerNombres() {
@@ -56,4 +58,19 @@ export async function deleteTitulos(idTitulo) {
     headers
   );
   return resp.data;
+}
+
+// -------El cowboy del día-------
+
+// ----Mostrar:
+// Mostrar nombre del cowboy del día
+export async function fetchCowboysToday() {
+  try {
+    const response = await fetch("/api/cowboys/today");
+    const data = await response.json();
+    return data.name;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return null;
+  }
 }
