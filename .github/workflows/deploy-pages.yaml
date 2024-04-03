@@ -31,5 +31,8 @@ jobs:
       - run: git config --local user.email "action@github.com"
       - run: git config --local user.name "GitHub Pages Deploy Action"     
       - run: npm install
-      - run: npm run deploy
+      - run: npm run build-gh-pages
+      - run: git add dist
+      - run: git commit -m "Deploy to GitHub Pages"
+      - run: git push
       
