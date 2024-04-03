@@ -32,9 +32,9 @@ jobs:
       - run: npm run build-gh-pages
       - run: |
           git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Pages Deploy Action"   
-          cd ..
-          git add frontend/dist
+          git config --local user.name "GitHub Pages Deploy Action"  
+          git checkout gh-pages
+          git add dist 
           git commit -m "Deploy to GitHub Pages"
-          git subtree push --prefix frontend/dist origin gh-pages
+          git push
       
