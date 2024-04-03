@@ -27,12 +27,14 @@ jobs:
       - run: pwd
       - run: rm -rf dist
       - run: git branch
-      - run: ls -l
-      - run: git config --local user.email "action@github.com"
-      - run: git config --local user.name "GitHub Pages Deploy Action"     
+      - run: ls -l  
       - run: npm install
       - run: npm run build-gh-pages
-      - run: git add dist
-      - run: git commit -m "Deploy to GitHub Pages"
-      - run: git subtree push --prefix dist origin gh-pages
+      - run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Pages Deploy Action"   
+          cd ..
+          git add frontend/dist
+          git commit -m "Deploy to GitHub Pages"
+          git subtree push --prefix frontend/dist origin gh-pages
       
