@@ -20,7 +20,7 @@ const ListaElMasTonto = () => {
           titulos={tonto.titulos}
         />
 
-        {/* Lista de participantes */}
+        {/* Lista de participantes tontos */}
         <h3 className="tituloH3">Lista de participantes</h3>
         <ListaParticipantes />
       </section>
