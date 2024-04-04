@@ -1,4 +1,4 @@
-// Lista participantes
+// ListaTontos
 import { useEffect, useState } from "react";
 import { obtenerNombres } from "../API/Api";
 
