@@ -2,34 +2,52 @@ name: 🚢 Publicar a GitHub Pages
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 concurrency:
-  group: ci-deploy-pages-${{ github.ref }}
+  group: "pages"
   cancel-in-progress: true
 
 jobs:
-  publish:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     defaults:
-        run:
-          working-directory: ${{ github.workspace }}/frontend
-    name: Publicar a GitHub Pages
+      run:
+        working-directory: ${{ github.workspace }}/frontend
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
         with:
-          node-version: 20.5.1
-          cache: 'npm'
-      - run: pwd
-      - run: rm -rf dist
-      - run: git branch
-      - run: ls -l
-      - run: git config --local user.email "action@github.com"
-      - run: git config --local user.name "GitHub Pages Deploy Action"     
-      - run: npm install
-      - run: npm run deploy
-      
+          node-version: 20
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run deploy
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload dist folder
+          path: "./frontend/dist"
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
