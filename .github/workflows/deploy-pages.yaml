@@ -16,6 +16,9 @@ concurrency:
 
 jobs:
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     defaults:
       run:
         working-directory: ${{ github.workspace }}/frontend
