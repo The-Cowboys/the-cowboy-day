@@ -1,6 +1,6 @@
 import { useCowboyDelDia } from "../../Hooks/useCowboyDelDia";
 import Tarjeta from "../../Componentes/Tarjeta/Tarjeta";
-import LisPartiCowboyDelDia from "./ComponetesDelCowboyDelDia/LisPartiCowboyDelDia";
+import ListaCowboysDelDia from "./ComponetesDelCowboyDelDia/ListaCowboysDelDia";
 import Carga from "../Errores/Carga";
 
 // como idetificar errores:
@@ -32,7 +32,7 @@ const CowboyDelDia = () => {
 
       {/* Lista de participantes cowboy del día */}
       <h3 className="tituloH3">Lista de participantes</h3>
-      <LisPartiCowboyDelDia />
+      <ListaCowboysDelDia />
     </>
   );
 };
