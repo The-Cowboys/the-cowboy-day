@@ -15,7 +15,7 @@ import Carga from "../Errores/Carga";
 // 9) Usar if para comprovar si una variable es null antes de usarla
 
 const CowboyDelDia = () => {
-  const { cowboy } = useCowboyDelDia();
+  const { cowboy, errorCowboy } = useCowboyDelDia();
 
   if (cowboy == null) {
     return <Carga />;
@@ -24,11 +24,21 @@ const CowboyDelDia = () => {
     <>
       {/* Tarjeta del cowboy del día */}
       <h3 className="tituloH3">Cowboy del día de hoy es...</h3>
-      <Tarjeta
-        nombre={cowboy.name}
-        total={"--"}
-        titulos={["--Próximamente--"]}
-      />
+      {cowboy && (
+        <Tarjeta
+          nombre={cowboy.name}
+          total={"--"}
+          titulos={["--Próximamente--"]}
+        />
+      )}
+      {errorCowboy && (
+        // Tarjeta de error del cowboy del día
+        <Tarjeta
+          nombre={"Procesando un cowboy"}
+          total={"--"}
+          titulos={["----"]}
+        />
+      )}
 
       {/* Lista de participantes cowboy del día */}
       <h3 className="tituloH3">Lista de participantes</h3>

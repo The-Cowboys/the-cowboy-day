@@ -33,11 +33,13 @@ const Inicio = () => {
 
         {/* Tarjeta del cowboy del día */}
         <h3 className="tituloH3">Cowboy del día de hoy es...</h3>
-        <Tarjeta
-          nombre={cowboy.name}
-          total={"--"}
-          titulos={["--Próximamente--"]}
-        />
+        {cowboy && (
+          <Tarjeta
+            nombre={cowboy.name}
+            total={"--"}
+            titulos={["--Próximamente--"]}
+          />
+        )}
         {errorCowboy && (
           // Tarjeta de error del cowboy del día
           <Tarjeta
