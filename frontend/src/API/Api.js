@@ -65,12 +65,8 @@ export async function deleteTitulos(idTitulo) {
 // ----Mostrar:
 // Mostrar nombre del cowboy del día
 export async function fetchCowboysToday() {
-  try {
-    const response = await fetch("/api/cowboys/today");
-    const data = await response.json();
-    return data.name;
-  } catch (error) {
-    console.error("Error fetching data:", error);
-    return null;
-  }
+  const resp = await api.get(
+    `https://thecowboys.duckdns.org/api/cowboys/today`
+  );
+  return resp.data;
 }

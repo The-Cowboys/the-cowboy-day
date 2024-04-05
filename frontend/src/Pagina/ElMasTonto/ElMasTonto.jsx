@@ -1,5 +1,5 @@
 import { useObtenerTonto } from "../../Hooks/useObtenerTonto";
-import ListaParticipantes from "../ElMasTonto/PerfilDeParticipante/ListaParticipantes";
+import ListaTontos from "./PerfilDeParticipante/ListaTontos";
 import Carga from "../Errores/Carga";
 import Tarjeta from "../../Componentes/Tarjeta/Tarjeta";
 
@@ -20,9 +20,9 @@ const ListaElMasTonto = () => {
           titulos={tonto.titulos}
         />
 
-        {/* Lista de participantes */}
+        {/* Lista de participantes tontos */}
         <h3 className="tituloH3">Lista de participantes</h3>
-        <ListaParticipantes />
+        <ListaTontos />
       </section>
     </>
   );
