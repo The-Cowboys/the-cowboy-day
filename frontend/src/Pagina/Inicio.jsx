@@ -36,6 +36,14 @@ const Inicio = () => {
           total={"--"}
           titulos={["--Próximamente--"]}
         />
+        {error && (
+          // Tarjeta de error del cowboy del día
+          <Tarjeta
+            nombre={"Procesando un cowboy"}
+            total={"--"}
+            titulos={["----"]}
+          />
+        )}
       </section>
     </>
   );
