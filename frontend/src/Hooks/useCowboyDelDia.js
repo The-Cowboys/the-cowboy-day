@@ -4,10 +4,16 @@ import { fetchCowboysToday } from "../API/Api";
 
 export const useCowboyDelDia = () => {
   const [cowboy, setCowboy] = useState(null);
+  const [errorCowboy, setErrorCowboy] = useState(false);
 
   const fetchCowboys = async () => {
-    const cowboyName = await fetchCowboysToday();
-    setCowboy(cowboyName);
+    try {
+      const cowboyName = await fetchCowboysToday();
+      setCowboy(cowboyName);
+    } catch (error) {
+      setErrorCowboy(true);
+      console.log("Error al obtener datos:");
+    }
   };
 
   useEffect(() => {
@@ -16,5 +22,6 @@ export const useCowboyDelDia = () => {
 
   return {
     cowboy,
+    errorCowboy,
   };
 };

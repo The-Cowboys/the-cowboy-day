@@ -1,9 +1,11 @@
 import { useObtenerTonto } from "../Hooks/useObtenerTonto";
+import { useCowboyDelDia } from "../Hooks/useCowboyDelDia";
 import Tarjeta from "../Componentes/Tarjeta/Tarjeta";
 import Carga from "../Pagina/Errores/Carga";
 
 const Inicio = () => {
-  const { tonto, carga, error } = useObtenerTonto();
+  const { tonto, carga, errorTonto } = useObtenerTonto();
+  const { cowboy, errorCowboy } = useCowboyDelDia();
 
   if (carga) {
     return <Carga />;
@@ -20,7 +22,7 @@ const Inicio = () => {
             titulos={tonto.titulos}
           />
         )}
-        {error && (
+        {errorTonto && (
           // Tarjeta de error del día del más tonto
           <Tarjeta
             nombre={"Procesando un tonto"}
@@ -31,12 +33,14 @@ const Inicio = () => {
 
         {/* Tarjeta del cowboy del día */}
         <h3 className="tituloH3">Cowboy del día de hoy es...</h3>
-        <Tarjeta
-          nombre={"--Próximamente--"}
-          total={"--"}
-          titulos={["--Próximamente--"]}
-        />
-        {error && (
+        {cowboy && (
+          <Tarjeta
+            nombre={cowboy.name}
+            total={"--"}
+            titulos={["--Próximamente--"]}
+          />
+        )}
+        {errorCowboy && (
           // Tarjeta de error del cowboy del día
           <Tarjeta
             nombre={"Procesando un cowboy"}
