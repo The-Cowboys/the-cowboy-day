@@ -91,6 +91,10 @@ span.numeros {
   font-size: 18px;
   padding-top: 10px;
 }
+.negrita {
+  background-color: var(--fondoNav);
+  font-size: 25px;
+}
 
 /* Lista Participantes */
 .ListaParticipantes {
