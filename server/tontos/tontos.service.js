@@ -17,7 +17,9 @@ async function saveTodays(cowboyId) {
   const today = await tontoRepository.getTontoByDate(strToday);
   if (today) return today;
 
-  return await tontoRepository.saveTonto(strToday, cowboyId, date);
+  await tontoRepository.saveTonto(strToday, cowboyId, date);
+
+  return await tontoRepository.getTontoById(cowboyId)
 }
 
 async function getToday() {

@@ -4,7 +4,7 @@ const convertirCowboy = (row) => {
   return {
     id: row.id,
     nombre: row.name,
-    total: row.total,
+    total: row.tonto,
     correo: row.email,
   };
 };
@@ -18,11 +18,10 @@ async function getTontoByDate(dayStr) {
       c.name AS name,
       c.email AS email,
       ti.name AS titulo,
-      COUNT(t1.id)::int AS total
+      c.tonto AS tonto
     FROM cowboys c
     INNER JOIN tontos t ON t.cowboy_id = c.id
     LEFT JOIN titulos ti ON ti.cowboy_id = c.id
-    LEFT JOIN tontos t1 ON t1.cowboy_id = c.id
     WHERE t.dia = $1 
     GROUP BY t.dia, c.id, c.name, ti.name;
     `,
@@ -42,22 +41,33 @@ async function getTontoByDate(dayStr) {
 }
 
 async function saveTonto(dia, cowboyId, created) {
-  const res = await pool.query(
-    `INSERT INTO tontos 
-      (dia, cowboy_id, created) 
-    VALUES 
-      ($1, $2, $3)
-    RETURNING *`,
-    [dia, cowboyId, created]
-  );
+  try {
+    await pool.query("BEGIN");
 
-  const data = res.rows[0];
-  return {
-    id: data.id,
-    dia: data.dia,
-    cowboyId: data.cowboy_id,
-    created: data.created,
-  };
+    await pool.query(
+      `
+      INSERT INTO tontos 
+        (dia, cowboy_id, created) 
+      VALUES 
+        ($1, $2, $3);
+      `,
+      [dia, cowboyId, created]
+    );
+
+    await pool.query(
+      `
+      UPDATE cowboys 
+      SET tonto = tonto + 1
+      WHERE id = $1;
+      `,
+      [cowboyId]
+    );
+
+    await pool.query("COMMIT");
+  } catch (e) {
+    await pool.query("ROLLBACK");
+    throw e;
+  }
 }
 
 async function getTontos() {
@@ -68,12 +78,11 @@ async function getTontos() {
       c.name AS name,
       c.email AS email,
       ti.name AS titulo,
-      COUNT(t.cowboy_id)::int AS total
+      c.tonto AS tonto
     FROM cowboys c
-    LEFT JOIN tontos t ON t.cowboy_id = c.id
     LEFT JOIN titulos ti ON ti.cowboy_id = c.id
     GROUP BY c.id, c.name, ti.name
-    ORDER BY total DESC;
+    ORDER BY tonto DESC;
     `
   );
 
@@ -104,9 +113,8 @@ async function getTontoById(idCowboy) {
       c.name AS name,
       c.email AS email,
       ti.name AS titulo,
-      COUNT(t.cowboy_id)::int AS total
+      c.tonto AS tonto
     FROM cowboys c
-    LEFT JOIN tontos t ON t.cowboy_id = c.id
     LEFT JOIN titulos ti ON ti.cowboy_id = c.id
     WHERE c.id = $1
     GROUP BY c.id, c.name, ti.name;
