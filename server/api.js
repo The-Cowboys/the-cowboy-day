@@ -4,9 +4,10 @@ const router = express.Router();
 
 const tontosController = require("./tontos/tontos.controller");
 const titulosController = require("./titulos/titulos.controller");
+const usuariosController = require('./usuarios/usuarios.controller');
 
-const cowboysRoute = require("./cowboys/cowboys.route");
-const putosRoute = require("./putos/putos.route");
+const cowboysRoute = require("./cowboys/cowboys.route"); // TODO: remove
+const putosRoute = require("./putos/putos.route"); // TODO: remove
 
 router.use("/cowboys", cowboysRoute);
 router.use("/putos", putosRoute); // TODO: remove
@@ -33,5 +34,11 @@ router.get("/tontos/:idCowboy", tontosController.getTontoPorId);
 
 // Obtener todos los tontos
 router.get("/tontos", tontosController.getAllTontos);
+
+// == Usuarios ==
+// Registrar usuario
+router.post('/registrar', usuariosController.registrar);
+// Iniciar sesión
+router.post('/login', usuariosController.login);
 
 module.exports = router;
