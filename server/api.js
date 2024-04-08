@@ -6,8 +6,8 @@ const tontosController = require("./tontos/tontos.controller");
 const titulosController = require("./titulos/titulos.controller");
 const usuariosController = require('./usuarios/usuarios.controller');
 
-const cowboysRoute = require("./cowboys/cowboys.route"); // TODO: remove
-const putosRoute = require("./putos/putos.route"); // TODO: remove
+const cowboysRoute = require("./cowboys/cowboys.route");
+const putosRoute = require("./putos/putos.route");
 
 router.use("/cowboys", cowboysRoute);
 router.use("/putos", putosRoute); // TODO: remove
