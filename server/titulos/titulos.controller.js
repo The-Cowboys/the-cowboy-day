@@ -32,18 +32,6 @@ async function createCowboyTitulo(req, res) {
   }
 }
 
-async function getAllTitulos(_, res) {
-  try {
-    res.json(await titulosService.getAll());
-  } catch (err) {
-    console.error(err);
-
-    res.status(500).json({
-      message: "Error getting all titles",
-    });
-  }
-}
-
 async function deleteTitulo(req, res) {
   try {
     const id = req.params.idTitulo;
@@ -61,6 +49,5 @@ async function deleteTitulo(req, res) {
 module.exports = {
   getCowboyTitulos,
   createCowboyTitulo,
-  getAllTitulos,
   deleteTitulo,
 };

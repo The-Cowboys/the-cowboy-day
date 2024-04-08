@@ -1,9 +1,5 @@
 const repository = require("./titulos.repository");
 
-async function getAll() {
-  return await repository.getAll();
-}
-
 async function deleteById(id) {
   return await repository.deleteById(id);
 }
@@ -17,7 +13,6 @@ async function saveTitulo(cowboyId, data) {
 }
 
 module.exports = {
-  getAll,
   deleteById,
   getAllByCowboyId,
   saveTitulo,
