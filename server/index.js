@@ -13,13 +13,13 @@ const PORT = 3000;
 
 const web = express.static("frontend/dist");
 
-// Set up rate limiter: maximum of twenty requests per minute
+// Limitador de carga para evitar ataques de fuerza bruta
 const limiter = RateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minute
-  max: 100,
+  windowMs: 1 * 60 * 1000,
+  max: 60,
 });
 
-
+// Header para que la pagina sea mas segura
 const hlmetHeaders = helmet.contentSecurityPolicy({
   directives: {
     "script-src": ["'self'", "fonts.googleapis.com"],
@@ -28,19 +28,23 @@ const hlmetHeaders = helmet.contentSecurityPolicy({
 
 // gzip compression
 app.use(compression());
+
 // set security HTTP headers
 app.use(hlmetHeaders);
-//  apply to all requests
-app.use(limiter);
+
 // enable cors
 app.use(cors());
+
 // parse json request body
 app.use(express.json());
+
 // static files
 app.use(express.static("frontend/dist"));
 
-app.use("/", web);
-app.use("/api", apiRoute);
+// Las rutas de la API con limitador de carga
+app.use("/api", limiter, apiRoute);
+
+// Cualquier otra ruta corresponde a la web, sin limitador de carga
 app.use("*", web);
 
 // Start the server
