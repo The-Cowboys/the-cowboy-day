@@ -1,4 +1,4 @@
-const { sudoAuth } = require("./auth/auth.middleware");
+const { standardAuth, sudoAuth } = require("./auth/auth.middleware");
 const express = require("express");
 const router = express.Router();
 
@@ -12,9 +12,6 @@ const cowboysController = require("./cowboys/cowboys.controller");
 router.get("/cowboys/:idCowboy/titulos", titulosController.getCowboyTitulos);
 // Solicitud `POST /cowboys/idCowboy/titulos` para crear un titulo al un cowboy por id
 router.post("/cowboys/:idCowboy/titulos", standardAuth, titulosController.createCowboyTitulo);
-
-// Solicitud `GET /titulos para obtener` todos los títulos
-router.get("/titulos", titulosController.getAllTitulos);
 // Solicitud `DELETE /titulos/:idTitulo` para obtener todos los títulos
 router.delete("/titulos/:idTitulo", standardAuth, titulosController.deleteTitulo);
 
