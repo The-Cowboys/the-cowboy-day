@@ -2,8 +2,17 @@ const jwt = require("jsonwebtoken");
 
 const secret = process.env.TOKEN_SECRET;
 
-function generateAccessToken(data) {
-  return jwt.sign(data, secret, { expiresIn: '1 year' });
+
+function generateAccessToken(email, rol, estado) {
+  return jwt.sign(
+    {
+      email: email,
+      rol: rol,
+      estado: estado,
+    },
+    secret,
+    { expiresIn: "1 week" }
+  );
 }
 
 function getAuthUser(accessToken) {
@@ -14,12 +23,5 @@ function getAuthUser(accessToken) {
 
 module.exports = {
   getAuthUser,
+  generateAccessToken,
 };
-
-const pep = generateAccessToken({
-  "name": "Elmas",
-  "role": "sudo"
-});
-
-console.log(pep);
-console.log(getAuthUser(pep));

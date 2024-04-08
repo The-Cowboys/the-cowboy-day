@@ -1,11 +1,14 @@
 const authService = require("./auth.service");
 
-function checkRole(req, res, next, role) {
+const { ROL_USUARIO, ROL_SUDO } = require("./../usuarios/roles");
+
+
+function checkRole(req, res, next, rolRequerido) {
   try {
     const accessToken = req.header("Authorization").replace("Bearer ", "");
     const user = authService.getAuthUser(accessToken);
 
-    if (role && role !== user.role) {
+    if (rolRequerido !== user.role) {
       throw new Error("No autorizado");
     }
 
@@ -19,11 +22,11 @@ function checkRole(req, res, next, role) {
 }
 
 function standardAuth(req, res, next) {
-  checkRole(req, res, next);
+  checkRole(req, res, next, ROL_USUARIO);
 }
 
 function sudoAuth(req, res, next) {
-  checkRole(req, res, next, "sudo");
+  checkRole(req, res, next, ROL_SUDO);
 }
 
 module.exports = {

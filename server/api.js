@@ -1,9 +1,10 @@
-const { standardAuth, sudoAuth } = require("./auth/auth.middleware");
+const { sudoAuth } = require("./auth/auth.middleware");
 const express = require("express");
 const router = express.Router();
 
 const tontosController = require("./tontos/tontos.controller");
 const titulosController = require("./titulos/titulos.controller");
+const usuariosController = require('./usuarios/usuarios.controller');
 const cowboysController = require("./cowboys/cowboys.controller");
 
 // == Titulos ==
@@ -26,6 +27,12 @@ router.get("/tontos/hoy", tontosController.getTontoHoy);
 router.get("/tontos/:idCowboy", tontosController.getTontoPorId);
 // Obtener todos los tontos
 router.get("/tontos", tontosController.getAllTontos);
+
+// == Usuarios ==
+// Registrar usuario
+router.post('/registrar', usuariosController.registrar);
+// Iniciar sesión
+router.post('/login', usuariosController.login);
 
 // == Cowboys ==
 // Obtener todos los cowboys
