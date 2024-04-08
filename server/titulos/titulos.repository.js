@@ -9,11 +9,6 @@ function convertRowToObject(row) {
   };
 }
 
-async function getAll() {
-  const results = await pool.query("SELECT * FROM titulos ORDER BY created");
-  return results.rows.map(convertRowToObject);
-}
-
 async function deleteById(id) {
   await pool.query("DELETE FROM titulos WHERE id = $1", [id]);
 }
@@ -40,7 +35,6 @@ async function saveTitulo(cowboyId, data) {
 }
 
 module.exports = {
-  getAll,
   deleteById,
   getAllByCowboyId,
   saveTitulo,
