@@ -16,7 +16,7 @@ const web = express.static("frontend/dist");
 // Limitador de carga para evitar ataques de fuerza bruta
 const limiter = RateLimit({
   windowMs: 1 * 60 * 1000,
-  max: 2,
+  max: 60,
 });
 
 // Header para que la pagina sea mas segura
