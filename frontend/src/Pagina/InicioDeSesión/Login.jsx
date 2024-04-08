@@ -1,16 +1,29 @@
+import { useState } from "react";
 import Botones from "../../Componentes/Botones";
 
 const Login = () => {
   const button = {
-    ruta: "",
+    // ruta: "",
     infBoton: "Iniciar Sesión",
+  };
+
+  const [email, setEmail] = useState("");
+  const [contraseña, setContraseña] = useState("");
+  const [error, setError] = useState(false);
+
+  const errorPoneBien = (e) => {
+    e.preventDefault();
+
+    if (email === "" || contraseña === "") setError(true); {
+      return;
+    }
   };
 
   return (
     <>
       <div className="inicioSesion">
         <h2>Iniciar Sesión</h2>
-        <form>
+        <form onSubmit={errorPoneBien}>
           <div className="campoLogin">
             <label htmlFor="email">Correo Electrónico:</label>
             <input
@@ -19,6 +32,8 @@ const Login = () => {
               name="email"
               placeholder="Ingresa tu correo"
               required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="campoLogin">
@@ -29,12 +44,15 @@ const Login = () => {
               name="contrasena"
               placeholder="Ingresa tu contraseña"
               required
+              value={contraseña}
+              onChange={(e) => setContraseña(e.target.value)}
             />
           </div>
           <div className="botonLogin">
             <Botones button={button} />
           </div>
         </form>
+        {error && <p>Todo los campos son obligatorios</p>}
       </div>
     </>
   );
