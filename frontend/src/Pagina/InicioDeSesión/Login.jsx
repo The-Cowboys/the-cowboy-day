@@ -14,7 +14,8 @@ const Login = () => {
   const errorPoneBien = (e) => {
     e.preventDefault();
 
-    if (email === "" || contraseña === "") setError(true); {
+    if (email === "" || contraseña === "") setError(true);
+    {
       return;
     }
   };
@@ -51,6 +52,10 @@ const Login = () => {
           <div className="botonLogin">
             <Botones button={button} />
           </div>
+          <p className="fondoNav Regi">
+            ¿No tienes una cuenta?{" "}
+            <strong className="fondoNav">Regístrate</strong>
+          </p>
         </form>
         {error && <p>Todo los campos son obligatorios</p>}
       </div>

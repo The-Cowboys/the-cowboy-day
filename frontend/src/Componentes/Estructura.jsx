@@ -8,6 +8,7 @@ import Error404 from "../Pagina/Errores/Error404";
 import Error from "../Pagina/Errores/Error";
 import Inicio from "../Pagina/Inicio";
 import EstructuraDePerfil from "../Pagina/ElMasTonto/PerfilDeParticipante/EstructuraDePerfil";
+import Login from "../Pagina/InicioDeSesión/Login";
 
 const Estructura = () => {
   return (
@@ -20,6 +21,7 @@ const Estructura = () => {
 
           {/* Inicio */}
           <Route path="/" element={<Inicio /> } />
+          <Route path="/login" element={<Login /> } />
 
           {/* Estadisticas */}
           <Route path="/EstadisticasElMasTonto" element={<EstadisticasElMasTonto />} />
