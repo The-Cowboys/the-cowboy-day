@@ -223,6 +223,7 @@ span {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
+  margin-top: 5rem;
   background-color: var(--fondoNav);
   border: 1px solid var(--marron);
   border-radius: 5px;
@@ -256,4 +257,8 @@ span {
 }
 .inicioSesion label{
   background-color: var(--fondoNav);
+}
+.Regi {
+  margin-top: 18px;
+  margin-bottom: -15px;
 }

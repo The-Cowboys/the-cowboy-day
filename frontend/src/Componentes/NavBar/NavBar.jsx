@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import EntrarSalir from "../../Pagina/InicioDeSesión/EntrarSalir";
 
 const NavBar = () => {
   return (
@@ -81,6 +82,7 @@ const NavBar = () => {
                   </li>
                 </ul>
               </li>
+              <EntrarSalir />
             </ul>
           </div>
         </div>
