@@ -70,3 +70,13 @@ export async function fetchCowboysToday() {
   );
   return resp.data;
 }
+
+// ----Login:
+// Usuario y contraseña 🔐
+export async function InicioSesion(sesion) {
+  const respuesta = await api.post(
+    `https://thecowboys.duckdns.org/api/login`,
+    sesion
+  );
+  return respuesta.data;
+}

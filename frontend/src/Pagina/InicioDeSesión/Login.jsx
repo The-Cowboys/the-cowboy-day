@@ -1,9 +1,27 @@
 import { useState } from "react";
 import Botones from "../../Componentes/Botones";
+import { InicioSesion } from "../../API/Api";
+import { Link } from "react-router-dom";
+
+// Que muestra mi pantalla?
+//  - Input para ingresar email
+//  - Input para ingresar contraseña
+//  - Boton que guarda login
+//  - Posible mensaje de error
+// Variables del estado:
+//  - Estado para el input - email
+//  - Estado para el input - contraseña
+//  - Estado booleano para el error
+// Acciones de la pantalla:
+//  - 1 sola el login
+//  Pasos:
+//  1. declarar los estados
+//  2. asociar los estado al HTML
+//  3. hacer una funcion para cada accion
 
 const Login = () => {
   const button = {
-    // ruta: "",
+    // ruta: "/EstructuraDePerfil/1",
     infBoton: "Iniciar Sesión",
   };
 
@@ -18,6 +36,23 @@ const Login = () => {
     {
       return;
     }
+  };
+
+  const IniciarSesion = async () => {
+    const sesion = {
+      email: email,
+      password: contraseña,
+    };
+    console.log(sesion);
+    const token = await InicioSesion(sesion);
+    console.log(token);
+    window.localStorage.setItem("token", token);
+    console.log(window);
+    console.log(window.localStorage);
+
+    // Tareas pendiente
+    // 1 navegar al inicio
+    // 2 guardar el token en la sesion ? buscar
   };
 
   return (
@@ -50,7 +85,12 @@ const Login = () => {
             />
           </div>
           <div className="botonLogin">
-            <Botones button={button} />
+            <Botones button={button} onClick={IniciarSesion} />
+            <Link to={button.ruta}>
+              <button type="button" onClick={IniciarSesion} className="btn btn-dark">
+                {button.infBoton}
+              </button>
+            </Link>
           </div>
           <p className="fondoNav Regi">
             ¿No tienes una cuenta?{" "}
