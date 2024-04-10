@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Botones from "../../Componentes/Botones";
 import { InicioSesion } from "../../API/Api";
 import { Link } from "react-router-dom";
 
@@ -20,20 +19,14 @@ import { Link } from "react-router-dom";
 //  3. hacer una funcion para cada accion
 
 const Login = () => {
-  const button = {
-    // ruta: "/EstructuraDePerfil/1",
-    infBoton: "Iniciar Sesión",
-  };
-
   const [email, setEmail] = useState("");
   const [contraseña, setContraseña] = useState("");
   const [error, setError] = useState(false);
 
   const errorPoneBien = (e) => {
     e.preventDefault();
-
-    if (email === "" || contraseña === "") setError(true);
-    {
+    if (email === "" || contraseña === "") {
+      setError(true);
       return;
     }
   };
@@ -50,6 +43,7 @@ const Login = () => {
     console.log(window);
     console.log(window.localStorage);
 
+    window.location.href = "/EstructuraDePerfil/1";
     // Tareas pendiente
     // 1 navegar al inicio
     // 2 guardar el token en la sesion ? buscar
@@ -85,10 +79,13 @@ const Login = () => {
             />
           </div>
           <div className="botonLogin">
-            <Botones button={button} onClick={IniciarSesion} />
-            <Link to={button.ruta}>
-              <button type="button" onClick={IniciarSesion} className="btn btn-dark">
-                {button.infBoton}
+            <Link>
+              <button
+                type="button"
+                onClick={IniciarSesion}
+                className="btn btn-dark"
+              >
+                Iniciar Sesión
               </button>
             </Link>
           </div>
