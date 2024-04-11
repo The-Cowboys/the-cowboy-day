@@ -3,6 +3,16 @@ const api = axios.create();
 
 const token = import.meta.env.VITE_JWT;
 
+const tokenSesion = () => {
+  const obtenerToken = localStorage.getItem("token");
+  const tokenn = JSON.parse(obtenerToken);
+  return tokenn;
+};
+const lol =tokenSesion();
+console.log( lol.token);
+
+
+
 const headers = {
   "Content-Type": "application/json",
   Authorization: `Bearer ${token}`,

@@ -39,9 +39,8 @@ const Login = () => {
     console.log(sesion);
     const token = await InicioSesion(sesion);
     window.localStorage.setItem("token", JSON.stringify(token));
-    console.log(window);
-    console.log(window.localStorage);
-
+    // console.log(window);
+    // console.log(window.localStorage);
     window.location.href = "/EstructuraDePerfil/1";
     // Tareas pendiente
     // 1 navegar al inicio
