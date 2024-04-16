@@ -37,10 +37,6 @@ const Login = () => {
       setInicioSesion(true);
       console.log("manco");
     }
-
-    // Tareas pendiente
-    // 1 navegar al inicio
-    // 2 guardar el token en la sesion ? buscar
   };
 
   return (
