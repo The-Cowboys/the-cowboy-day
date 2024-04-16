@@ -44,60 +44,60 @@ const Login = () => {
   };
 
   return (
-      <div className="inicioSesion">
-        <h2>Iniciar Sesión</h2>
-        <form>
-          <div className="campoLogin">
-            <label htmlFor="email">Correo Electrónico:</label>
-            <input
-              id="email"
-              type="email"
-              name="email"
-              placeholder="Ingresa tu correo"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <div className="campoLogin">
-            <label htmlFor="password">Contraseña:</label>
-            <input
-              id="password"
-              type="password"
-              name="contrasena"
-              placeholder="Ingresa tu contraseña"
-              required
-              value={contraseña}
-              onChange={(e) => setContraseña(e.target.value)}
-            />
-          </div>
-          <div className="botonLogin">
-            <Link>
-              <button
-                type="button"
-                className="btn btn-dark"
-                onClick={IniciarSesion}
-              >
-                Iniciar Sesión
-              </button>
+    <div className="inicioSesion">
+      <h2>Iniciar Sesión</h2>
+      <form>
+        <div className="campoLogin">
+          <label htmlFor="email">Correo Electrónico:</label>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            placeholder="Ingresa tu correo"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+        <div className="campoLogin">
+          <label htmlFor="password">Contraseña:</label>
+          <input
+            id="password"
+            type="password"
+            name="contrasena"
+            placeholder="Ingresa tu contraseña"
+            required
+            value={contraseña}
+            onChange={(e) => setContraseña(e.target.value)}
+          />
+        </div>
+        <div className="botonLogin">
+          <Link>
+            <button
+              type="button"
+              className="btn btn-dark"
+              onClick={IniciarSesion}
+            >
+              Iniciar Sesión
+            </button>
+          </Link>
+        </div>
+        <p className="fondoNav Regi">
+          ¿No tienes una cuenta?{" "}
+          <strong className="fondoNav">
+            <Link className="fondoNav inicioRegistro" to="/registro">
+              Regístrate
             </Link>
-          </div>
-          <p className="fondoNav Regi">
-            ¿No tienes una cuenta?{" "}
-            <strong className="fondoNav">
-              <Link className="fondoNav inicioRegistro" to="/registro">
-                Regístrate
-              </Link>
-            </strong>
-          </p>
-        </form>
-        {errorInicioSesion && (
-          <p className="errorInicioSesion fondoNav">
-            Oops, parece que el usuario o la contraseña no son correctos.
-            ¿Quieres intentarlo de nuevo?
-          </p>
-        )}
-      </div>
+          </strong>
+        </p>
+      </form>
+      {errorInicioSesion && (
+        <p className="errorInicioSesion fondoNav">
+          Oops, parece que el usuario o la contraseña no son correctos. ¿Quieres
+          intentarlo de nuevo?
+        </p>
+      )}
+    </div>
   );
 };
 
