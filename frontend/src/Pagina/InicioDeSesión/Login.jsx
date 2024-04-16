@@ -21,16 +21,22 @@ import { Link, useNavigate } from "react-router-dom";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [contraseña, setContraseña] = useState("");
+  const [errorInicioSesion, setInicioSesion] = useState(false);
   const navegar = useNavigate();
 
   const IniciarSesion = async () => {
-    const sesion = {
-      email: email,
-      password: contraseña,
-    };
-    const token = await InicioSesion(sesion);
-    window.localStorage.setItem("token", JSON.stringify(token));
-    navegar("/");
+    try {
+      const sesion = {
+        email: email,
+        password: contraseña,
+      };
+      const token = await InicioSesion(sesion);
+      window.localStorage.setItem("token", JSON.stringify(token));
+      navegar("/");
+    } catch (error) {
+      setInicioSesion(true);
+      console.log("manco");
+    }
 
     // Tareas pendiente
     // 1 navegar al inicio
@@ -82,7 +88,12 @@ const Login = () => {
             <strong className="fondoNav">Regístrate</strong>
           </p>
         </form>
-        {/* {error && <p>Todo los campos son obligatorios</p>} */}
+        {errorInicioSesion && (
+          <p className="errorInicioSesion fondoNav">
+            Oops, parece que el usuario o la contraseña no son correctos.
+            ¿Quieres intentarlo de nuevo?
+          </p>
+        )}
       </div>
     </>
   );
