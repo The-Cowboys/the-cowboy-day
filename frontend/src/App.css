@@ -171,7 +171,7 @@ span {
   border: 2px solid var(--boton);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-m
+
 /* Componete <Error /> */
 .errorDeErrores {
   font-size: 22px;
@@ -210,4 +210,61 @@ m
   100% {
     transform: rotateY(360deg);
   }
+}
+
+/* Inicio de sesión */
+.campoLogin {
+  margin-bottom: 15px;
+  background-color: var(--fondoNav);
+}
+.inicioSesion {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 5rem;
+  background-color: var(--fondoNav);
+  border: 1px solid var(--marron);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.inicioSesion h2 {
+  background-color: var(--fondoNav);
+  text-align: center;
+}
+.inicioSesion form {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--fondoNav);
+}
+.inicioSesion input {
+  padding: 8px;
+  border: 1px solid var(--marron);
+  border-radius: 3px;
+  font-size: 16px;
+  margin-top: 5px;
+  margin-left: 8px;
+}
+.inicioSesion input:focus {
+  border-color: var(--hoverBorde);
+  outline: none;
+  transition: 0.3s;
+}
+.botonLogin {
+  text-align: center;
+  background-color: var(--fondoNav);
+}
+.inicioSesion label {
+  background-color: var(--fondoNav);
+}
+.Regi {
+  margin-top: 18px;
+  margin-bottom: -15px;
+}
+.errorInicioSesion {
+  margin-top: 25px;
+}
+/* Inicio de sesión y registro */
+.inicioRegistro {
+  text-decoration: none;
+  color: var(--texto);
 }

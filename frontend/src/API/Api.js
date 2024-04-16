@@ -3,6 +3,16 @@ const api = axios.create();
 
 const token = import.meta.env.VITE_JWT;
 
+const tokenSesion = () => {
+  const obtenerToken = localStorage.getItem("token");
+  const tokenn = JSON.parse(obtenerToken);
+  return tokenn;
+};
+const lol =tokenSesion();
+console.log( lol.token);
+
+
+
 const headers = {
   "Content-Type": "application/json",
   Authorization: `Bearer ${token}`,
@@ -69,4 +79,14 @@ export async function fetchCowboysToday() {
     `https://thecowboys.duckdns.org/api/cowboys/today`
   );
   return resp.data;
+}
+
+// ----Login:
+// Usuario y contraseña 🔐
+export async function inicioSesion(sesion) {
+  const respuesta = await api.post(
+    `https://thecowboys.duckdns.org/api/login`,
+    sesion
+  );
+  return respuesta.data;
 }
