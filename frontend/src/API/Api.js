@@ -83,7 +83,7 @@ export async function fetchCowboysToday() {
 
 // ----Login:
 // Usuario y contraseña 🔐
-export async function InicioSesion(sesion) {
+export async function inicioSesion(sesion) {
   const respuesta = await api.post(
     `https://thecowboys.duckdns.org/api/login`,
     sesion

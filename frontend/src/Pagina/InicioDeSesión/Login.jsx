@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { InicioSesion } from "../../API/Api";
+import { inicioSesion } from "../../API/Api";
 import { Link, useNavigate } from "react-router-dom";
 
 // Que muestra mi pantalla?
@@ -30,7 +30,7 @@ const Login = () => {
         email: email,
         password: contraseña,
       };
-      const token = await InicioSesion(sesion);
+      const token = await inicioSesion(sesion);
       window.localStorage.setItem("token", JSON.stringify(token));
       navegar("/");
     } catch (error) {
