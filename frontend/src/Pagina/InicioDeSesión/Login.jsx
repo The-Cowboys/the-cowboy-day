@@ -24,7 +24,7 @@ const Login = () => {
   const [errorInicioSesion, setInicioSesion] = useState(false);
   const navegar = useNavigate();
 
-  const IniciarSesion = async () => {
+  const iniciarSesion = async () => {
     try {
       const sesion = {
         email: email,
@@ -35,7 +35,6 @@ const Login = () => {
       navegar("/");
     } catch (error) {
       setInicioSesion(true);
-      console.log("manco");
     }
   };
 
@@ -72,7 +71,7 @@ const Login = () => {
             <button
               type="button"
               className="btn btn-dark"
-              onClick={IniciarSesion}
+              onClick={iniciarSesion}
             >
               Iniciar Sesión
             </button>
