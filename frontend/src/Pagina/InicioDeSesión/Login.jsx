@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { InicioSesion } from "../../API/Api";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // Que muestra mi pantalla?
 //  - Input para ingresar email
@@ -21,27 +21,17 @@ import { Link } from "react-router-dom";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [contraseña, setContraseña] = useState("");
-  const [error, setError] = useState(false);
-
-  const errorPoneBien = (e) => {
-    e.preventDefault();
-    if (email === "" || contraseña === "") {
-      setError(true);
-      return;
-    }
-  };
+  const navegar = useNavigate();
 
   const IniciarSesion = async () => {
     const sesion = {
       email: email,
       password: contraseña,
     };
-    console.log(sesion);
     const token = await InicioSesion(sesion);
     window.localStorage.setItem("token", JSON.stringify(token));
-    // console.log(window);
-    // console.log(window.localStorage);
-    window.location.href = "/EstructuraDePerfil/1";
+    navegar("/");
+
     // Tareas pendiente
     // 1 navegar al inicio
     // 2 guardar el token en la sesion ? buscar
@@ -51,7 +41,7 @@ const Login = () => {
     <>
       <div className="inicioSesion">
         <h2>Iniciar Sesión</h2>
-        <form onSubmit={errorPoneBien}>
+        <form>
           <div className="campoLogin">
             <label htmlFor="email">Correo Electrónico:</label>
             <input
@@ -92,7 +82,7 @@ const Login = () => {
             <strong className="fondoNav">Regístrate</strong>
           </p>
         </form>
-        {error && <p>Todo los campos son obligatorios</p>}
+        {/* {error && <p>Todo los campos son obligatorios</p>} */}
       </div>
     </>
   );
