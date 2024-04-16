@@ -9,6 +9,7 @@ import Error from "../Pagina/Errores/Error";
 import Inicio from "../Pagina/Inicio";
 import EstructuraDePerfil from "../Pagina/ElMasTonto/PerfilDeParticipante/EstructuraDePerfil";
 import Login from "../Pagina/InicioDeSesión/Login";
+import Registro from "../Pagina/InicioDeSesión/Registro";
 
 const Estructura = () => {
   return (
@@ -22,6 +23,7 @@ const Estructura = () => {
           {/* Inicio */}
           <Route path="/" element={<Inicio /> } />
           <Route path="/login" element={<Login /> } />
+          <Route path="/registro" element={<Registro /> } />
 
           {/* Estadisticas */}
           <Route path="/EstadisticasElMasTonto" element={<EstadisticasElMasTonto />} />

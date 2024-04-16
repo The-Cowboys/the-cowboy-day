@@ -265,3 +265,8 @@ span {
 .errorInicioSesion {
   margin-top: 25px;
 }
+/* Inicio de sesión y registro */
+.inicioRegistro {
+  text-decoration: none;
+  color: var(--texto);
+}

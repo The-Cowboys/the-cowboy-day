@@ -44,7 +44,6 @@ const Login = () => {
   };
 
   return (
-    <>
       <div className="inicioSesion">
         <h2>Iniciar Sesión</h2>
         <form>
@@ -85,7 +84,11 @@ const Login = () => {
           </div>
           <p className="fondoNav Regi">
             ¿No tienes una cuenta?{" "}
-            <strong className="fondoNav">Regístrate</strong>
+            <strong className="fondoNav">
+              <Link className="fondoNav inicioRegistro" to="/registro">
+                Regístrate
+              </Link>
+            </strong>
           </p>
         </form>
         {errorInicioSesion && (
@@ -95,7 +98,6 @@ const Login = () => {
           </p>
         )}
       </div>
-    </>
   );
 };
 
