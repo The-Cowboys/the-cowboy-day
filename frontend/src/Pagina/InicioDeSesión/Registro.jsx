@@ -29,6 +29,18 @@ const Registro = () => {
             // onChange={(e) => setContraseña(e.target.value)}
           />
         </div>
+        <div className="campoLogin">
+          <label htmlFor="password">Contraseña:</label>
+          <input
+            id="password"
+            type="password"
+            name="contrasena"
+            placeholder="Repita su contraseña"
+            required
+            // value={contraseña}
+            // onChange={(e) => setContraseña(e.target.value)}
+          />
+        </div>
         <div className="botonLogin">
           <Link>
             <button
