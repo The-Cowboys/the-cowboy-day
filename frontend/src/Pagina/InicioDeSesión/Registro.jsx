@@ -5,21 +5,26 @@ import { registro } from "../../API/Api";
 const Registro = () => {
   const [email, setEmail] = useState("");
   const [contraseña, setContraseña] = useState("");
+  const [errorRegistro, setErrorRegistro] = useState(false);
+  const [errorVacio, setErrorVacio] = useState(false);
   const navegar = useNavigate();
 
   const btnRegistro = async () => {
-    const reg = {
-      email: email,
-      password: contraseña,
-    };
-    try {
-      await registro(reg);
-  
-      navegar("/");
-      console.log("Sos el 1");
-
-    } catch (error) {
-      console.log("manco");
+    if (email == "" || contraseña == "") {
+      setErrorVacio(true);
+    } else {
+      const reg = {
+        email: email,
+        password: contraseña,
+      };
+      try {
+        await registro(reg);
+        navegar("/");
+        
+      } catch (error) {
+        // console.log(error.response.status);
+        setErrorRegistro(true);
+      }
     }
   };
 
@@ -79,6 +84,16 @@ const Registro = () => {
           </strong>
         </p>
       </form>
+      {errorRegistro && (
+        <p className="errorInicioSesion fondoNav">
+          Oops, parece que ese correo ya está registrado.
+        </p>
+      )}
+      {errorVacio && (
+        <p className="errorInicioSesion fondoNav">
+          Recuerda completar todos los campos obligatorios antes de entrar en el pueblo.
+        </p>
+      )}
     </div>
   );
 };
