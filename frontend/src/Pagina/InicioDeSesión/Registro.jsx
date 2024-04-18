@@ -4,25 +4,28 @@ import { registro } from "../../API/Api";
 
 const Registro = () => {
   const [email, setEmail] = useState("");
-  const [contraseña, setContraseña] = useState("");
+  const [contraseña1, setContraseña1] = useState("");
+  const [contraseña2, setContraseña2] = useState("");
   const [errorRegistro, setErrorRegistro] = useState(false);
   const [errorVacio, setErrorVacio] = useState(false);
   const navegar = useNavigate();
 
   const btnRegistro = async () => {
-    if (email == "" || contraseña == "") {
+    if (email == "" || contraseña1 == "" || contraseña2 === "") {
       setErrorVacio(true);
     } else {
+      if (contraseña1 !== contraseña2) {
+        setErrorRegistro(true);
+        return;
+      }
       const reg = {
         email: email,
-        password: contraseña,
+        password: contraseña1,
       };
       try {
         await registro(reg);
         navegar("/");
-        
       } catch (error) {
-        // console.log(error.response.status);
         setErrorRegistro(true);
       }
     }
@@ -45,32 +48,36 @@ const Registro = () => {
           />
         </div>
         <div className="campoLogin">
-          <label htmlFor="password">Contraseña:</label>
+          <label htmlFor="password1">Contraseña:</label>
           <input
-            id="password"
+            id="password1"
             type="password"
             name="contrasena"
             placeholder="Ingresa tu contraseña"
             required
-            value={contraseña}
-            onChange={(e) => setContraseña(e.target.value)}
+            value={contraseña1}
+            onChange={(e) => setContraseña1(e.target.value)}
           />
         </div>
-        {/* <div className="campoLogin">
-          <label htmlFor="password">Contraseña:</label>
+        <div className="campoLogin">
+          <label htmlFor="password2">Contraseña:</label>
           <input
-            id="password"
+            id="password2"
             type="password"
             name="contrasena"
             placeholder="Repita su contraseña"
             required
-            value={contraseña}
-            onChange={(e) => setContraseña(e.target.value)}
+            value={contraseña2}
+            onChange={(e) => setContraseña2(e.target.value)}
           />
-        </div> */}
+        </div>
         <div className="botonLogin">
           <Link>
-            <button type="button" className="btn btn-dark" onClick={btnRegistro}>
+            <button
+              type="button"
+              className="btn btn-dark"
+              onClick={btnRegistro}
+            >
               Registrarse
             </button>
           </Link>
@@ -91,7 +98,8 @@ const Registro = () => {
       )}
       {errorVacio && (
         <p className="errorInicioSesion fondoNav">
-          Recuerda completar todos los campos obligatorios antes de entrar en el pueblo.
+          Recuerda completar todos los campos obligatorios antes de entrar en el
+          pueblo.
         </p>
       )}
     </div>
