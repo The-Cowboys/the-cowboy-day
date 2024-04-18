@@ -1,6 +1,28 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { registro } from "../../API/Api";
 
 const Registro = () => {
+  const [email, setEmail] = useState("");
+  const [contraseña, setContraseña] = useState("");
+  const navegar = useNavigate();
+
+  const btnRegistro = async () => {
+    const reg = {
+      email: email,
+      password: contraseña,
+    };
+    try {
+      await registro(reg);
+  
+      navegar("/");
+      console.log("Sos el 1");
+
+    } catch (error) {
+      console.log("manco");
+    }
+  };
+
   return (
     <div className="inicioSesion">
       <h2>Registro</h2>
@@ -13,8 +35,8 @@ const Registro = () => {
             name="email"
             placeholder="Ingresa tu correo"
             required
-            // value={email}
-            // onChange={(e) => setEmail(e.target.value)}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className="campoLogin">
@@ -25,11 +47,11 @@ const Registro = () => {
             name="contrasena"
             placeholder="Ingresa tu contraseña"
             required
-            // value={contraseña}
-            // onChange={(e) => setContraseña(e.target.value)}
+            value={contraseña}
+            onChange={(e) => setContraseña(e.target.value)}
           />
         </div>
-        <div className="campoLogin">
+        {/* <div className="campoLogin">
           <label htmlFor="password">Contraseña:</label>
           <input
             id="password"
@@ -37,17 +59,13 @@ const Registro = () => {
             name="contrasena"
             placeholder="Repita su contraseña"
             required
-            // value={contraseña}
-            // onChange={(e) => setContraseña(e.target.value)}
+            value={contraseña}
+            onChange={(e) => setContraseña(e.target.value)}
           />
-        </div>
+        </div> */}
         <div className="botonLogin">
           <Link>
-            <button
-              type="button"
-              className="btn btn-dark"
-              // onClick={IniciarSesion}
-            >
+            <button type="button" className="btn btn-dark" onClick={btnRegistro}>
               Registrarse
             </button>
           </Link>
