@@ -7,6 +7,7 @@ const Registro = () => {
   const [contraseña1, setContraseña1] = useState("");
   const [contraseña2, setContraseña2] = useState("");
   const [errorRegistro, setErrorRegistro] = useState(false);
+  const [errorContraseña, setErrorContraseña] = useState(false);
   const [errorVacio, setErrorVacio] = useState(false);
   const navegar = useNavigate();
 
@@ -15,7 +16,7 @@ const Registro = () => {
       setErrorVacio(true);
     } else {
       if (contraseña1 !== contraseña2) {
-        setErrorRegistro(true);
+        setErrorContraseña(true);
         return;
       }
       const reg = {
@@ -100,6 +101,12 @@ const Registro = () => {
         <p className="errorInicioSesion fondoNav">
           Recuerda completar todos los campos obligatorios antes de entrar en el
           pueblo.
+        </p>
+      )}
+      {errorContraseña && (
+        <p className="errorInicioSesion fondoNav">
+          Las contraseñas deben coincidir para continuar. ¡Asegurate de que
+          sean iguales!
         </p>
       )}
     </div>
