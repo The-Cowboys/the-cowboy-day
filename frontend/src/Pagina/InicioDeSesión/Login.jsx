@@ -43,6 +43,7 @@ const Login = () => {
       <h2>Iniciar Sesión</h2>
       <form>
         <div className="campoLogin">
+          {/* Correo Electrónico */}
           <label htmlFor="email">Correo Electrónico:</label>
           <input
             id="email"
@@ -55,6 +56,7 @@ const Login = () => {
           />
         </div>
         <div className="campoLogin">
+          {/* Contraseña */}
           <label htmlFor="password">Contraseña:</label>
           <input
             id="password"
@@ -86,6 +88,7 @@ const Login = () => {
           </strong>
         </p>
       </form>
+      {/* Error */}
       {errorInicioSesion && (
         <p className="errorInicioSesion fondoNav">
           Oops, parece que el usuario o la contraseña no son correctos. ¿Quieres

@@ -37,6 +37,7 @@ const Registro = () => {
       <h2>Registro</h2>
       <form>
         <div className="campoLogin">
+          {/* Correo Electrónico */}
           <label htmlFor="email">Correo Electrónico:</label>
           <input
             id="email"
@@ -49,6 +50,7 @@ const Registro = () => {
           />
         </div>
         <div className="campoLogin">
+          {/* Contraseña 1 */}
           <label htmlFor="password1">Contraseña:</label>
           <input
             id="password1"
@@ -61,6 +63,7 @@ const Registro = () => {
           />
         </div>
         <div className="campoLogin">
+          {/* Contraseña 2 */}
           <label htmlFor="password2">Contraseña:</label>
           <input
             id="password2"
@@ -92,6 +95,7 @@ const Registro = () => {
           </strong>
         </p>
       </form>
+      {/* Errores */}
       {errorRegistro && (
         <p className="errorInicioSesion fondoNav">
           Oops, parece que ese correo ya está registrado.
@@ -105,8 +109,8 @@ const Registro = () => {
       )}
       {errorContraseña && (
         <p className="errorInicioSesion fondoNav">
-          Las contraseñas deben coincidir para continuar. ¡Asegurate de que
-          sean iguales!
+          Las contraseñas deben coincidir para continuar. ¡Asegurate de que sean
+          iguales!
         </p>
       )}
     </div>
