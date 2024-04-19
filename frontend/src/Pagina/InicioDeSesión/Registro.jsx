@@ -12,6 +12,9 @@ const Registro = () => {
   const navegar = useNavigate();
 
   const btnRegistro = async () => {
+    setErrorRegistro(false);
+    setErrorContraseña(false);
+    setErrorVacio(false);
     if (email == "" || contraseña1 == "" || contraseña2 === "") {
       setErrorVacio(true);
     } else {
