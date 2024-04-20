@@ -24,7 +24,7 @@ const Login = () => {
   const [errorInicioSesion, setInicioSesion] = useState(false);
   const navegar = useNavigate();
 
-  const IniciarSesion = async () => {
+  const iniciarSesion = async () => {
     try {
       const sesion = {
         email: email,
@@ -35,7 +35,6 @@ const Login = () => {
       navegar("/");
     } catch (error) {
       setInicioSesion(true);
-      console.log("manco");
     }
   };
 
@@ -44,6 +43,7 @@ const Login = () => {
       <h2>Iniciar Sesión</h2>
       <form>
         <div className="campoLogin">
+          {/* Correo Electrónico */}
           <label htmlFor="email">Correo Electrónico:</label>
           <input
             id="email"
@@ -56,6 +56,7 @@ const Login = () => {
           />
         </div>
         <div className="campoLogin">
+          {/* Contraseña */}
           <label htmlFor="password">Contraseña:</label>
           <input
             id="password"
@@ -72,7 +73,7 @@ const Login = () => {
             <button
               type="button"
               className="btn btn-dark"
-              onClick={IniciarSesion}
+              onClick={iniciarSesion}
             >
               Iniciar Sesión
             </button>
@@ -87,6 +88,7 @@ const Login = () => {
           </strong>
         </p>
       </form>
+      {/* Error */}
       {errorInicioSesion && (
         <p className="errorInicioSesion fondoNav">
           Oops, parece que el usuario o la contraseña no son correctos. ¿Quieres

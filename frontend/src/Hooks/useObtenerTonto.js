@@ -13,7 +13,7 @@ export const useObtenerTonto = () => {
       setTonto(data);
     } catch (error) {
       setErrorTonto(true);
-      console.log("Error al obtener datos:");
+      console.log("Error al obtener datos:", "Procesando un tonto");
     } finally {
       setCarga(false);
     }

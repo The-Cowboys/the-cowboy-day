@@ -1,11 +1,46 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { registro } from "../../API/Api";
 
 const Registro = () => {
+  const [email, setEmail] = useState("");
+  const [contraseña1, setContraseña1] = useState("");
+  const [contraseña2, setContraseña2] = useState("");
+  const [errorRegistro, setErrorRegistro] = useState(false);
+  const [errorContraseña, setErrorContraseña] = useState(false);
+  const [errorVacio, setErrorVacio] = useState(false);
+  const navegar = useNavigate();
+
+  const btnRegistro = async () => {
+    setErrorRegistro(false);
+    setErrorContraseña(false);
+    setErrorVacio(false);
+    if (email == "" || contraseña1 == "" || contraseña2 === "") {
+      setErrorVacio(true);
+    } else {
+      if (contraseña1 !== contraseña2) {
+        setErrorContraseña(true);
+        return;
+      }
+      const reg = {
+        email: email,
+        password: contraseña1,
+      };
+      try {
+        await registro(reg);
+        navegar("/");
+      } catch (error) {
+        setErrorRegistro(true);
+      }
+    }
+  };
+
   return (
     <div className="inicioSesion">
       <h2>Registro</h2>
       <form>
         <div className="campoLogin">
+          {/* Correo Electrónico */}
           <label htmlFor="email">Correo Electrónico:</label>
           <input
             id="email"
@@ -13,20 +48,34 @@ const Registro = () => {
             name="email"
             placeholder="Ingresa tu correo"
             required
-            // value={email}
-            // onChange={(e) => setEmail(e.target.value)}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className="campoLogin">
-          <label htmlFor="password">Contraseña:</label>
+          {/* Contraseña 1 */}
+          <label htmlFor="password1">Contraseña:</label>
           <input
-            id="password"
+            id="password1"
             type="password"
             name="contrasena"
             placeholder="Ingresa tu contraseña"
             required
-            // value={contraseña}
-            // onChange={(e) => setContraseña(e.target.value)}
+            value={contraseña1}
+            onChange={(e) => setContraseña1(e.target.value)}
+          />
+        </div>
+        <div className="campoLogin">
+          {/* Contraseña 2 */}
+          <label htmlFor="password2">Contraseña:</label>
+          <input
+            id="password2"
+            type="password"
+            name="contrasena"
+            placeholder="Repita su contraseña"
+            required
+            value={contraseña2}
+            onChange={(e) => setContraseña2(e.target.value)}
           />
         </div>
         <div className="botonLogin">
@@ -34,7 +83,7 @@ const Registro = () => {
             <button
               type="button"
               className="btn btn-dark"
-              // onClick={IniciarSesion}
+              onClick={btnRegistro}
             >
               Registrarse
             </button>
@@ -49,6 +98,24 @@ const Registro = () => {
           </strong>
         </p>
       </form>
+      {/* Errores */}
+      {errorRegistro && (
+        <p className="errorInicioSesion fondoNav">
+          Oops, parece que ese correo ya está registrado.
+        </p>
+      )}
+      {errorVacio && (
+        <p className="errorInicioSesion fondoNav">
+          Recuerda completar todos los campos obligatorios antes de entrar en el
+          pueblo.
+        </p>
+      )}
+      {errorContraseña && (
+        <p className="errorInicioSesion fondoNav">
+          Las contraseñas deben coincidir para continuar. ¡Asegurate de que sean
+          iguales!
+        </p>
+      )}
     </div>
   );
 };
