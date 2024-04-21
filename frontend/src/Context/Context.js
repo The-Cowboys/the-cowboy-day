@@ -1,3 +1,5 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 
-export const PruebaContext = createContext(null);
+export const TContext = createContext();
+
+export const useEstadoGlobal = () => useContext(TContext);
