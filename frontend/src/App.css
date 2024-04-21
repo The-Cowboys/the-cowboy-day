@@ -61,10 +61,13 @@
 /* El mas tonto */
 .tituloH3 {
   text-align: center;
-  margin-top: 25px;
-  font-size: 40px;
-  font-family: "Playfair Display", serif;
+  margin-top: 10px;
+  font-family: var(--tipografiaGeneral);
   font-weight: bold;
+  font-size: 40px;
+  @media (max-width: 480px) {
+    font-size: 30px;
+  }
 }
 
 /* CowboyDelDia */
@@ -78,7 +81,33 @@
   max-width: 750px;
   margin-left: auto;
   margin-right: auto;
-  /* border: 2px solid var(--marron); */
+}
+.tarjeta {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+.tarjeta img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  height: auto;
+}
+@media (max-width: 768px) {
+  .tarjeta {
+    max-width: 90%;
+  }
+  .tarjeta img {
+    max-width: 90%;
+  }
+}
+@media (max-width: 700px) {
+  .tarjeta {
+    max-width: 80%;
+  }
+  .tarjeta img {
+    max-width: 70%;
+  }
 }
 span.numeros {
   background-color: var(--boton);
