@@ -1,9 +1,9 @@
 const TarjetaTonta = ({ nombre, total, titulos }) => {
   return (
     <div className="principalTarjeta">
-      <div className="card">
+      <div className="card tarjeta">
         <div className="row g-0">
-          <div className="fondoNav col-md-4">
+          <div className="fondoNav imgTarjeta col-md-4">
             <img
               src="Cowboys.png"
               className="fondoNav img-fluid rounded-start"
