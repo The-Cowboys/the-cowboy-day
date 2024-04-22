@@ -7,7 +7,7 @@ const tokenSesion = () => {
   return tokenn;
 };
 
-export const EstadoGlobal = ({ contenido }) => {
+export const EstadoGlobal = ({ children }) => {
   const [token, setToken] = useState(null);
   console.log("token actual", token)
 
@@ -17,7 +17,7 @@ export const EstadoGlobal = ({ contenido }) => {
 
   return (
     <TContext.Provider value={{ token, setToken }}>
-      {contenido}
+      {children}
     </TContext.Provider>
   );
 };
