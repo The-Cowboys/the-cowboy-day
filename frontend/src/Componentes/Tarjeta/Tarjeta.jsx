@@ -1,3 +1,5 @@
+import Cpmpartir from "../Cpmpartir";
+
 const TarjetaTonta = ({ nombre, total, titulos }) => {
   return (
     <div className="principalTarjeta">
@@ -20,11 +22,14 @@ const TarjetaTonta = ({ nombre, total, titulos }) => {
                 <strong className="negrita">Titulos totales:</strong>{" "}
                 {titulos.length}
               </h5>
-              <div>
+              <div className="fondoNav">
                 <p className="titulosObtenidos fondoNav">
                   <strong className="negrita">Titulos:</strong>{" "}
                   {titulos.join(", ")}
                 </p>
+                <div className="fondoNav">
+                  <Cpmpartir />
+                </div>
               </div>
             </div>
           </div>
