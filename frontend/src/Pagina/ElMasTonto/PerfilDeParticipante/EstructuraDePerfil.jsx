@@ -19,6 +19,7 @@ const EstructuraDePerfil = () => {
         nombre={participante.nombre}
         total={participante.total}
         titulos={participante.titulos}
+        mensaje="Tonto seleccionado "
       />
       {/* Lista de titulos */}
       <div className="ListaTitulos">

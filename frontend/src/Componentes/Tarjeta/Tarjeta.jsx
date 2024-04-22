@@ -1,6 +1,6 @@
-import Cpmpartir from "../Cpmpartir";
+import { Link } from "react-router-dom";
 
-const TarjetaTonta = ({ nombre, total, titulos }) => {
+const TarjetaTonta = ({ nombre, total, titulos, mensaje }) => {
   return (
     <div className="principalTarjeta">
       <div className="card tarjeta">
@@ -28,7 +28,14 @@ const TarjetaTonta = ({ nombre, total, titulos }) => {
                   {titulos.join(", ")}
                 </p>
                 <div className="fondoNav">
-                  <Cpmpartir />
+                  <Link
+                    to={`https://api.whatsapp.com/send?text=${mensaje}${nombre}`}
+                    target="_blank"
+                  >
+                    <button type="button" className="btn btn-dark">
+                      whatsapp
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>

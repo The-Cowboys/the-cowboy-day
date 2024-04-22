@@ -33,6 +33,7 @@ const Inicio = () => {
             nombre={tonto.nombre}
             total={tonto.total}
             titulos={tonto.titulos}
+            mensaje="Tonto del día de hoy es "
           />
         )}
         {errorTonto && (
@@ -51,6 +52,7 @@ const Inicio = () => {
             nombre={cowboy.name}
             total={"--"}
             titulos={["--Próximamente--"]}
+            mensaje="Cowboy del día de hoy es "
           />
         )}
         {errorCowboy && (
