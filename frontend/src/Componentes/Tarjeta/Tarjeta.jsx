@@ -1,6 +1,21 @@
 import { Link } from "react-router-dom";
 
-const TarjetaTonta = ({ nombre, total, titulos, mensaje }) => {
+const TarjetaTonta = ({ nombre, total, titulos, mensaje, todaLaInfo }) => {
+  let laInfo = "";
+  if (todaLaInfo != "") {
+    laInfo =
+      mensaje +
+      nombre +
+      "%0A" +
+      "Veces tonto: " +
+      total +
+      "%0A" +
+      "Titulos: " +
+      titulos;
+  } else {
+    laInfo = mensaje + nombre;
+  }
+
   return (
     <div className="principalTarjeta">
       <div className="card tarjeta">
@@ -29,7 +44,7 @@ const TarjetaTonta = ({ nombre, total, titulos, mensaje }) => {
                 </p>
                 <div className="fondoNav">
                   <Link
-                    to={`https://api.whatsapp.com/send?text=${mensaje}${nombre}`}
+                    to={`https://api.whatsapp.com/send?text= ${laInfo}`}
                     target="_blank"
                   >
                     <button type="button" className="btn btn-dark">
