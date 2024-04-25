@@ -3,22 +3,9 @@ import { useCowboyDelDia } from "../Hooks/useCowboyDelDia";
 import Tarjeta from "../Componentes/Tarjeta/Tarjeta";
 import Carga from "../Pagina/Errores/Carga";
 
-
-import { useContext } from "react";
-import { PruebaContext } from "../Context/Context";
-
-
-
 const Inicio = () => {
   const { tonto, carga, errorTonto } = useObtenerTonto();
   const { cowboy, errorCowboy } = useCowboyDelDia();
-
-
-  const compartida = useContext(PruebaContext);
-  console.log(compartida);
-
-
-  
 
   if (carga) {
     return <Carga />;
