@@ -19,7 +19,7 @@ const EstructuraDePerfil = () => {
         nombre={participante.nombre}
         total={participante.total}
         titulos={participante.titulos}
-        todaLaInfo="perfil"
+        tipoDeMensaje="perfilTonto"
       />
       {/* Lista de titulos */}
       <div className="ListaTitulos">

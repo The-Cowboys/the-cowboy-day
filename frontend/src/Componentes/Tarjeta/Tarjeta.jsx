@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 
-const TarjetaTonta = ({ nombre, total, titulos, todaLaInfo }) => {
-  let laInfo = "";
-  if (todaLaInfo == "perfil") {
-    laInfo =
+const TarjetaTonta = ({ nombre, total, titulos, tipoDeMensaje }) => {
+  let mensajeFinal = "";
+  if (tipoDeMensaje == "perfilTonto") {
+    mensajeFinal =
       "Tonto seleccionado: " +
       nombre +
       "%0A" +
@@ -13,17 +13,17 @@ const TarjetaTonta = ({ nombre, total, titulos, todaLaInfo }) => {
       "Titulos: " +
       titulos;
   }
-  if (todaLaInfo == "tontoDelDía") {
-    laInfo = "Tonto del día de hoy es " + nombre;
+  if (tipoDeMensaje == "tontoDelDía") {
+    mensajeFinal = "Tonto del día de hoy es " + nombre;
   }
-  if (todaLaInfo == "CowboyDelDía") {
-    laInfo = "Cowboy del día de hoy es " + nombre;
+  if (tipoDeMensaje == "cowboyDelDía") {
+    mensajeFinal = "Cowboy del día de hoy es " + nombre;
   }
-  if (todaLaInfo == "errorTonto") {
-    laInfo = "El algoritmo está preparando un tontos " + nombre;
+  if (tipoDeMensaje == "errorTonto") {
+    mensajeFinal = "El algoritmo está preparando un tontos " + nombre;
   }
-  if (todaLaInfo == "errorCowboy") {
-    laInfo = "El algoritmo está preparando un cowboy " + nombre;
+  if (tipoDeMensaje == "errorCowboy") {
+    mensajeFinal = "El algoritmo está preparando un cowboy " + nombre;
   }
 
   return (
@@ -54,7 +54,7 @@ const TarjetaTonta = ({ nombre, total, titulos, todaLaInfo }) => {
                 </p>
                 <div className="fondoNav">
                   <Link
-                    to={`https://api.whatsapp.com/send?text= ${laInfo}`}
+                    to={`https://api.whatsapp.com/send?text= ${mensajeFinal}`}
                     target="_blank"
                   >
                     <button type="button" className="btn btn-dark">

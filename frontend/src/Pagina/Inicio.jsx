@@ -33,7 +33,7 @@ const Inicio = () => {
             nombre={tonto.nombre}
             total={tonto.total}
             titulos={tonto.titulos}
-            todaLaInfo="tontoDelDía"
+            tipoDeMensaje="tontoDelDía"
           />
         )}
         {errorTonto && (
@@ -42,7 +42,7 @@ const Inicio = () => {
             nombre={"¡Procesando!"}
             total={"--"}
             titulos={["----"]}
-            todaLaInfo="errorTonto"
+            tipoDeMensaje="errorTonto"
           />
         )}
 
@@ -53,7 +53,7 @@ const Inicio = () => {
             nombre={cowboy.name}
             total={"--"}
             titulos={["--Próximamente--"]}
-            todaLaInfo="CowboyDelDía"
+            tipoDeMensaje="cowboyDelDía"
           />
         )}
         {errorCowboy && (
@@ -62,7 +62,7 @@ const Inicio = () => {
             nombre={"¡Procesando!"}
             total={"--"}
             titulos={["----"]}
-            todaLaInfo="errorCowboy"
+            tipoDeMensaje="errorCowboy"
           />
         )}
       </section>
