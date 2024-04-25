@@ -19,7 +19,7 @@ const ListaElMasTonto = () => {
             nombre={tonto.nombre}
             total={tonto.total}
             titulos={tonto.titulos}
-            todaLaInfo=""
+            todaLaInfo="tontoDelDía"
           />
         )}
         {errorTonto && (
@@ -28,8 +28,7 @@ const ListaElMasTonto = () => {
             nombre={"¡Procesando!"}
             total={"--"}
             titulos={["----"]}
-            mensaje="El algoritmo está preparando un tonto "
-            todaLaInfo=""
+            todaLaInfo="errorTonto"
           />
         )}
 

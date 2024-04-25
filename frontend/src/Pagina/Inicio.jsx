@@ -33,8 +33,7 @@ const Inicio = () => {
             nombre={tonto.nombre}
             total={tonto.total}
             titulos={tonto.titulos}
-            mensaje="Tonto del día de hoy es "
-            todaLaInfo=""
+            todaLaInfo="tontoDelDía"
           />
         )}
         {errorTonto && (
@@ -43,8 +42,7 @@ const Inicio = () => {
             nombre={"¡Procesando!"}
             total={"--"}
             titulos={["----"]}
-            mensaje="El algoritmo está preparando un tonto "
-            todaLaInfo=""
+            todaLaInfo="errorTonto"
           />
         )}
 
@@ -55,8 +53,7 @@ const Inicio = () => {
             nombre={cowboy.name}
             total={"--"}
             titulos={["--Próximamente--"]}
-            mensaje="Cowboy del día de hoy es "
-            todaLaInfo=""
+            todaLaInfo="CowboyDelDía"
           />
         )}
         {errorCowboy && (
@@ -65,8 +62,7 @@ const Inicio = () => {
             nombre={"¡Procesando!"}
             total={"--"}
             titulos={["----"]}
-            mensaje="El algoritmo está preparando un cowboy "
-            todaLaInfo=""
+            todaLaInfo="errorCowboy"
           />
         )}
       </section>

@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
-const TarjetaTonta = ({ nombre, total, titulos, mensaje, todaLaInfo }) => {
+const TarjetaTonta = ({ nombre, total, titulos, todaLaInfo }) => {
   let laInfo = "";
-  if (todaLaInfo != "") {
+  if (todaLaInfo == "perfil") {
     laInfo =
-      mensaje +
+      "Tonto seleccionado: " +
       nombre +
       "%0A" +
       "Veces tonto: " +
@@ -12,8 +12,18 @@ const TarjetaTonta = ({ nombre, total, titulos, mensaje, todaLaInfo }) => {
       "%0A" +
       "Titulos: " +
       titulos;
-  } else {
-    laInfo = mensaje + nombre;
+  }
+  if (todaLaInfo == "tontoDelDía") {
+    laInfo = "Tonto del día de hoy es " + nombre;
+  }
+  if (todaLaInfo == "CowboyDelDía") {
+    laInfo = "Cowboy del día de hoy es " + nombre;
+  }
+  if (todaLaInfo == "errorTonto") {
+    laInfo = "El algoritmo está preparando un tontos " + nombre;
+  }
+  if (todaLaInfo == "errorCowboy") {
+    laInfo = "El algoritmo está preparando un cowboy " + nombre;
   }
 
   return (
