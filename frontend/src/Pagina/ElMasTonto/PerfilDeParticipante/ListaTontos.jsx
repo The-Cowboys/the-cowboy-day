@@ -6,6 +6,16 @@ const ListaTontos = () => {
 
   return (
     <div className="ListaParticipantes">
+      <div className="compartirListaWhatsapp">
+        <Link
+          // to={`https://api.whatsapp.com/send?text= ${}`}
+          target="_blank"
+        >
+          <button type="button" className="btn btn-dark">
+            Compartir lista en whatsapp
+          </button>
+        </Link>
+      </div>
       <ol className="list-group list-group-numbered">
         {users.map((user, index) => (
           <li
