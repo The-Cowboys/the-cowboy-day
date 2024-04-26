@@ -20,14 +20,16 @@ const Inicio = () => {
             nombre={tonto.nombre}
             total={tonto.total}
             titulos={tonto.titulos}
+            tipoDeMensaje="tontoDelDía"
           />
         )}
         {errorTonto && (
           // Tarjeta de error del día del más tonto
           <Tarjeta
-            nombre={"Procesando un tonto"}
+            nombre={"¡Procesando!"}
             total={"--"}
             titulos={["----"]}
+            tipoDeMensaje="errorTonto"
           />
         )}
 
@@ -38,14 +40,16 @@ const Inicio = () => {
             nombre={cowboy.name}
             total={"--"}
             titulos={["--Próximamente--"]}
+            tipoDeMensaje="cowboyDelDía"
           />
         )}
         {errorCowboy && (
           // Tarjeta de error del cowboy del día
           <Tarjeta
-            nombre={"Procesando un cowboy"}
+            nombre={"¡Procesando!"}
             total={"--"}
             titulos={["----"]}
+            tipoDeMensaje="errorCowboy"
           />
         )}
       </section>

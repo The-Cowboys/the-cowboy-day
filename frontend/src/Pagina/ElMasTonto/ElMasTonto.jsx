@@ -19,14 +19,16 @@ const ListaElMasTonto = () => {
             nombre={tonto.nombre}
             total={tonto.total}
             titulos={tonto.titulos}
+            tipoDeMensaje="tontoDelDía"
           />
         )}
         {errorTonto && (
           // Tarjeta de error del día del más tonto
           <Tarjeta
-            nombre={"Procesando un tonto"}
+            nombre={"¡Procesando!"}
             total={"--"}
             titulos={["----"]}
+            tipoDeMensaje="errorTonto"
           />
         )}
 

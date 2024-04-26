@@ -29,6 +29,7 @@ const CowboyDelDia = () => {
           nombre={cowboy.name}
           total={"--"}
           titulos={["--Próximamente--"]}
+          tipoDeMensaje="cowboyDelDía"
         />
       )}
       {errorCowboy && (
@@ -37,6 +38,7 @@ const CowboyDelDia = () => {
           nombre={"Procesando un cowboy"}
           total={"--"}
           titulos={["----"]}
+          tipoDeMensaje="errorCowboy"
         />
       )}
 
