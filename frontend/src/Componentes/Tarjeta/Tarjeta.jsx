@@ -58,7 +58,7 @@ const TarjetaTonta = ({ nombre, total, titulos, tipoDeMensaje }) => {
                     target="_blank"
                   >
                     <button type="button" className="btn btn-dark">
-                      whatsapp
+                      Compartir tarjeta en whatsapp
                     </button>
                   </Link>
                 </div>

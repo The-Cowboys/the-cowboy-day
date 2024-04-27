@@ -4,11 +4,18 @@ import { Link } from "react-router-dom";
 const ListaTontos = () => {
   const { users } = useNombres();
 
+  const mensaje = users.map((user) => {
+    const { nombre, total, titulos } = user;
+    const mensaje = `Tonto: ${nombre} %09%09%09%09 Total: ${total} %0A Títulos: 
+    ${titulos.join(", ")}%0A %0A`;
+    return mensaje;
+  });
+
   return (
     <div className="ListaParticipantes">
       <div className="compartirListaWhatsapp">
         <Link
-          // to={`https://api.whatsapp.com/send?text= ${}`}
+          to={`https://api.whatsapp.com/send?text= ${mensaje}`}
           target="_blank"
         >
           <button type="button" className="btn btn-dark">
