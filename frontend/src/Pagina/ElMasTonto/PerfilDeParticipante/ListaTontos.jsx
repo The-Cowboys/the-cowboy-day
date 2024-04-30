@@ -4,12 +4,11 @@ import { Link } from "react-router-dom";
 const ListaTontos = () => {
   const { users } = useNombres();
 
-  const mensaje = users.map((user) => {
-    const { nombre, total, titulos } = user;
-    const mensaje = `Tonto: ${nombre} %09%09%09%09 Total: ${total} %0A Títulos: 
-    ${titulos.join(", ")}%0A %0A`;
-    return mensaje;
-  });
+  let mensaje = "";
+  for (let i = 0; i < users.length; i++) {
+    const { nombre, total, titulos } = users[i];
+    mensaje += `*${nombre}* x ${total} (${titulos.join(", ")})%0A`;
+  }
 
   return (
     <div className="ListaParticipantes">
