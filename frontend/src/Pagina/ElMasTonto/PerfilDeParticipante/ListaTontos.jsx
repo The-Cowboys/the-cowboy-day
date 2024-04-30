@@ -4,8 +4,24 @@ import { Link } from "react-router-dom";
 const ListaTontos = () => {
   const { users } = useNombres();
 
+  let mensaje = "";
+  for (let i = 0; i < users.length; i++) {
+    const { nombre, total, titulos } = users[i];
+    mensaje += `*${nombre}* x ${total} (${titulos.join(", ")})%0A`;
+  }
+
   return (
     <div className="ListaParticipantes">
+      <div className="compartirListaWhatsapp">
+        <Link
+          to={`https://api.whatsapp.com/send?text= ${mensaje}`}
+          target="_blank"
+        >
+          <button type="button" className="btn btn-dark">
+            Compartir lista en whatsapp
+          </button>
+        </Link>
+      </div>
       <ol className="list-group list-group-numbered">
         {users.map((user, index) => (
           <li

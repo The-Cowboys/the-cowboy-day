@@ -123,6 +123,13 @@ span.numeros {
   font-size: 25px;
 }
 
+/* Lista Participantes    <ListaTontos /> */
+/* Lista Participantes - boton */
+.compartirListaWhatsapp {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem;
+}
 /* Lista Participantes */
 .ListaParticipantes {
   border: 10px solid var(--fondoPricipal);
@@ -298,5 +305,3 @@ span {
   text-decoration: none;
   color: var(--texto);
 }
-
-/* Componente cpmpartir */
