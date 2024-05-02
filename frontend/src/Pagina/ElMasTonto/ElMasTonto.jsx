@@ -2,6 +2,7 @@ import { useObtenerTonto } from "../../Hooks/useObtenerTonto";
 import ListaTontos from "./PerfilDeParticipante/ListaTontos";
 import Carga from "../Errores/Carga";
 import Tarjeta from "../../Componentes/Tarjeta/Tarjeta";
+import Calendario from "../../Componentes/Calendario";
 
 const ListaElMasTonto = () => {
   const { tonto, carga, errorTonto } = useObtenerTonto();
@@ -31,10 +32,14 @@ const ListaElMasTonto = () => {
             tipoDeMensaje="errorTonto"
           />
         )}
-
+      </section>
+      <section>
         {/* Lista de participantes tontos */}
         <h3 className="tituloH3">Lista de participantes</h3>
         <ListaTontos />
+      </section>
+      <section className="calendarioTamaño">
+        <Calendario />
       </section>
     </>
   );
