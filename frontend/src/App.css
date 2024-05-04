@@ -308,10 +308,69 @@ span {
 
 /* Calendario de los tontos */
 .calendarioTamaño {
-  width: 300px;
-  height: 300px;
+  width: 800px;
+  height: 500px;
   background-color: var(--fondoNav);
   margin: 0 auto;
   margin-top: 1rem;
   margin-bottom: 2rem;
+}
+.rbc-header, /* Días de la semana */
+.rbc-date-cell, /* Numero del cuadrado */
+.rbc-day-bg  /* Cuadrado */ {
+  background-color: var(--fondoNav) !important;
+}
+.rbc-header span /* Días de la semana Lun.mar.mie.jue.vie... */ {
+  background-color: var(--fondoNav) !important;
+}
+.rbc-month-view {
+  border-bottom: 0px solid var(--marron) !important;
+  border-radius: 3px !important;
+}
+.rbc-header,
+.rbc-month-row,
+.rbc-row-content {
+  border: 2px solid var(--marron) !important;
+  border-radius: 3px !important;
+  margin-top: -2px !important;
+  margin-right: -2px !important;
+  margin-left: -2px !important;
+}
+.rbc-date-cell,
+.rbc-day-bg {
+  border: 2px solid var(--marron) !important;
+  border-radius: 3px !important;
+  margin: -2px !important;
+}
+.rbc-toolbar-label {
+  font-size: 1.6rem;
+  color: var(--texto);
+}
+.rbc-btn-group button {
+  color: var(--texto) !important;
+  background-color: var(--fondoNav) !important;
+  border: 2px solid var(--marron) !important;
+  border-radius: 3px !important;
+  margin-top: -2px !important;
+  margin-left: -2px !important;
+}
+.rbc-btn-group button:hover {
+  color: var(--hoverTexto) !important;
+  transition: 0.3s !important;
+}
+.rbc-today {
+  background-color: var(--fondoPricipal) !important;
+}
+.rbc-event-content {
+  background-color: var(--boton);
+}
+.rbc-event {
+  background-color: var(--boton) !important;
+  border: 2px solid var(--marron) !important;
+  border-radius: 3px !important;
+  margin: -1px !important;
+  margin-top: 2px !important;
+}
+.rbc-row-segment {
+  height: 1px;
 }
