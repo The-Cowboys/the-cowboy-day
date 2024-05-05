@@ -22,6 +22,11 @@ async function saveTodays(cowboyId) {
   return await tontoRepository.getTontoById(cowboyId)
 }
 
+async function getTontoByMes(year, month) {
+  const mes = `${month}/${year}`;
+  return await tontoRepository.getTontoByMes(mes);
+}
+
 async function getToday() {
   const strToday = getTodayString();
   return await tontoRepository.getTontoByDate(strToday);
@@ -36,6 +41,7 @@ async function getAll() {
 }
 
 module.exports = {
+  getTontoByMes,
   getTontoById,
   saveTodays,
   getToday,
