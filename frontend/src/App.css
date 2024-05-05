@@ -366,7 +366,7 @@ span {
 }
 .rbc-event {
   background-color: var(--boton) !important;
-  border: 2px solid var(--marron) !important;
+  border: 2px solid var(--hoverBorde) !important;
   border-radius: 3px !important;
   margin: -1px !important;
   margin-top: 2px !important;
