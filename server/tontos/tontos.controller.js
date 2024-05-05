@@ -50,10 +50,9 @@ async function getTontoHoy(_, res) {
 }
 
 async function getTontosMes(req, res) {
-  console.log('getTontosMes', req.params);
   try {
-    const year = req.params.year;
-    const month = req.params.month;
+    const year = parseInt(req.params.year);
+    const month = parseInt(req.params.month);
 
     const tontos = await tontosService.getTontoByMes(year, month);
     return res.json(tontos);
@@ -61,7 +60,7 @@ async function getTontosMes(req, res) {
     console.error(err);
 
     res.status(500).json({
-      message: `Error getting todays's tonto`,
+      message: `Error obteniendo los tontos del mes`,
     });
   }
 }

@@ -9,7 +9,7 @@ const convertirCowboy = (row) => {
   };
 };
 
-async function getTontoByMes(month) {
+async function getTontoByPeriod(start, end) {
   const res = await pool.query(
     `
     SELECT 
@@ -20,10 +20,11 @@ async function getTontoByMes(month) {
       c.tonto AS tonto
     FROM cowboys c
     INNER JOIN tontos t ON t.cowboy_id = c.id
-    WHERE t.dia LIKE $1 
-    GROUP BY t.dia, c.id, c.name;
+    WHERE t.dia BETWEEN $1 AND $2
+    GROUP BY t.dia, c.id, c.name
+    ORDER BY T.dia ASC;
     `,
-    [`%/${month}`]
+    [start, end]
   );
 
   return res.rows.map((row) => {
@@ -161,7 +162,7 @@ async function getTontoById(idCowboy) {
 }
 
 module.exports = {
-  getTontoByMes,
+  getTontoByPeriod,
   getTontoByDate,
   saveTonto,
   getTontos,
