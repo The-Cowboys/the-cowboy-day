@@ -1,14 +1,14 @@
--- Step 1: Add a new column dia_temp with date type
+-- Paso 1: Agregar una nueva columna dia_temp con tipo de dato date
 ALTER TABLE tontos ADD COLUMN dia_temp DATE;
 
--- Step 2: Set the values of dia_temp from dia
+-- Paso 2: Establecer los valores de dia_temp a partir de dia
 UPDATE tontos SET dia_temp = TO_DATE(dia, 'DD/MM/YYYY');
 
--- Step 3: Drop the old dia column
+-- Paso 3: Eliminar la antigua columna dia
 ALTER TABLE tontos DROP COLUMN dia;
 
--- Step 4: Rename dia_temp to dia
+-- Paso 4: Renombrar dia_temp a dia
 ALTER TABLE tontos RENAME COLUMN dia_temp TO dia;
 
--- Step 5: Set the new dia column to non-nullable
+-- Paso 5: Establecer la nueva columna dia como no nula
 ALTER TABLE tontos ALTER COLUMN dia SET NOT NULL;
