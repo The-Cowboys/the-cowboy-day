@@ -49,6 +49,22 @@ async function getTontoHoy(_, res) {
   }
 }
 
+async function getTontosMes(req, res) {
+  try {
+    const year = parseInt(req.params.year);
+    const month = parseInt(req.params.month);
+
+    const tontos = await tontosService.getTontoByMes(year, month);
+    return res.json(tontos);
+  } catch (err) {
+    console.error(err);
+
+    res.status(500).json({
+      message: `Error obteniendo los tontos del mes`,
+    });
+  }
+}
+
 async function getAllTontos(_, res) {
   try {
     res.json(await tontosService.getAll());
@@ -66,4 +82,5 @@ module.exports = {
   getTontoHoy,
   getAllTontos,
   getTontoPorId,
+  getTontosMes,
 };
