@@ -2,6 +2,8 @@ import { Calendar, dayjsLocalizer } from "react-big-calendar";
 import dayjs from "dayjs";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "dayjs/locale/es";
+import { useState } from "react";
+import { useEffect } from "react";
 
 dayjs.locale("es");
 
@@ -13,23 +15,36 @@ const Calendario = () => {
     next: "Mes siguiente",
   };
 
-  const events = [
-    {
-      start: dayjs("2024-05-09").toDate(),
-      end: dayjs("2024-05-11").toDate(),
-      title: "Prueba 1",
-    },
-    {
-      start: dayjs("2024-05-22").toDate(),
-      end: dayjs("2024-05-22").toDate(),
-      title: "Prueba 2",
-    },
-    {
-      start: dayjs("2024-06-22").toDate(),
-      end: dayjs("2024-06-22").toDate(),
-      title: "Prueba 3",
-    },
-  ];
+  const [eventos, setEventos] = useState([]);
+
+  useEffect(() => {
+    // TODO: como carajo obtener el rango de fechas inicial en el calendario?
+  }, []);
+
+  const manejarCambioDeMes = (rango) => {
+    obtenerTontosEntreFechas(rango.start, rango.end);
+  };
+
+  const obtenerTontosEntreFechas = (inicio, fin) => {
+    console.log("Fecha inicio", inicio);
+    console.log("Fecha fin", fin);
+
+    // TODO 1: llamar a API para obtener el historial de tontos entre las dos fechas
+    // TODO 2: al recibir la lista de tontos del dia, mapearla a un arreglo de eventos
+
+    // ESTO ES UN EJEMPLO, GENERA NOMBRES ALEATOREOS
+    // BORRAR
+    const nombres = ["Jorge", "German", "Pablo", "Marcelo", "Cristian"];
+    const eventos = Array.from({ length: 31 }, (_, i) => {
+      return {
+        start: dayjs(inicio).add(i, "day").toDate(),
+        end: dayjs(inicio).add(i, "day").toDate(),
+        title: nombres[Math.floor(Math.random() * nombres.length)],
+      };
+    });
+
+    setEventos(eventos);
+  };
 
   return (
     <>
@@ -38,7 +53,8 @@ const Calendario = () => {
           localizer={localizar}
           messages={messages}
           views={["month"]}
-          events={events}
+          events={eventos}
+          onRangeChange={(rango) => manejarCambioDeMes(rango)}
         />
       </div>
     </>
