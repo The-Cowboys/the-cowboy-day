@@ -1,23 +1,11 @@
-const dayjs = require('dayjs');
-
 const tontoRepository = require('./tontos.repository');
-
-function getTodayString() {
-  const date = new Date();
-  return getDateString(date);
-}
-
-function getDateString(date) {
-  return dayjs(date).format('DD/MM/YYYY');
-}
 
 async function saveTodays(cowboyId) {
   const date = new Date();
-  const strToday = getDateString(date);
-  const today = await tontoRepository.getTontoByDate(strToday);
+  const today = await tontoRepository.getTontoByDate(date);
   if (today) return today;
 
-  await tontoRepository.saveTonto(strToday, cowboyId, date);
+  await tontoRepository.saveTonto(date, cowboyId, new Date());
 
   return await tontoRepository.getTontoById(cowboyId)
 }
@@ -29,8 +17,8 @@ async function getTontoByMes(year, month) {
 }
 
 async function getToday() {
-  const strToday = getTodayString();
-  return await tontoRepository.getTontoByDate(strToday);
+  const date = new Date();
+  return await tontoRepository.getTontoByDate(date);
 }
 
 async function getTontoById(idCowboy) {
