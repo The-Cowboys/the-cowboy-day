@@ -9,6 +9,33 @@ const convertirCowboy = (row) => {
   };
 };
 
+async function getTontoByPeriod(start, end) {
+  const res = await pool.query(
+    `
+    SELECT 
+      t.dia AS dia, 
+      c.id AS id,
+      c.name AS name,
+      c.email AS email,
+      c.tonto AS tonto
+    FROM cowboys c
+    INNER JOIN tontos t ON t.cowboy_id = c.id
+    WHERE t.dia BETWEEN $1 AND $2
+    GROUP BY t.dia, c.id, c.name
+    ORDER BY T.dia ASC;
+    `,
+    [start, end]
+  );
+
+  return res.rows.map((row) => {
+    const cowboy = convertirCowboy(row);
+    return {
+      ...cowboy,
+      dia: row.dia,
+    };
+  });
+}
+
 async function getTontoByDate(dayStr) {
   const res = await pool.query(
     `
@@ -135,6 +162,7 @@ async function getTontoById(idCowboy) {
 }
 
 module.exports = {
+  getTontoByPeriod,
   getTontoByDate,
   saveTonto,
   getTontos,
