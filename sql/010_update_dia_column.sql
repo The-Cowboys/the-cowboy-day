@@ -12,3 +12,6 @@ ALTER TABLE tontos RENAME COLUMN dia_temp TO dia;
 
 -- Paso 5: Establecer la nueva columna dia como no nula
 ALTER TABLE tontos ALTER COLUMN dia SET NOT NULL;
+
+-- Paso 6: Establecer la nueva columna dia como única
+ALTER TABLE tontos ADD UNIQUE (dia);
