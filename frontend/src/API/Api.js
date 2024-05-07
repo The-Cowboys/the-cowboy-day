@@ -90,3 +90,14 @@ export async function registro(reg) {
   );
   return respuesta.data;
 }
+
+// -------Calendario-------
+
+// ----Mostrar:
+// Mostrar nombre en la fecha que salio
+export async function obtenerTontosDelMes(fecha) {
+  const resp = await api.get(
+    `https://thecowboys.duckdns.org/api/tontos/${fecha}`
+  );
+  return resp.data;
+}

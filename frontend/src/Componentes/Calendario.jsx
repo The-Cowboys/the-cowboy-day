@@ -1,9 +1,9 @@
 import { Calendar, dayjsLocalizer } from "react-big-calendar";
+import { useState } from "react";
+import { useEffect } from "react";
 import dayjs from "dayjs";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "dayjs/locale/es";
-import { useState } from "react";
-import { useEffect } from "react";
 
 dayjs.locale("es");
 
