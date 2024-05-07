@@ -49,12 +49,26 @@ async function getTontoHoy(_, res) {
   }
 }
 
-async function getTontosMes(req, res) {
+async function getTontosPorRango(req, res) {
   try {
-    const year = parseInt(req.params.year);
-    const month = parseInt(req.params.month);
+    const inicio = req.query.inicio;
+    const fin = req.query.fin;
 
-    const tontos = await tontosService.getTontoByMes(year, month);
+    console.log("inicio", inicio, "fin", fin);
+
+    if (!inicio) {
+      return res.status(400).json({
+        message: `Falta el parámetro de 'inicio' en la URL`,
+      });
+    }
+
+    if (!fin) {
+      return res.status(400).json({
+        message: `Falta el parámetro de 'fin' en la URL`,
+      });
+    }
+
+    const tontos = await tontosService.getTontosPorRango(inicio, fin);
     return res.json(tontos);
   } catch (err) {
     console.error(err);
@@ -82,5 +96,5 @@ module.exports = {
   getTontoHoy,
   getAllTontos,
   getTontoPorId,
-  getTontosMes,
+  getTontosPorRango,
 };
