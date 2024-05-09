@@ -96,8 +96,11 @@ export async function registro(reg) {
 // ----Mostrar:
 // Mostrar nombre en la fecha que salio
 export async function obtenerTontosDelMes(fecha) {
+  console.log("api")
   const resp = await api.get(
     `https://thecowboys.duckdns.org/api/tontos/${fecha}`
+    // `https://thecowboys.duckdns.org/api/tontos/2024/04/`
   );
+  console.log("api2",resp)
   return resp.data;
 }

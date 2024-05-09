@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import dayjs from "dayjs";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "dayjs/locale/es";
+import { obtenerTontosDelMes } from "../API/Api";
 
 dayjs.locale("es");
 
@@ -16,14 +17,20 @@ const Calendario = () => {
   };
 
   const [eventos, setEventos] = useState([]);
-
+  
   useEffect(() => {
     // TODO: como carajo obtener el rango de fechas inicial en el calendario?
   }, []);
-
+  
   const manejarCambioDeMes = (rango) => {
     obtenerTontosEntreFechas(rango.start, rango.end);
   };
+  
+  const obtenerTontosDelMes2 = async () => {
+    const fecha = "2024/05"
+    await obtenerTontosDelMes(fecha);
+  }
+  obtenerTontosDelMes2();
 
   const obtenerTontosEntreFechas = (inicio, fin) => {
     console.log("Fecha inicio", inicio);
