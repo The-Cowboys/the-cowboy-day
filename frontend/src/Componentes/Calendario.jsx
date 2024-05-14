@@ -17,40 +17,41 @@ const Calendario = () => {
   };
 
   const [eventos, setEventos] = useState([]);
-  
+
   useEffect(() => {
-    // TODO: como carajo obtener el rango de fechas inicial en el calendario?
+    // PARAHACER: como carajo obtener el rango de fechas inicial en el calendario?
+    // const inicio = ??????
+    // const fin = ??????
+    // obtenerTontosEntreFechas(inicio, fin)
+    // Alternativa
+    // - Otener fecha actual
+    // - Otener inicio del mes
+    // - Obtener fin del mes
+    // obtenerTontosEntreFechas(ini, f)
   }, []);
-  
+
   const manejarCambioDeMes = (rango) => {
+    console.log("rango", rango);
     obtenerTontosEntreFechas(rango.start, rango.end);
   };
-  
-  const obtenerTontosDelMes2 = async () => {
-    const fecha = "2024/05"
-    await obtenerTontosDelMes(fecha);
-  }
-  obtenerTontosDelMes2();
 
-  const obtenerTontosEntreFechas = (inicio, fin) => {
+  const obtenerTontosEntreFechas = async (inicio, fin) => {
     console.log("Fecha inicio", inicio);
     console.log("Fecha fin", fin);
 
-    // TODO 1: llamar a API para obtener el historial de tontos entre las dos fechas
-    // TODO 2: al recibir la lista de tontos del dia, mapearla a un arreglo de eventos
+    const tontos = await obtenerTontosDelMes(inicio, fin);
 
-    // ESTO ES UN EJEMPLO, GENERA NOMBRES ALEATOREOS
-    // BORRAR
-    const nombres = ["Jorge", "German", "Pablo", "Marcelo", "Cristian"];
-    const eventos = Array.from({ length: 31 }, (_, i) => {
+    const eventoCalendario = (tonto) => {
+      const dia = new Date(Date.parse(tonto.dia));
       return {
-        start: dayjs(inicio).add(i, "day").toDate(),
-        end: dayjs(inicio).add(i, "day").toDate(),
-        title: nombres[Math.floor(Math.random() * nombres.length)],
+        start: tonto.dia,
+        end: dia,
+        title: tonto.nombre,
       };
-    });
+    };
 
-    setEventos(eventos);
+    const listaEventos = tontos.map(eventoCalendario);
+    setEventos(listaEventos);
   };
 
   return (
