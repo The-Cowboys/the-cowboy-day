@@ -1,10 +1,9 @@
 import { Calendar, dayjsLocalizer } from "react-big-calendar";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+import { obtenerTontosDelMes } from "../API/Api";
 import dayjs from "dayjs";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "dayjs/locale/es";
-import { obtenerTontosDelMes } from "../API/Api";
 
 dayjs.locale("es");
 
@@ -27,25 +26,28 @@ const Calendario = () => {
     // - Otener fecha actual
     // - Otener inicio del mes
     // - Obtener fin del mes
-    // obtenerTontosEntreFechas(ini, f)
+    // obtenerTontosEntreFechas(inicio, fin)
   }, []);
 
   const manejarCambioDeMes = (rango) => {
-    console.log("rango", rango);
     obtenerTontosEntreFechas(rango.start, rango.end);
   };
 
   const obtenerTontosEntreFechas = async (inicio, fin) => {
-    console.log("Fecha inicio", inicio);
-    console.log("Fecha fin", fin);
+    // console.log("Fecha inicio", inicio);
+    // console.log("Fecha fin", fin);
 
     const tontos = await obtenerTontosDelMes(inicio, fin);
 
     const eventoCalendario = (tonto) => {
-      const dia = new Date(Date.parse(tonto.dia));
+      const diaInicio = new Date(tonto.dia);
+      if (isNaN(diaInicio)) {
+        console.error(`Error de fechas: ${tonto.dia}`);
+        return null;
+      }
       return {
-        start: tonto.dia,
-        end: dia,
+        start: diaInicio,
+        end: diaInicio,
         title: tonto.nombre,
       };
     };
