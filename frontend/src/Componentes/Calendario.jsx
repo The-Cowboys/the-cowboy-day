@@ -40,14 +40,10 @@ const Calendario = () => {
     const tontos = await obtenerTontosDelMes(inicio, fin);
 
     const eventoCalendario = (tonto) => {
-      const diaInicio = new Date(tonto.dia);
-      if (isNaN(diaInicio)) {
-        console.error(`Error de fechas: ${tonto.dia}`);
-        return null;
-      }
+      const dia = new Date(Date.parse(tonto.dia));
       return {
-        start: diaInicio,
-        end: diaInicio,
+        start: dia,
+        end: dia,
         title: tonto.nombre,
       };
     };
