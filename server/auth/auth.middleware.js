@@ -8,7 +8,7 @@ function checkRole(req, res, next, rolRequerido) {
     const accessToken = req.header("Authorization").replace("Bearer ", "");
     const user = authService.getAuthUser(accessToken);
 
-    if (rolRequerido !== user.role) {
+    if (rolRequerido !== user.rol) {
       throw new Error("No autorizado");
     }
 
