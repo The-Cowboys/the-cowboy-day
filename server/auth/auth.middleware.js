@@ -8,7 +8,10 @@ function checkRole(req, res, next, rolRequerido) {
     const accessToken = req.header("Authorization").replace("Bearer ", "");
     const user = authService.getAuthUser(accessToken);
 
-    if (rolRequerido !== user.role) {
+    console.log('rol', rolRequerido);
+    console.log('usuario', user.role);
+
+    if (rolRequerido !== user.rol && rolRequerido !== user.role) {
       throw new Error("No autorizado");
     }
 
@@ -16,7 +19,7 @@ function checkRole(req, res, next, rolRequerido) {
     next();
   } catch (error) {
     console.error(error);
-
+i
     res.status(403).json({ message: "Token invalido" });
   }
 }
