@@ -4,6 +4,9 @@ const convertirUsuario = (fila) => {
   return {
     email: fila.email,
     password: fila.hash,
+    estado: fila.estado,
+    rol: fila.rol,
+    creado: fila.created,
   };
 };
 
@@ -12,7 +15,10 @@ async function obtener(email) {
     `
     SELECT 
       email,
-      hash
+      hash,
+      estado,
+      rol,
+      created
     FROM usuarios
     WHERE email = $1;
     `,
