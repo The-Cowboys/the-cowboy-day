@@ -4,7 +4,12 @@ const secret = process.env.TOKEN_SECRET;
 
 
 function generateAccessToken(email, rol, estado) {
-  return jwt.sign(
+
+  console.log("email", email);
+  console.log("rol", rol);
+  console.log("estado", estado);
+
+	return jwt.sign(
     {
       email: email,
       rol: rol,
@@ -17,6 +22,8 @@ function generateAccessToken(email, rol, estado) {
 
 function getAuthUser(accessToken) {
   const decoded = jwt.verify(accessToken, secret);
+  console.log('decoded token', decoded);
+
   // TODO: fetch user from DB and validate
   return decoded;
 }
