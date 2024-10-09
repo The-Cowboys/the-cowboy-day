@@ -2,13 +2,12 @@ const authService = require("./auth.service");
 
 const { ROL_USUARIO, ROL_SUDO } = require("./../usuarios/roles");
 
-
 function checkRole(req, res, next, rolRequerido) {
   try {
     const accessToken = req.header("Authorization").replace("Bearer ", "");
     const user = authService.getAuthUser(accessToken);
 
-    if (rolRequerido !== user.role) {
+    if (rolRequerido !== user.rol) {
       throw new Error("No autorizado");
     }
 
