@@ -18,15 +18,10 @@ const Calendario = () => {
   const [eventos, setEventos] = useState([]);
 
   useEffect(() => {
-    // PARAHACER: como carajo obtener el rango de fechas inicial en el calendario?
-    // const inicio = ??????
-    // const fin = ??????
-    // obtenerTontosEntreFechas(inicio, fin)
-    // Alternativa
-    // - Otener fecha actual
-    // - Otener inicio del mes
-    // - Obtener fin del mes
-    // obtenerTontosEntreFechas(inicio, fin)
+    const ahora = new Date();
+    const inicioDelMes = new Date(ahora.getFullYear(), ahora.getMonth(), 1);
+    const finDelMes = new Date(ahora.getFullYear(), ahora.getMonth() + 1, 0);
+    obtenerTontosEntreFechas(inicioDelMes, finDelMes);
   }, []);
 
   const manejarCambioDeMes = (rango) => {
@@ -34,13 +29,13 @@ const Calendario = () => {
   };
 
   const obtenerTontosEntreFechas = async (inicio, fin) => {
-    // console.log("Fecha inicio", inicio);
-    // console.log("Fecha fin", fin);
+    console.log("Fecha inicio", inicio);
+    console.log("Fecha fin", fin);
 
     const tontos = await obtenerTontosDelMes(inicio, fin);
 
     const eventoCalendario = (tonto) => {
-      const dia = new Date(Date.parse(tonto.dia));
+      const dia = new Date(tonto.dia);
       return {
         start: dia,
         end: dia,
