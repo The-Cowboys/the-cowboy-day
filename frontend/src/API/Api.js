@@ -1,7 +1,10 @@
 import axios from "axios";
 const api = axios.create();
 
-const token = import.meta.env.VITE_JWT;
+const baseUrl = import.meta.env.DEV ? "https://thecowboys.one" : "";
+const token   = import.meta.env.VITE_JWT;
+
+console.log("URL", baseUrl);
 
 const headers = {
   "Content-Type": "application/json",
@@ -13,28 +16,28 @@ const headers = {
 // ----Mostrar:
 // Mostrar nombres de los participantes
 export async function obtenerNombres() {
-  const resp = await api.get(`https://thecowboys.duckdns.org/api/tontos`);
+  const resp = await api.get(`${baseUrl}/api/tontos`);
   return resp.data;
 }
 
 // Mostrar títulos
 export async function getTitulos(idCowboy) {
   const resp = await api.get(
-    `https://thecowboys.duckdns.org/api/cowboys/${idCowboy}/titulos`
+    `${baseUrl}/api/cowboys/${idCowboy}/titulos`
   );
   return resp.data;
 }
 
 // Mostrar Tonto del día
 export async function obtenerTonto() {
-  const resp = await api.get(`https://thecowboys.duckdns.org/api/tontos/hoy`);
+  const resp = await api.get(`${baseUrl}/api/tontos/hoy`);
   return resp.data;
 }
 
 // Obtener Tonto por ID Participante
 export async function obtenerTontoId(idCowboy) {
   const resp = await api.get(
-    `https://thecowboys.duckdns.org/api/tontos/${idCowboy}`
+    `${baseUrl}/api/tontos/${idCowboy}`
   );
   return resp.data;
 }
@@ -43,7 +46,7 @@ export async function obtenerTontoId(idCowboy) {
 // Guardar títulos
 export async function postTitulos(idCowboy, data) {
   const resp = await api.post(
-    `https://thecowboys.duckdns.org/api/cowboys/${idCowboy}/titulos`,
+    `${baseUrl}/api/cowboys/${idCowboy}/titulos`,
     data,
     headers
   );
@@ -54,7 +57,7 @@ export async function postTitulos(idCowboy, data) {
 // Borrar títulos
 export async function deleteTitulos(idTitulo) {
   const resp = await api.delete(
-    `https://thecowboys.duckdns.org/api/titulos/${idTitulo}/`,
+    `${baseUrl}/api/titulos/${idTitulo}/`,
     headers
   );
   return resp.data;
@@ -66,7 +69,7 @@ export async function deleteTitulos(idTitulo) {
 // Mostrar nombre del cowboy del día
 export async function fetchCowboysToday() {
   const resp = await api.get(
-    `https://thecowboys.duckdns.org/api/cowboys/today`
+    `${baseUrl}/api/cowboys/today`
   );
   return resp.data;
 }
@@ -76,7 +79,7 @@ export async function fetchCowboysToday() {
 // Usuario y contraseña 🔐
 export async function inicioSesion(sesion) {
   const respuesta = await api.post(
-    `https://thecowboys.duckdns.org/api/login`,
+    `${baseUrl}/api/login`,
     sesion
   );
   return respuesta.data;
@@ -85,7 +88,7 @@ export async function inicioSesion(sesion) {
 // Registro
 export async function registro(reg) {
   const respuesta = await api.post(
-    `https://thecowboys.duckdns.org/api/registrar`,
+    `${baseUrl}/api/registrar`,
     reg
   );
   return respuesta.data;

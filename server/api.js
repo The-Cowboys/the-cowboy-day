@@ -20,6 +20,8 @@ router.delete("/titulos/:idTitulo", standardAuth, titulosController.deleteTitulo
 router.post("/tontos", sudoAuth, tontosController.createTontoHoy);
 // Obtener tonto del dia
 router.get("/tontos/hoy", tontosController.getTontoHoy);
+// Obtener calendario de tontos entre dos fechas
+router.get("/tontos/calendario", tontosController.getTontosPorRango);
 // Obtener tonto por id
 router.get("/tontos/:idCowboy", tontosController.getTontoPorId);
 // Obtener todos los tontos
