@@ -10,6 +10,7 @@ import Inicio from "../Pagina/Inicio";
 import EstructuraDePerfil from "../Pagina/ElMasTonto/PerfilDeParticipante/EstructuraDePerfil";
 import Login from "../Pagina/InicioDeSesión/Login";
 import Registro from "../Pagina/InicioDeSesión/Registro";
+import Calendario from "./Calendario";
 
 const Estructura = () => {
   return (
@@ -19,6 +20,7 @@ const Estructura = () => {
           {/* NavBar */}
           <Route path="/ElMasTonto" element={<ElMasTonto />} />
           <Route path="/CowboyDelDia" element={<CowboyDelDia />} />
+          <Route path="/Calendario" element={<Calendario />} />
 
           {/* Inicio */}
           <Route path="/" element={<Inicio /> } />

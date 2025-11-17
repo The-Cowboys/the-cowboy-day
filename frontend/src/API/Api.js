@@ -1,7 +1,7 @@
 import axios from "axios";
 const api = axios.create();
 
-const baseUrl = import.meta.env.DEV ? "https://thecowboys.one" : "";
+const baseUrl = import.meta.env.DEV ? "https://thecowboys.lol" : "";
 const token   = import.meta.env.VITE_JWT;
 
 console.log("URL", baseUrl);
@@ -92,4 +92,17 @@ export async function registro(reg) {
     reg
   );
   return respuesta.data;
+}
+
+// -------Calendario-------
+
+// ----Mostrar:
+// Mostrar nombre en la fecha que salio
+export async function obtenerTontosDelMes(inicio, fin) {
+  const resp = await api.get(
+    `${baseUrl}/api/tontos/calendario?inicio=${inicio.toISOString()}&fin=${fin.toISOString()}`
+    // ?inicio=2024-05-01T00:00:00.000Z&fin=2024-05-05T23:59:59.999Z
+  );
+  console.log("api2", resp.data)
+  return resp.data;
 }

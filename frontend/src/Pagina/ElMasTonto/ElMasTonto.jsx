@@ -31,7 +31,8 @@ const ListaElMasTonto = () => {
             tipoDeMensaje="errorTonto"
           />
         )}
-
+      </section>
+      <section>
         {/* Lista de participantes tontos */}
         <h3 className="tituloH3">Lista de participantes</h3>
         <ListaTontos />
