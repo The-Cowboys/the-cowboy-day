@@ -9,8 +9,6 @@ const { ESTADO_ACTIVACION_PENDIENTE } = require("./estados");
 
 
 const registrar = async (usuarioSolicitud) => {
-  console.log("usuarioSolicitud", usuarioSolicitud);
-
   const hashedPassword = await bcrypt.hash(usuarioSolicitud.password, 10);
   const usuario = {
     email: usuarioSolicitud.email,
@@ -28,10 +26,7 @@ const registrar = async (usuarioSolicitud) => {
 };
 
 const login = async (usuarioSolicitud) => {
-  console.log("usuarioSolicitud", usuarioSolicitud);
   const usuario = await usuariosRepository.obtener(usuarioSolicitud.email);
-
-  console.log("usuario", usuario);
   if (usuario) {
     const passwordCorrecto = await bcrypt.compare(
       usuarioSolicitud.password,
